@@ -1,0 +1,274 @@
+{
+  "note": "Photos de l'ancien site. Elles ne sont pas encore copiées dans le dépôt : chaque URL pointe vers la copie de la Wayback Machine. Les noms comme 'xxx-780x519.jpg' sont des miniatures, l'original porte le même nom sans le suffixe de taille.",
+  "photos": [
+    {
+      "fichier": "2023/03/Logo-550x108.png",
+      "utilise_pour": [
+        "accueil"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/03/Logo-550x108.png"
+    },
+    {
+      "fichier": "2023/03/logo-3.png",
+      "utilise_pour": [
+        "accueil"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/03/logo-3.png"
+    },
+    {
+      "fichier": "2026/04/chambre-ramatuelle-oumede-1200x799.jpg",
+      "utilise_pour": [
+        "accueil"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/04/chambre-ramatuelle-oumede-1200x799.jpg"
+    },
+    {
+      "fichier": "2026/04/chambre-avec-terrasse-oumede-ramatuelle-768x1013.jpg",
+      "utilise_pour": [
+        "accueil"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/04/chambre-avec-terrasse-oumede-ramatuelle-768x1013.jpg"
+    },
+    {
+      "fichier": "2026/04/oumede-hotel-vigne-ramatuelle-1200x799.jpg",
+      "utilise_pour": [
+        "accueil"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/04/oumede-hotel-vigne-ramatuelle-1200x799.jpg"
+    },
+    {
+      "fichier": "2023/05/687909140.jpg",
+      "utilise_pour": [
+        "accueil",
+        "chambre:studio"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/687909140.jpg"
+    },
+    {
+      "fichier": "2023/05/687907154.jpg",
+      "utilise_pour": [
+        "accueil"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/687907154.jpg"
+    },
+    {
+      "fichier": "2023/05/chambre-double-standard-oumede-ramatuelle.jpg",
+      "utilise_pour": [
+        "chambre:chambre-1-double-standard"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/chambre-double-standard-oumede-ramatuelle.jpg"
+    },
+    {
+      "fichier": "2023/05/F284F394-EFA6-437C-BB5B-FF1357ABD78F_1_105_c-1.jpeg",
+      "utilise_pour": [
+        "chambre:chambre-1-double-standard",
+        "chambre:chambre-3-double-superieure-triple"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/F284F394-EFA6-437C-BB5B-FF1357ABD78F_1_105_c-1.jpeg"
+    },
+    {
+      "fichier": "2026/05/chambre2-ramatuelle-oumede.jpg",
+      "utilise_pour": [
+        "chambre:chambre-2-double-standard"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/05/chambre2-ramatuelle-oumede.jpg"
+    },
+    {
+      "fichier": "2026/05/chambre2-oumede.jpg",
+      "utilise_pour": [
+        "chambre:chambre-2-double-standard"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/05/chambre2-oumede.jpg"
+    },
+    {
+      "fichier": "2026/05/chambre2.jpg",
+      "utilise_pour": [
+        "chambre:chambre-2-double-standard"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/05/chambre2.jpg"
+    },
+    {
+      "fichier": "2026/05/chambre2-oumede-sdb.jpg",
+      "utilise_pour": [
+        "chambre:chambre-2-double-standard"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/05/chambre2-oumede-sdb.jpg"
+    },
+    {
+      "fichier": "2023/05/687908198.jpg",
+      "utilise_pour": [
+        "chambre:chambre-3-double-superieure-triple",
+        "chambre:chambre-4-double-superieure"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/687908198.jpg"
+    },
+    {
+      "fichier": "2023/05/687908125.jpg",
+      "utilise_pour": [
+        "chambre:chambre-3-double-superieure-triple"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/687908125.jpg"
+    },
+    {
+      "fichier": "2026/04/hotel-ramatuelle-mer-vigne-auberge-oumede.jpg",
+      "utilise_pour": [
+        "chambre:chambre-3-double-superieure-triple"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/04/hotel-ramatuelle-mer-vigne-auberge-oumede.jpg"
+    },
+    {
+      "fichier": "2023/05/687908103.jpg",
+      "utilise_pour": [
+        "chambre:chambre-3-double-superieure-triple"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/687908103.jpg"
+    },
+    {
+      "fichier": "2023/05/FCF4D21F-9A9D-4C9D-9B6B-AC19BF0EB08C_1_105_c.jpeg",
+      "utilise_pour": [
+        "chambre:chambre-4-double-superieure"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/FCF4D21F-9A9D-4C9D-9B6B-AC19BF0EB08C_1_105_c.jpeg"
+    },
+    {
+      "fichier": "2023/05/470727493.jpg",
+      "utilise_pour": [
+        "chambre:chambre-4-double-superieure"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/470727493.jpg"
+    },
+    {
+      "fichier": "2023/05/687908166.jpg",
+      "utilise_pour": [
+        "chambre:chambre-4-double-superieure"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/687908166.jpg"
+    },
+    {
+      "fichier": "2023/05/687909142.jpg",
+      "utilise_pour": [
+        "chambre:studio"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/687909142.jpg"
+    },
+    {
+      "fichier": "2023/05/687909141.jpg",
+      "utilise_pour": [
+        "chambre:studio"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/687909141.jpg"
+    },
+    {
+      "fichier": "2023/05/687909108.jpg",
+      "utilise_pour": [
+        "chambre:studio"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/687909108.jpg"
+    },
+    {
+      "fichier": "2023/05/687909985.jpg",
+      "utilise_pour": [
+        "chambre:suite-junior"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/687909985.jpg"
+    },
+    {
+      "fichier": "2023/05/687909999.jpg",
+      "utilise_pour": [
+        "chambre:suite-junior"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/687909999.jpg"
+    },
+    {
+      "fichier": "2023/05/687909948.jpg",
+      "utilise_pour": [
+        "chambre:suite-junior"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/687909948.jpg"
+    },
+    {
+      "fichier": "2023/05/687909872.jpg",
+      "utilise_pour": [
+        "chambre:suite-junior"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/687909872.jpg"
+    },
+    {
+      "fichier": "2023/05/suite-oumede-780x520.jpg",
+      "utilise_pour": [
+        "chambre:suite-junior"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/suite-oumede-780x520.jpg"
+    },
+    {
+      "fichier": "2023/05/313A8442-01A8-4AC4-836C-F54A7C25D687_1_105_c.jpeg",
+      "utilise_pour": [
+        "chambre:suite-de-l-oumede"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/313A8442-01A8-4AC4-836C-F54A7C25D687_1_105_c.jpeg"
+    },
+    {
+      "fichier": "2023/05/C36F00A5-DFD2-49E8-BBA7-D50B544674E1_1_105_c.jpeg",
+      "utilise_pour": [
+        "chambre:suite-de-l-oumede"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/C36F00A5-DFD2-49E8-BBA7-D50B544674E1_1_105_c.jpeg"
+    },
+    {
+      "fichier": "2023/05/F1562A10-9600-4F82-AC7C-761C135ED4FD_1_105_c.jpeg",
+      "utilise_pour": [
+        "chambre:suite-de-l-oumede"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/F1562A10-9600-4F82-AC7C-761C135ED4FD_1_105_c.jpeg"
+    },
+    {
+      "fichier": "2023/05/08854B69-053A-4F7C-89D4-B3C22F773F54_1_105_c.jpeg",
+      "utilise_pour": [
+        "chambre:suite-de-l-oumede"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/08854B69-053A-4F7C-89D4-B3C22F773F54_1_105_c.jpeg"
+    },
+    {
+      "fichier": "2026/04/petit-dejeuner-ramatuelle-oumede.png",
+      "utilise_pour": [
+        "services"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/04/petit-dejeuner-ramatuelle-oumede.png"
+    },
+    {
+      "fichier": "2026/04/piscine-auberge-oumede-ramatuelle-780x520.jpg",
+      "utilise_pour": [
+        "services"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/04/piscine-auberge-oumede-ramatuelle-780x520.jpg"
+    },
+    {
+      "fichier": "2026/04/jardins-auberge-oumede-780x1016.jpg",
+      "utilise_pour": [
+        "services"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/04/jardins-auberge-oumede-780x1016.jpg"
+    },
+    {
+      "fichier": "2026/04/plage-pampelonne-auberge-de-loumede-550x384.jpg",
+      "utilise_pour": [
+        "decouvrir"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/04/plage-pampelonne-auberge-de-loumede-550x384.jpg"
+    },
+    {
+      "fichier": "2026/04/marche-provencal-de-ramatuelle-auberge-oumede-550x413.jpg",
+      "utilise_pour": [
+        "decouvrir"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/04/marche-provencal-de-ramatuelle-auberge-oumede-550x413.jpg"
+    },
+    {
+      "fichier": "2026/04/randonnee-ramatuelle-oumede-french-riviera-550x413.jpg",
+      "utilise_pour": [
+        "decouvrir"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/04/randonnee-ramatuelle-oumede-french-riviera-550x413.jpg"
+    }
+  ]
+}

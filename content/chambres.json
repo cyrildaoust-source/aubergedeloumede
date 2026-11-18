@@ -1,0 +1,321 @@
+{
+  "titre": "Hébergements d'exception",
+  "sous_titre": "Sélectionnez votre chambre",
+  "categories": [
+    "Double",
+    "Studio",
+    "Suite"
+  ],
+  "chambres": [
+    {
+      "slug": "chambre-1-double-standard",
+      "nom": "Chambre 1 – Double Standard",
+      "categorie": "Double",
+      "ancienne_url": "https://aubergedeloumede.com/room/studio-with-balcony/",
+      "surface_m2": 28,
+      "personnes_max": 2,
+      "lits": [
+        "Lit double 180 cm"
+      ],
+      "description": "Chambre double élégante et lumineuse à Ramatuelle, idéale pour un séjour paisible sur la Côte d'Azur. Ouverte sur une terrasse privative avec vue sur la piscine et le jardin, elle offre un cadre raffiné et reposant, parfait pour profiter du calme environnant à quelques minutes des plages de Pampelonne.",
+      "equipements_hotel": [
+        "Piscine extérieure",
+        "Petit-déjeuner sur demande",
+        "Parking extérieur gratuit"
+      ],
+      "equipements": [
+        "Climatisation",
+        "TV",
+        "Wifi & Internet",
+        "Serviettes de bain",
+        "Terrasse",
+        "Sèche-cheveux",
+        "Produits d'accueil",
+        "Coffre-fort",
+        "Mini bar"
+      ],
+      "caracteristiques": [
+        "Surface : 28 m²",
+        "Lit double 180 cm",
+        "Terrasse privative",
+        "Vue sur la piscine et le jardin"
+      ],
+      "type_booking": "Chambre Double Standard",
+      "photos": [
+        "2023/05/chambre-double-standard-oumede-ramatuelle.jpg",
+        "2023/05/F284F394-EFA6-437C-BB5B-FF1357ABD78F_1_105_c-1.jpeg"
+      ]
+    },
+    {
+      "slug": "chambre-2-double-standard",
+      "nom": "Chambre 2 – Double Standard",
+      "categorie": "Double",
+      "ancienne_url": "https://aubergedeloumede.com/room/copied-chambre-2-double-standard/",
+      "surface_m2": 28,
+      "personnes_max": 2,
+      "lits": [
+        "Lit double 160 cm"
+      ],
+      "description": "Chambre double élégante et lumineuse à Ramatuelle, idéale pour un séjour paisible sur la Côte d'Azur. Ouverte sur une terrasse privative avec vue sur la piscine et le jardin, elle offre un cadre raffiné et reposant, parfait pour profiter du calme environnant à quelques minutes des plages de Pampelonne.",
+      "equipements_hotel": [
+        "Piscine extérieure",
+        "Petit-déjeuner sur demande",
+        "Parking extérieur gratuit"
+      ],
+      "equipements": [
+        "Climatisation",
+        "TV",
+        "Wifi & Internet",
+        "Serviettes de bain",
+        "Terrasse",
+        "Sèche-cheveux",
+        "Produits d'accueil",
+        "Coffre-fort",
+        "Mini bar"
+      ],
+      "caracteristiques": [
+        "Surface : 28 m²",
+        "Lit double 160 cm",
+        "Terrasse privative",
+        "Vue sur la piscine et le jardin"
+      ],
+      "type_booking": "Chambre Double Standard",
+      "photos": [
+        "2026/05/chambre2-ramatuelle-oumede.jpg",
+        "2026/05/chambre2-oumede.jpg",
+        "2026/05/chambre2.jpg",
+        "2026/05/chambre2-oumede-sdb.jpg"
+      ]
+    },
+    {
+      "slug": "chambre-3-double-superieure-triple",
+      "nom": "Chambre 3 – Double Supérieure / Triple",
+      "categorie": "Double",
+      "ancienne_url": "https://aubergedeloumede.com/room/city-view-studio/",
+      "surface_m2": 35,
+      "personnes_max": 3,
+      "lits": [
+        "Lit double 180 cm",
+        "Lit simple 90 cm"
+      ],
+      "description": "Chambre spacieuse et confortable, idéale pour un séjour en couple ou en famille à Ramatuelle. Avec sa terrasse privative et sa vue sur la piscine et le jardin, elle offre un cadre harmonieux entre élégance et convivialité, à proximité de Saint-Tropez.",
+      "equipements_hotel": [
+        "Piscine extérieure",
+        "Petit-déjeuner sur demande",
+        "Parking extérieur gratuit",
+        "Lit supplémentaire"
+      ],
+      "equipements": [
+        "Climatisation",
+        "TV",
+        "Wifi & Internet",
+        "Serviettes de bain",
+        "Terrasse",
+        "Sèche-cheveux",
+        "Produits d'accueil",
+        "Téléphone",
+        "Coffre-fort",
+        "Mini bar"
+      ],
+      "caracteristiques": [
+        "Surface : 35 m²",
+        "Lit double 180 cm",
+        "Lit simple 90 cm",
+        "Terrasse privative",
+        "Vue sur la piscine et le jardin",
+        "Logement entièrement situé au rez-de-chaussée"
+      ],
+      "type_booking": "Chambre Triple",
+      "photos": [
+        "2023/05/F284F394-EFA6-437C-BB5B-FF1357ABD78F_1_105_c-1.jpeg",
+        "2023/05/687908198.jpg",
+        "2023/05/687908125.jpg",
+        "2026/04/hotel-ramatuelle-mer-vigne-auberge-oumede.jpg",
+        "2023/05/687908103.jpg"
+      ]
+    },
+    {
+      "slug": "chambre-4-double-superieure",
+      "nom": "Chambre 4 – Double Supérieure",
+      "categorie": "Double",
+      "ancienne_url": "https://aubergedeloumede.com/room/studio-king/",
+      "surface_m2": 30,
+      "personnes_max": 2,
+      "lits": [
+        "Lit double 180 cm"
+      ],
+      "description": "Chambre double au charme discret, baignée de lumière et tournée vers la piscine et le jardin. Sa terrasse privative invite à la détente dans un environnement calme et verdoyant, pour un séjour confortable et authentique à Ramatuelle.",
+      "equipements_hotel": [
+        "Piscine extérieure",
+        "Petit-déjeuner sur demande",
+        "Parking extérieur gratuit"
+      ],
+      "equipements": [
+        "Climatisation",
+        "TV",
+        "Wifi & Internet",
+        "Serviettes de bain",
+        "Terrasse",
+        "Sèche-cheveux",
+        "Produits d'accueil",
+        "Téléphone",
+        "Coffre-fort",
+        "Mini bar",
+        "Machine à café",
+        "Bouilloire"
+      ],
+      "caracteristiques": [
+        "Surface : 30 m²",
+        "Lit double 180 cm",
+        "Terrasse privative",
+        "Vue sur la piscine et le jardin",
+        "Logement entièrement situé au rez-de-chaussée"
+      ],
+      "type_booking": "Chambre Double Supérieure",
+      "photos": [
+        "2023/05/FCF4D21F-9A9D-4C9D-9B6B-AC19BF0EB08C_1_105_c.jpeg",
+        "2023/05/470727493.jpg",
+        "2023/05/687908198.jpg",
+        "2023/05/687908166.jpg"
+      ]
+    },
+    {
+      "slug": "studio",
+      "nom": "Studio",
+      "categorie": "Studio",
+      "ancienne_url": "https://aubergedeloumede.com/room/one-bed-apartment/",
+      "surface_m2": 25,
+      "personnes_max": 2,
+      "lits": [
+        "Lit double 160 cm"
+      ],
+      "description": "Studio indépendant alliant confort et fonctionnalité, parfait pour un séjour en toute autonomie à Ramatuelle. Sa terrasse privative avec vue sur le jardin offre un cadre paisible et verdoyant, idéal pour se ressourcer en toute tranquillité.",
+      "equipements_hotel": [
+        "Piscine extérieure",
+        "Petit-déjeuner sur demande",
+        "Parking extérieur gratuit"
+      ],
+      "equipements": [
+        "Climatisation",
+        "Cuisine équipée",
+        "TV",
+        "Wifi & Internet",
+        "Serviettes de bain",
+        "Terrasse",
+        "Machine à café",
+        "Sèche-cheveux",
+        "Produits d'accueil",
+        "Coffre-fort",
+        "Mini bar"
+      ],
+      "caracteristiques": [
+        "Surface : 25 m²",
+        "Lit double 160 cm",
+        "Terrasse privative avec vue sur les jardins",
+        "Vue sur la piscine",
+        "Logement entièrement situé au rez-de-chaussée"
+      ],
+      "type_booking": "Studio",
+      "photos": [
+        "2023/05/687909142.jpg",
+        "2023/05/687909140.jpg",
+        "2023/05/687909141.jpg",
+        "2023/05/687909108.jpg"
+      ]
+    },
+    {
+      "slug": "suite-junior",
+      "nom": "Suite Junior",
+      "categorie": "Suite",
+      "ancienne_url": "https://aubergedeloumede.com/room/terrace-apartment/",
+      "surface_m2": 40,
+      "personnes_max": 2,
+      "lits": [
+        "Lit double 160 cm",
+        "Canapé-lit convertible 140 cm"
+      ],
+      "description": "Suite junior élégante et confortable, offrant un bel espace de vie avec cuisine équipée. Sa terrasse privative avec vue sur les vignes invite à profiter pleinement de l'environnement naturel, pour un séjour relaxant et raffiné à Ramatuelle.",
+      "equipements_hotel": [
+        "Piscine extérieure",
+        "Petit-déjeuner sur demande",
+        "Parking extérieur gratuit"
+      ],
+      "equipements": [
+        "Climatisation",
+        "Kitchenette",
+        "TV",
+        "Wifi & Internet",
+        "Serviettes de bain",
+        "Terrasse",
+        "Machine à café",
+        "Sèche-cheveux",
+        "Produits d'accueil",
+        "Coffre-fort",
+        "Mini bar"
+      ],
+      "caracteristiques": [
+        "Surface : 40 m²",
+        "Lit double 160 cm",
+        "Coin salon avec canapé-lit convertible 140 cm",
+        "Terrasse privative avec vue sur les jardins",
+        "Espace repas extérieur",
+        "Logement entièrement situé au rez-de-chaussée"
+      ],
+      "type_booking": "Suite Junior - Vue sur Jardin",
+      "photos": [
+        "2023/05/687909985.jpg",
+        "2023/05/687909999.jpg",
+        "2023/05/687909948.jpg",
+        "2023/05/687909872.jpg",
+        "2023/05/suite-oumede-780x520.jpg"
+      ]
+    },
+    {
+      "slug": "suite-de-l-oumede",
+      "nom": "Suite de L'Oumède",
+      "categorie": "Suite",
+      "ancienne_url": "https://aubergedeloumede.com/room/apartment-king/",
+      "surface_m2": 57,
+      "personnes_max": 4,
+      "lits": [
+        "Lit double 160 cm",
+        "Canapé-lit convertible 160 cm"
+      ],
+      "description": "Suite spacieuse avec salon et cuisine équipée, pensée comme un véritable lieu de vie indépendant. Sa terrasse avec vue sur les vignes et ses volumes généreux en font une adresse idéale pour un séjour prolongé à Ramatuelle, entre confort, élégance et art de vivre provençal.",
+      "equipements_hotel": [
+        "Piscine extérieure",
+        "Petit-déjeuner sur demande",
+        "Parking extérieur gratuit"
+      ],
+      "equipements": [
+        "Climatisation",
+        "Cuisine équipée",
+        "TV",
+        "Wifi & Internet",
+        "Serviettes de bain",
+        "Terrasse",
+        "Machine à café",
+        "Sèche-cheveux",
+        "Produits d'accueil",
+        "Téléphone",
+        "Coffre-fort",
+        "Mini bar"
+      ],
+      "caracteristiques": [
+        "Surface : 57 m²",
+        "Lit double 160 cm",
+        "Coin salon avec canapé-lit convertible 160 cm",
+        "Terrasse privative avec vue sur les vignes",
+        "Vue sur les vignes et le jardin",
+        "Logement entièrement situé au rez-de-chaussée"
+      ],
+      "type_booking": "Suite avec Terrasse",
+      "photos": [
+        "2023/05/313A8442-01A8-4AC4-836C-F54A7C25D687_1_105_c.jpeg",
+        "2023/05/C36F00A5-DFD2-49E8-BBA7-D50B544674E1_1_105_c.jpeg",
+        "2023/05/F1562A10-9600-4F82-AC7C-761C135ED4FD_1_105_c.jpeg",
+        "2023/05/08854B69-053A-4F7C-89D4-B3C22F773F54_1_105_c.jpeg"
+      ]
+    }
+  ]
+}

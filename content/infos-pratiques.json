@@ -1,0 +1,20 @@
+{
+  "arrivee": "De 16h00 à 20h00 (aucune arrivée possible après 20h00)",
+  "depart": "De 8h30 à 11h00",
+  "a_l_arrivee": "Pièce d'identité avec photo et carte de crédit demandées. Merci d'indiquer à l'avance votre heure d'arrivée.",
+  "enfants": "Tous les enfants sont les bienvenus. Les enfants de plus de 2 ans sont facturés au tarif adulte.",
+  "lits_appoint": "Aucun lit d'appoint ni lit bébé disponible.",
+  "animaux": "Les animaux de compagnie ne sont pas admis.",
+  "fetes": "Les fêtes, événements, enterrements de vie de célibataire ne sont pas autorisés.",
+  "heures_silencieuses": "De 23h00 à 07h00.",
+  "piscine": "Chauffée à partir du mois de juin.",
+  "paiement_sur_place": [
+    "Espèces"
+  ],
+  "annulation": "Conditions d'annulation et de prépaiement variables selon le type d'hébergement.",
+  "reservation_directe": {
+    "telephone": "04 94 44 11 11",
+    "email": "contact@aubergedeloumede.com"
+  },
+  "sources": "Règles affichées sur Booking.com (consulté le 18/11/2026) et page Contact de l'ancien site."
+}

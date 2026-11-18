@@ -1,0 +1,40 @@
+{
+  "titre": "Nos services & attentions",
+  "sous_titre": "Tout ce qu'il faut pour un séjour en toute sérénité",
+  "texte": "À l'Auberge de l'Oumède, chaque détail est pensé pour votre confort : piscine chauffée, jardin ensoleillé, terrasse avec vue sur les vignes, petit-déjeuner en plein air et services discrets pour un séjour tout en douceur.",
+  "services": [
+    {
+      "surtitre": "Un réveil tout en douceur",
+      "titre": "Petit-déjeuner avec vue",
+      "texte": "Chaque matin, le petit-déjeuner se savoure en terrasse, entre piscine et vignoble, dans une atmosphère calme et ensoleillée.",
+      "detail": "Petit-déjeuner continental, sur demande.",
+      "photo": "2026/04/petit-dejeuner-ramatuelle-oumede.png",
+      "lien": {
+        "texte": "Menu Petit-déjeuner",
+        "url": null
+      }
+    },
+    {
+      "surtitre": "Sous le soleil du Sud",
+      "titre": "La Piscine",
+      "texte": "Entourée de verdure, la piscine chauffée offre un moment de fraîcheur et de sérénité, à savourer tout au long de la journée.",
+      "detail": "Piscine extérieure chauffée à partir du mois de juin, avec espace peu profond.",
+      "photo": "2026/04/piscine-auberge-oumede-ramatuelle-780x520.jpg"
+    },
+    {
+      "surtitre": "Écrin de verdure",
+      "titre": "Les Jardins",
+      "texte": "Entourée de pins parasols et d'oliviers, l'Auberge s'ouvre sur un jardin méditerranéen baigné de lumière. Entre vignes à perte de vue et espaces ombragés, chaque recoin invite au calme et à la détente, dans une atmosphère douce et authentique où le temps semble suspendu.",
+      "photo": "2026/04/jardins-auberge-oumede-780x1016.jpg"
+    }
+  ],
+  "points_forts": [
+    "Piscine extérieure chauffée",
+    "Parking privé gratuit sur place",
+    "Connexion Wi-Fi gratuite",
+    "Chambres familiales",
+    "Chambres non-fumeurs",
+    "Petit-déjeuner continental",
+    "Terrasse et jardin"
+  ]
+}

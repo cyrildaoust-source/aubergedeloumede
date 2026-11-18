@@ -55,6 +55,8 @@ const img = (base, file, alt, { cls = "", eager = false, sizes = "", label = "",
   ? `<div class="ph ph--empty ${cls}" role="img" aria-label="${esc(alt)}">${icon(ico, "icon--lg")}</div>`
   : `<div class="ph ${cls}" data-label="${esc(label || alt)}"><img ${srcAttrs(base, file, sizes || "(max-width:700px) 100vw, 50vw")} alt="${esc(alt)}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" onerror="this.classList.add('is-missing')"></div>`;
 
+const GLOBAL_FROM = TF.a_partir_de_global;
+const FROM_LABEL = GLOBAL_FROM ? `Dès ${GLOBAL_FROM} €` : "Tarif selon vos dates";
 const priceOf = (slug) => TF.chambres?.[slug]?.a_partir_de ?? null;
 const priceHtml = (slug, long = false) => {
   const p = priceOf(slug);
@@ -173,7 +175,7 @@ function footer(base) {
 </footer>`;
 }
 
-const mobileBar = (base, { title = "Tarif selon vos dates", href = "contact.html", cta = "Vérifier les dates" } = {}) =>
+const mobileBar = (base, { title = GLOBAL_FROM ? `${FROM_LABEL} / nuit` : "Tarif selon vos dates", href = "contact.html", cta = "Vérifier les dates" } = {}) =>
   `<div class="mbar" role="region" aria-label="Réservation rapide">
   <div class="mbar__txt"><strong>${title}</strong><span>${icon("star")} ${num(B.note_globale)} · ${B.nombre_avis} avis Booking</span></div>
   <a class="btn" href="${base}${href}">${cta}</a>
@@ -225,6 +227,7 @@ function reviewsBlock(base, { compact = false } = {}) {
 }
 
 const KNOW = [
+  ...(TF.saison ? [["calendar", "Ouverture", `Saison ${TF.saison}.`]] : []),
   ["clock", "Arrivée", "De 16h00 à 20h00. Aucune arrivée possible après 20h00 : prévenez-nous de votre heure d'arrivée."],
   ["clock", "Départ", "De 8h30 à 11h00."],
   ["card", "À l'arrivée", "Pièce d'identité avec photo et carte de crédit demandées."],
@@ -235,8 +238,9 @@ const KNOW = [
 const knowBlock = () => `<div class="know">${KNOW.map(([i, t, d]) => `<div class="know__i">${icon(i)}<div><strong>${t}</strong><p>${d}</p></div></div>`).join("")}</div>`;
 
 const FAQ = [
+  ...(GLOBAL_FROM ? [["Quels sont vos tarifs ?", `De ${GLOBAL_FROM} à ${num(TF.jusqu_a_global)} € la nuit selon la saison et le logement. L'Auberge est ouverte ${TF.saison}. Indiquez vos dates : nous vous répondons avec le tarif exact.`]] : []),
   ["Comment réserver en direct ?", `Indiquez vos dates dans le formulaire de demande ou appelez-nous au ${C.telephone_affiche}. Nous vous répondons personnellement avec la disponibilité et le tarif exact pour votre séjour.`],
-  ["Le petit-déjeuner est-il inclus ?", "Le petit-déjeuner continental est proposé sur demande et se prend en terrasse, entre piscine et vignes. Le menu détaillé et son tarif seront bientôt publiés sur cette page."],
+  ["Le petit-déjeuner est-il inclus ?", `Non, il est proposé sur demande${TF.petit_dejeuner.prix_par_personne ? ` (${TF.petit_dejeuner.prix_par_personne} € par personne)` : ""}. Le petit-déjeuner continental se prend en terrasse, entre piscine et vignes.`],
   ["La piscine est-elle chauffée ?", "Oui, la piscine extérieure est chauffée à partir du mois de juin. Elle dispose d'un espace peu profond."],
   ["Y a-t-il un parking ?", "Oui, un parking privé gratuit est à votre disposition sur place. Une voiture est conseillée pour profiter des plages et des villages."],
   ["Les plages sont-elles accessibles facilement ?", "L'Auberge se trouve à environ 1 km des plages de Pampelonne, à 4 km du village de Ramatuelle et à 6 km de Saint-Tropez. Nous pouvons vous aider à réserver votre plage."],
@@ -285,7 +289,7 @@ function home() {
       <div class="bookbar__f bookbar__f--wide"><label for="h-c">Logement</label><select id="h-c" name="chambre"><option value="">Tous les logements</option>${ROOMS.map((r) => `<option value="${r.slug}">${esc(shortName(r))}</option>`).join("")}</select></div>
       <button class="btn" type="submit">${icon("calendar", "icon--sm")} Vérifier les dates</button>
     </form>
-    <p class="bookbar__note">${icon("check", "icon--sm")} Réservation en direct avec les propriétaires · Réponse personnelle · Sans engagement</p>
+    <p class="bookbar__note">${icon("check", "icon--sm")} ${GLOBAL_FROM ? `Chambres dès ${GLOBAL_FROM} € la nuit · ` : ""}Réservation en direct · Réponse personnelle · Sans engagement</p>
   </div>
 </section>
 
@@ -432,6 +436,7 @@ function roomsPage() {
     <thead><tr><th scope="col">Logement</th><th scope="col">Surface</th><th scope="col">Voyageurs</th><th scope="col">Couchage</th><th scope="col">Cuisine</th><th scope="col">Vue</th><th scope="col">Tarif</th></tr></thead>
     <tbody>${ROOMS.map((r) => `<tr><th scope="row"><a href="chambres/${r.slug}.html">${esc(shortName(r))}</a></th><td>${r.surface_m2} m²</td><td>${r.personnes_max}</td><td>${r.lits.join("<br>")}</td><td>${hasKitchen(r) ? yes + " " + hasKitchen(r) : no}</td><td>${esc(viewOf(r))}</td><td>${priceOf(r.slug) ? priceOf(r.slug) + " €" : "Selon dates"}</td></tr>`).join("")}</tbody>
   </table></div>
+  ${GLOBAL_FROM ? `<p class="note" style="margin-top:14px">Tarifs : de ${GLOBAL_FROM} à ${num(TF.jusqu_a_global)} € la nuit selon la saison et le logement. Ouverture ${TF.saison}. Tarif exact pour vos dates avec notre réponse.</p>` : ""}
   <p class="note" style="margin-top:14px">Dans tous les logements : climatisation, TV, Wi-Fi, coffre-fort, mini-bar, sèche-cheveux, produits d'accueil et terrasse privative.</p>
 </div></section>
 ${ctaBand(base)}`;
@@ -509,7 +514,8 @@ function roomPage(r, i) {
   </div>
   <aside class="rd__aside" aria-label="Demande de réservation">
     <form class="bookcard" action="../contact.html" method="get" data-dates data-search>
-      <div class="bookcard__price"><strong>${priceOf(r.slug) ? `${priceOf(r.slug)} € <small>/ nuit</small>` : "Tarif selon vos dates"}</strong><a class="bookcard__score" href="#avis">${icon("star", "icon--sm")} ${num(B.note_globale)} <span class="muted">(${B.nombre_avis})</span></a></div>
+      <div class="bookcard__price"><strong>${priceOf(r.slug) ? `${priceOf(r.slug)} € <small>/ nuit</small>` : GLOBAL_FROM ? `${FROM_LABEL} <small>/ nuit</small>` : "Tarif selon vos dates"}</strong><a class="bookcard__score" href="#avis">${icon("star", "icon--sm")} ${num(B.note_globale)} <span class="muted">(${B.nombre_avis})</span></a></div>
+      ${!priceOf(r.slug) && GLOBAL_FROM ? `<p class="bookcard__hint">Prix indicatif selon la saison et le logement (de ${GLOBAL_FROM} à ${num(TF.jusqu_a_global)} € la nuit). Tarif exact avec notre réponse.</p>` : ""}
       <input type="hidden" name="chambre" value="${r.slug}">
       <div class="fields">
         <div><label for="b-a">Arrivée</label><input id="b-a" type="date" name="arrivee" required></div>
@@ -541,7 +547,7 @@ ${ctaBand(base)}
 </dialog>`;
   const ld = { "@context": "https://schema.org", "@type": "HotelRoom", name: r.nom, description: r.description, floorSize: { "@type": "QuantitativeValue", value: r.surface_m2, unitCode: "MTK" }, occupancy: { "@type": "QuantitativeValue", maxValue: r.personnes_max }, bed: r.lits.join(", "), amenityFeature: r.equipements.map((e) => ({ "@type": "LocationFeatureSpecification", name: e, value: true })), containedInPlace: { "@type": "BedAndBreakfast", name: site.nom } };
   return layout({ title: `${r.nom} · ${r.surface_m2} m² à Ramatuelle | Auberge de l'Oumède`, desc: r.description.slice(0, 155), body, base, active: "chambres", canonical: `chambres/${r.slug}.html`, jsonld: ld, ogImage: roomPhotos(r).list[0],
-    mbar: mobileBar(base, { title: priceOf(r.slug) ? `${priceOf(r.slug)} € / nuit` : "Tarif selon vos dates", href: `contact.html?chambre=${r.slug}`, cta: "Vérifier les dates" }) });
+    mbar: mobileBar(base, { title: priceOf(r.slug) ? `${priceOf(r.slug)} € / nuit` : GLOBAL_FROM ? `${FROM_LABEL} / nuit` : "Tarif selon vos dates", href: `contact.html?chambre=${r.slug}`, cta: "Vérifier les dates" }) });
 }
 
 function servicesPage() {

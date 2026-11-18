@@ -605,3 +605,5 @@ img { height: auto; }
 .lightbox__nav--prev .icon { transform: rotate(180deg); }
 .lightbox__nav--next { right: 16px; }
 @media (max-width: 600px) { .lightbox__nav { display: none; } }
+.bookcard__hint { font-size: .8rem; color: var(--muted); margin: -8px 0 14px; line-height: 1.45; }
+.know { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }

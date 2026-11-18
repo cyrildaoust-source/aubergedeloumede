@@ -1,18 +1,35 @@
 {
-  "note": "À COMPLÉTER par l'Auberge. Tant qu'une valeur vaut null, le site affiche « Tarif selon les dates » ou un encart « bientôt disponible ».",
+  "note": "Prix indicatifs. Source : Office de tourisme de Ramatuelle (fiche consultée le 18/11/2026) : nuitée de 370 à 1 650 €, petit-déjeuner 28 €, ouverture du 01/05 au 04/10/2026. TripAdvisor n'affiche pas de prix pour l'Auberge. Renseigner a_partir_de par logement pour un prix précis ; tant qu'une valeur vaut null, le site affiche le prix global.",
   "devise": "EUR",
   "chambres": {
-    "chambre-1-double-standard": { "a_partir_de": null },
-    "chambre-2-double-standard": { "a_partir_de": null },
-    "chambre-3-double-superieure-triple": { "a_partir_de": null },
-    "chambre-4-double-superieure": { "a_partir_de": null },
-    "studio": { "a_partir_de": null },
-    "suite-junior": { "a_partir_de": null },
-    "suite-de-l-oumede": { "a_partir_de": null }
+    "chambre-1-double-standard": {
+      "a_partir_de": null
+    },
+    "chambre-2-double-standard": {
+      "a_partir_de": null
+    },
+    "chambre-3-double-superieure-triple": {
+      "a_partir_de": null
+    },
+    "chambre-4-double-superieure": {
+      "a_partir_de": null
+    },
+    "studio": {
+      "a_partir_de": null
+    },
+    "suite-junior": {
+      "a_partir_de": null
+    },
+    "suite-de-l-oumede": {
+      "a_partir_de": null
+    }
   },
   "petit_dejeuner": {
-    "prix_par_personne": null,
+    "prix_par_personne": 28,
     "horaires": null,
     "menu": []
-  }
+  },
+  "a_partir_de_global": 370,
+  "jusqu_a_global": 1650,
+  "saison": "du 1er mai au 4 octobre 2026"
 }

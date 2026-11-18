@@ -15,7 +15,7 @@ fichiers, ou les recopiera directement dans les pages.
 | `decouvrir.json` | Pampelonne, marché, randonnées, lieux à proximité |
 | `avis.json` | Notes Booking et témoignages clients |
 | `infos-pratiques.json` | Horaires d'arrivée et de départ, règles de la maison |
-| `photos.json` | Inventaire des photos de l'ancien site avec leur adresse dans la Wayback Machine |
+| `photos.json` | Index des 45 photos du dépôt (venues de Booking) et inventaire des photos de l'ancien site |
 
 ## Les 7 logements
 
@@ -37,10 +37,13 @@ avec du faux texte : elles n'ont pas été reprises.
 
 ## Points à compléter ou vérifier
 
-- **Menu du petit-déjeuner** : le bouton existait mais ne menait nulle part. Contenu et prix à fournir.
 - **Tarifs** : aucun prix n'était affiché sur le site.
 - **Version anglaise** : le site avait un bouton EN/FR, mais aucune page anglaise n'a été archivée.
-- **Photos** : pas encore copiées dans le dépôt (voir `photos.json`). Certaines galeries de chambres
-  mélangeaient leurs photos avec celles des chambres voisines : à vérifier pièce par pièce.
+- **Photos** : les 45 photos de la fiche Booking sont dans `assets/photos/booking/`, rangées par type de
+  chambre Booking. Les photos de l'ancien site n'ont jamais été archivées par la Wayback Machine : celles
+  qui n'étaient pas aussi sur Booking (piscine, jardins, plage, marché, randonnée, logo) sont perdues.
+  Booking ne classe pas les Chambres 1 et 2 séparément, et n'a aucune photo de la Suite de L'Oumède
+  et une seule de la Suite Junior. Le logo est aussi à fournir.
+- **Menu et prix du petit-déjeuner** : à intégrer plus tard, quand ils seront disponibles.
 - **Avis** : deux fautes de frappe ont été corrigées dans l'avis de Patrick (« spacieuse », « propriétaires »).
 - **Ville** : Booking indique Saint-Tropez, l'ancien site indique Ramatuelle 83350. Le contenu garde Ramatuelle.

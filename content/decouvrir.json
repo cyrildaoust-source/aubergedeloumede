@@ -8,21 +8,24 @@
       "titre": "Plage de Pampelonne",
       "texte": "Nous vous accompagnons pour réserver l'une des plages emblématiques de la baie de Pampelonne, véritable écrin de la Côte d'Azur.",
       "lien": "http://ramatuelle.fr/vivre-a-ramatuelle/mer-et-littoral/plage-de-pampelonne/espace-naturel-remarquable/",
-      "photo": "2026/04/plage-pampelonne-auberge-de-loumede-550x384.jpg"
+      "photo_ancien_site": "2026/04/plage-pampelonne-auberge-de-loumede-550x384.jpg",
+      "photo": null
     },
     {
       "surtitre": "Traditions provençales",
       "titre": "Le marché de Ramatuelle",
       "texte": "Flânez au cœur du village et découvrez le marché, ses produits locaux, ses couleurs et son art de vivre typiquement provençal.",
       "lien": "https://www.ramatuelle-tourisme.com/wp-content/uploads/2025/04/flyer-marches-2025.pdf",
-      "photo": "2026/04/marche-provencal-de-ramatuelle-auberge-oumede-550x413.jpg"
+      "photo_ancien_site": "2026/04/marche-provencal-de-ramatuelle-auberge-oumede-550x413.jpg",
+      "photo": null
     },
     {
       "surtitre": "Nature préservée",
       "titre": "Sentiers & randonnées",
       "texte": "Explorez les chemins entre vignes et littoral, ou partez à la découverte des sentiers côtiers offrant des panoramas uniques sur la Méditerranée.",
       "lien": "https://www.ramatuelle-tourisme.com/fr/vos-questions-nos-reponses/quelles-randonnees-puis-je-faire-a-ramatuelle/",
-      "photo": "2026/04/randonnee-ramatuelle-oumede-french-riviera-550x413.jpg"
+      "photo_ancien_site": "2026/04/randonnee-ramatuelle-oumede-french-riviera-550x413.jpg",
+      "photo": null
     }
   ],
   "a_proximite_source_booking": {

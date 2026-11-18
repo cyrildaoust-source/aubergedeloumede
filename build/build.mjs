@@ -280,7 +280,6 @@ function home() {
   <div class="hero__media"><img ${srcAttrs("", PH.hero, "100vw")} alt="${PH.heroAlt}" fetchpriority="high" decoding="async" onerror="this.classList.add('is-missing')"></div>
   <div class="wrap hero__in">
     <a class="score-pill hero__badges" href="#avis"><b>${num(B.note_globale)}</b><span>${B.mention} · ${B.nombre_avis} avis Booking</span></a>
-    <p class="hero__kicker">Golfe de Saint-Tropez · Plage de Pampelonne à 1 km</p>
     <h1 id="h-hero">Entre vignes et mer, le calme absolu à Ramatuelle</h1>
     <p class="hero__sub">Un hôtel de charme avec piscine chauffée, à 6 km de Saint-Tropez : sept chambres, studio et suites, chacun avec sa terrasse privative.</p>
     <form class="bookbar" action="contact.html" method="get" data-dates data-search aria-label="Vérifier les disponibilités">
@@ -306,7 +305,6 @@ function home() {
 <section class="section" aria-labelledby="h-intro">
   <div class="wrap split">
     <div>
-      <span class="eyebrow">L'Auberge</span>
       <h2 id="h-intro">${esc(site.presentation.titre)}</h2>
       <p class="lead">${esc(site.presentation.texte)}</p>
       <div class="facts">
@@ -331,7 +329,7 @@ function home() {
 <section class="section section--sand" id="chambres" aria-labelledby="h-rooms">
   <div class="wrap">
     <div class="section__head">
-      <div><span class="eyebrow">Hébergements</span><h2 id="h-rooms">Choisissez votre logement</h2><p>Toutes nos chambres ouvrent sur une terrasse privative, avec climatisation, Wi-Fi et accès à la piscine.</p></div>
+      <div><h2 id="h-rooms">Choisissez votre logement</h2><p>Toutes nos chambres ouvrent sur une terrasse privative, avec climatisation, Wi-Fi et accès à la piscine.</p></div>
       <a class="link" href="chambres.html">Comparer les 7 logements ${icon("arrow", "icon--sm")}</a>
     </div>
     <div class="rooms rooms--scroll">${ROOMS.slice(0, 6).map((r) => roomCard(r, base)).join("")}</div>
@@ -340,28 +338,28 @@ function home() {
 
 <section class="section" aria-labelledby="h-serv">
   <div class="wrap">
-    <div class="section__head"><div><span class="eyebrow">Services & attentions</span><h2 id="h-serv">${esc(SV.sous_titre)}</h2></div><a class="link" href="services.html">Tous les services ${icon("arrow", "icon--sm")}</a></div>
+    <div class="section__head"><div><h2 id="h-serv">${esc(SV.sous_titre)}</h2></div><a class="link" href="services.html">Tous les services ${icon("arrow", "icon--sm")}</a></div>
     ${servicesGrid(base)}
   </div>
 </section>
 
 <section class="section section--sand" id="avis" aria-labelledby="h-avis">
   <div class="wrap">
-    <div class="section__head"><div><span class="eyebrow">Avis clients</span><h2 id="h-avis">Ils ont aimé le calme et l'accueil</h2></div><a class="link" href="ramatuelle.html#acces">Voir la situation ${icon("arrow", "icon--sm")}</a></div>
+    <div class="section__head"><div><h2 id="h-avis">Ils ont aimé le calme et l'accueil</h2></div><a class="link" href="ramatuelle.html#acces">Voir la situation ${icon("arrow", "icon--sm")}</a></div>
     ${reviewsBlock(base, { compact: true })}
   </div>
 </section>
 
 <section class="section" aria-labelledby="h-loc">
   <div class="wrap">
-    <div class="section__head"><div><span class="eyebrow">Situation</span><h2 id="h-loc">Au calme, tout près de tout</h2><p>${esc(site.situation.texte)}</p></div></div>
+    <div class="section__head"><div><h2 id="h-loc">Au calme, tout près de tout</h2><p>${esc(site.situation.texte)}</p></div></div>
     ${locationBlock(base)}
   </div>
 </section>
 
 <section class="section section--sand" id="bon-a-savoir" aria-labelledby="h-know">
   <div class="wrap">
-    <div class="section__head"><div><span class="eyebrow">Bon à savoir</span><h2 id="h-know">Avant de réserver</h2></div></div>
+    <div class="section__head"><div><h2 id="h-know">Avant de réserver</h2></div></div>
     ${knowBlock()}
     <h3 style="margin-top:56px">Questions fréquentes</h3>
     ${faqBlock()}
@@ -375,7 +373,6 @@ function servicesGrid(base) {
   return `<div class="services">${SV.services.map((s, i) => `<article class="service"${i === 0 ? ' id="petit-dejeuner-teaser"' : ""}>
     ${img(base, (s.photos || [s.photo])[0], s.titre, { ico: ["coffee", "pool", "leaf"][i] })}
     <div class="service__body">
-      <span class="eyebrow">${esc(s.surtitre)}</span>
       <h3>${esc(s.titre)}</h3>
       <p>${esc(s.texte)}</p>
       ${s.detail ? `<p class="service__detail">${icon("check", "icon--sm")} ${esc(s.detail)}</p>` : ""}
@@ -412,7 +409,6 @@ function roomsPage() {
   const body = `
 <section class="pagehead"><div class="wrap">
   <nav class="crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> / <span>Chambres & suites</span></nav>
-  <span class="eyebrow">${esc(CH.titre)}</span>
   <h1>Chambres, studio & suites</h1>
   <p class="lead">Sept logements de 25 à 57 m², tous avec terrasse privative, climatisation et Wi-Fi. Pour deux, en famille ou pour un long séjour.</p>
 </div></section>
@@ -436,7 +432,7 @@ function roomsPage() {
 </div></section>
 
 <section class="section section--sand" aria-labelledby="h-cmp"><div class="wrap">
-  <div class="section__head"><div><span class="eyebrow">Comparer</span><h2 id="h-cmp">Les 7 logements en un coup d'œil</h2></div></div>
+  <div class="section__head"><div><h2 id="h-cmp">Les 7 logements en un coup d'œil</h2></div></div>
   <div class="table-scroll" tabindex="0" role="region" aria-label="Tableau comparatif des logements">
   <table class="compare">
     <thead><tr><th scope="col">Logement</th><th scope="col">Surface</th><th scope="col">Voyageurs</th><th scope="col">Couchage</th><th scope="col">Cuisine</th><th scope="col">Vue</th><th scope="col">Tarif</th></tr></thead>
@@ -541,7 +537,7 @@ function roomPage(r, i) {
   </aside>
 </div>
 <section class="section section--sand" aria-labelledby="h-oth"><div class="wrap">
-  <div class="section__head"><div><span class="eyebrow">Vous aimerez aussi</span><h2 id="h-oth">Les autres logements</h2></div><a class="link" href="../chambres.html">Comparer les 7 logements ${icon("arrow", "icon--sm")}</a></div>
+  <div class="section__head"><div><h2 id="h-oth">Les autres logements</h2></div><a class="link" href="../chambres.html">Comparer les 7 logements ${icon("arrow", "icon--sm")}</a></div>
   <div class="rooms rooms--scroll">${others.map((o) => roomCard(o, base)).join("")}</div>
 </div></section>
 ${ctaBand(base)}
@@ -565,7 +561,6 @@ function servicesPage() {
   const body = `
 <section class="pagehead"><div class="wrap">
   <nav class="crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> / <span>Services</span></nav>
-  <span class="eyebrow">${esc(SV.titre)}</span>
   <h1>${esc(SV.sous_titre)}</h1>
   <p class="lead">${esc(SV.texte)}</p>
 </div></section>
@@ -578,7 +573,6 @@ function servicesPage() {
   <div class="menu-card">
     ${img(base, (SV.services[0].photos || [])[0], "Petit-déjeuner servi en terrasse", { ico: "coffee" })}
     <div>
-      <span class="eyebrow">${esc(SV.services[0].surtitre)}</span>
       <h2 id="h-pd">Le petit-déjeuner</h2>
       <p>${esc(SV.services[0].texte)}</p>
       <ul class="clean stack-sm" style="margin-bottom:22px">
@@ -602,27 +596,26 @@ function ramatuellePage() {
   const body = `
 <section class="pagehead"><div class="wrap">
   <nav class="crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> / <span>Saint-Tropez & alentours</span></nav>
-  <span class="eyebrow">${esc(DC.surtitre)}</span>
   <h1>Saint-Tropez, Pampelonne et Ramatuelle</h1>
   <p class="lead">${esc(DC.texte)} Plages mythiques, village perché, marché provençal et sentiers du littoral : voici nos conseils.</p>
 </div></section>
 <section class="section" style="padding-top:0"><div class="wrap">
   <div class="discover">${DC.activites.map((a, k) => `<article class="disc${exists(a.photo) ? "" : " disc--card"}">
     ${exists(a.photo) ? img(base, a.photo, a.titre) : `<span class="disc__ico">${icon(["wave", "landmark", "leaf"][k], "icon--lg")}</span>`}
-    <div><span class="eyebrow">${esc(a.surtitre)}</span><h2 style="font-size:1.7rem">${esc(a.titre)}</h2><p>${esc(a.texte)}</p>
+    <div><h2 style="font-size:1.7rem">${esc(a.titre)}</h2><p>${esc(a.texte)}</p>
     <a class="link" href="${a.lien.replace(/^http:/, "https:")}" target="_blank" rel="noopener">En savoir plus ${icon("arrow", "icon--sm")}<span class="sr"> (site externe)</span></a></div>
   </article>`).join("")}</div>
 </div></section>
 <section class="section" style="padding-top:0" aria-labelledby="h-evt"><div class="wrap">
-  <div class="section__head"><div><span class="eyebrow">Temps forts de la saison</span><h2 id="h-evt">Où dormir pour les grands rendez-vous</h2><p>L'Auberge est ouverte ${TF.saison || "de mai à octobre"}. Pensez à réserver tôt pour ces dates.</p></div></div>
+  <div class="section__head"><div><h2 id="h-evt">Où dormir pour les grands rendez-vous</h2><p>L'Auberge est ouverte ${TF.saison || "de mai à octobre"}. Pensez à réserver tôt pour ces dates.</p></div></div>
   <div class="discover">
-    <article class="disc disc--card"><span class="disc__ico">${icon("star", "icon--lg")}</span><span class="eyebrow">Début août</span><h3>Festival de Ramatuelle</h3><p>Théâtre, musique et humour en plein air, au cœur du village de Ramatuelle, à 4 km de l'Auberge.</p></article>
-    <article class="disc disc--card"><span class="disc__ico">${icon("wave", "icon--lg")}</span><span class="eyebrow">Fin septembre – début octobre</span><h3>Les Voiles de Saint-Tropez</h3><p>Les plus beaux voiliers classiques et modernes dans la baie. Le soir, retour au calme des vignes, loin de l'affluence du port.</p></article>
-    <article class="disc disc--card"><span class="disc__ico">${icon("landmark", "icon--lg")}</span><span class="eyebrow">Toute la saison</span><h3>Marchés provençaux</h3><p>Ramatuelle le jeudi et le dimanche, Saint-Tropez place des Lices le mardi et le samedi.</p></article>
+    <article class="disc disc--card"><span class="disc__ico">${icon("star", "icon--lg")}</span><h3>Festival de Ramatuelle</h3><p><b>Début août.</b> Théâtre, musique et humour en plein air, au cœur du village de Ramatuelle, à 4 km de l'Auberge.</p></article>
+    <article class="disc disc--card"><span class="disc__ico">${icon("wave", "icon--lg")}</span><h3>Les Voiles de Saint-Tropez</h3><p><b>Fin septembre – début octobre.</b> Les plus beaux voiliers classiques et modernes dans la baie. Le soir, retour au calme des vignes, loin de l'affluence du port.</p></article>
+    <article class="disc disc--card"><span class="disc__ico">${icon("landmark", "icon--lg")}</span><h3>Marchés provençaux</h3><p><b>Toute la saison.</b> Ramatuelle le jeudi et le dimanche, Saint-Tropez place des Lices le mardi et le samedi.</p></article>
   </div>
 </div></section>
 <section class="section section--sand" id="acces" aria-labelledby="h-acc"><div class="wrap">
-  <div class="section__head"><div><span class="eyebrow">Accès & distances</span><h2 id="h-acc">Venir à l'Auberge</h2><p>${esc(site.situation.texte)} Accès par la route des plages, chemin de l'Oumède.</p></div></div>
+  <div class="section__head"><div><h2 id="h-acc">Venir à l'Auberge</h2><p>${esc(site.situation.texte)} Accès par la route des plages, chemin de l'Oumède.</p></div></div>
   ${locationBlock(base)}
   <div class="dist-group" style="margin-top:40px;max-width:560px"><h3>Restaurants à proximité</h3><ul class="dist">${Object.entries(DC.a_proximite_source_booking.restaurants).map(([k, v]) => `<li><span>${k}</span><span>${v}</span></li>`).join("")}</ul></div>
 </div></section>
@@ -635,7 +628,6 @@ function contactPage() {
   const body = `
 <section class="pagehead"><div class="wrap">
   <nav class="crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> / <span>Contact & réservation</span></nav>
-  <span class="eyebrow">Réservation en direct</span>
   <h1>Demandez vos dates</h1>
   <p class="lead">Indiquez votre séjour : nous vous répondons personnellement avec la disponibilité et le tarif. Aucun paiement n'est demandé à cette étape.</p>
 </div></section>
@@ -683,7 +675,7 @@ function contactPage() {
     </div>
   </div>
 </div></section>
-<section class="section section--sand"><div class="wrap"><div class="section__head"><div><span class="eyebrow">Plan d'accès</span><h2>Nous trouver</h2></div></div>${locationBlock(base)}</div></section>`;
+<section class="section section--sand"><div class="wrap"><div class="section__head"><div><h2>Nous trouver</h2></div></div>${locationBlock(base)}</div></section>`;
   return layout({ title: "Réserver un hôtel de charme près de Saint-Tropez | Auberge de l'Oumède", desc: "Demandez vos dates à l'Auberge de l'Oumède : réponse personnelle avec disponibilité et tarif. 1035 chemin de l'Oumède, 83350 Ramatuelle. 04 94 44 11 11.", body, base, active: "contact", canonical: "contact.html" });
 }
 
@@ -704,7 +696,7 @@ function legalPage() {
 }
 
 function notFound() {
-  const body = `<section class="section"><div class="wrap center"><span class="eyebrow">Erreur 404</span><h1>Cette page s'est perdue dans les vignes</h1><p class="lead" style="margin:0 auto 28px">La page demandée n'existe pas ou a changé d'adresse.</p><a class="btn" href="/index.html">Retour à l'accueil</a> <a class="btn btn--ghost" href="/chambres.html">Voir les chambres</a></div></section>`;
+  const body = `<section class="section"><div class="wrap center"><h1>Cette page s'est perdue dans les vignes</h1><p class="lead" style="margin:0 auto 28px">La page demandée n'existe pas ou a changé d'adresse.</p><a class="btn" href="/index.html">Retour à l'accueil</a> <a class="btn btn--ghost" href="/chambres.html">Voir les chambres</a></div></section>`;
   return layout({ title: "Page introuvable | Auberge de l'Oumède", desc: "Page introuvable.", body, base: "/", canonical: "404.html" });
 }
 

@@ -304,7 +304,7 @@ function home() {
   <div class="wrap trust__in">
     <div class="trust__i"><span class="trust__ico">${icon("wave")}</span><div><strong>Plages à 1 km</strong><span>Pampelonne, 6 km de Saint-Tropez</span></div></div>
     <div class="trust__i"><span class="trust__ico">${icon("pool")}</span><div><strong>Piscine chauffée</strong><span>Dès juin, au milieu du jardin</span></div></div>
-    <div class="trust__i"><span class="trust__ico">${icon("terrace")}</span><div><strong>Terrasse privative</strong><span>Dans chaque logement</span></div></div>
+    <div class="trust__i"><span class="trust__ico">${icon("sun")}</span><div><strong>Terrasse privative</strong><span>Dans chaque logement</span></div></div>
     <div class="trust__i"><span class="trust__ico">${icon("parking")}</span><div><strong>Parking & Wi-Fi</strong><span>Gratuits sur place</span></div></div>
   </div>
 </section>
@@ -379,7 +379,7 @@ ${ctaBand(base)}`;
 
 function servicesGrid(base) {
   return `<div class="services services--rows">${SV.services.map((s, i) => `<article class="service"${i === 0 ? ' id="petit-dejeuner-teaser"' : ""}>
-    ${img(base, (s.photos || [s.photo])[0], s.titre, { ico: ["croissant", "pool", "olivier"][i], cls: i % 2 ? "ph--print" : "ph--arch" })}
+    ${img(base, (s.photos || [s.photo])[0], s.titre, { ico: ["coffee", "pool", "leaf"][i], cls: i % 2 ? "ph--print" : "ph--arch" })}
     <div class="service__body">
       <h3>${esc(s.titre)}</h3>
       <p>${esc(s.texte)}</p>

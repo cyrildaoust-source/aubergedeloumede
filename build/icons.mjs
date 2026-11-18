@@ -51,10 +51,10 @@ export const ICONS = {
 };
 
 const MAP = {
-  "Climatisation": "snow", "TV": "tv", "Wifi & Internet": "wifi", "Serviettes de bain": "towel", "Terrasse": "terrace",
-  "Sèche-cheveux": "hairdryer", "Produits d'accueil": "soap", "Coffre-fort": "safe", "Mini bar": "minibar", "Téléphone": "telephone",
+  "Climatisation": "snow", "TV": "tv", "Wifi & Internet": "wifi", "Serviettes de bain": "towel", "Terrasse": "sun",
+  "Sèche-cheveux": "wind", "Produits d'accueil": "soap", "Coffre-fort": "lock", "Mini bar": "fridge", "Téléphone": "phone",
   "Machine à café": "coffee", "Bouilloire": "kettle", "Cuisine équipée": "kitchen", "Kitchenette": "kitchen",
-  "Piscine extérieure": "pool", "Petit-déjeuner sur demande": "croissant", "Parking extérieur gratuit": "parking", "Lit supplémentaire": "bed",
+  "Piscine extérieure": "pool", "Petit-déjeuner sur demande": "coffee", "Parking extérieur gratuit": "parking", "Lit supplémentaire": "bed",
 };
 export const iconFor = (label) => MAP[label] || "check";
 
@@ -64,7 +64,7 @@ const PICTO = {};
 if (existsSync(PICTO_DIR)) {
   for (const f of readdirSync(PICTO_DIR)) {
     if (!f.endsWith(".svg")) continue;
-    const src = readFileSync(new URL(f, PICTO_DIR), "utf8").replace(/<\?xml[^>]*>|<!--[\s\S]*?-->|<metadata>[\s\S]*?<\/metadata>/g, "").trim();
+    const src = readFileSync(new URL(f, PICTO_DIR), "utf8").replace(/<\?xml[^>]*>|<!--[\s\S]*?-->/g, "").trim();
     const m = src.match(/<svg([^>]*)>([\s\S]*)<\/svg>/);
     if (!m) continue;
     const vb = (m[1].match(/viewBox="([^"]+)"/) || [, "0 0 24 24"])[1];

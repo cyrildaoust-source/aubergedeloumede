@@ -1,0 +1,664 @@
+{
+  "note": "Les photos du dépôt viennent de la fiche Booking (taille 2048 px max), rangées par type de chambre Booking dans assets/photos/booking/. Les photos de l'ancien site n'ont jamais été archivées par la Wayback Machine : seules celles qui étaient aussi sur Booking ont pu être récupérées.",
+  "correspondance_types_booking": {
+    "Chambre Double Standard": [
+      "chambre-1-double-standard",
+      "chambre-2-double-standard"
+    ],
+    "Chambre Double Supérieure": [
+      "chambre-4-double-superieure"
+    ],
+    "Chambre Triple": [
+      "chambre-3-double-superieure-triple"
+    ],
+    "Studio": [
+      "studio"
+    ],
+    "Suite Junior - Vue sur Jardin": [
+      "suite-junior"
+    ],
+    "Suite avec Terrasse": [
+      "suite-de-l-oumede"
+    ]
+  },
+  "photos_booking": [
+    {
+      "fichier": "assets/photos/booking/etablissement/jardin-48879054.jpg",
+      "id_booking": "48879054",
+      "types_de_chambre_booking": [],
+      "legende_booking": "Jardin"
+    },
+    {
+      "fichier": "assets/photos/booking/double-superieure/environs-470727493.jpg",
+      "id_booking": "470727493",
+      "types_de_chambre_booking": [
+        "Chambre Double Supérieure"
+      ],
+      "legende_booking": "Paysage naturel près de l'appart'hôtel"
+    },
+    {
+      "fichier": "assets/photos/booking/etablissement/piscine-548800787.jpg",
+      "id_booking": "548800787",
+      "types_de_chambre_booking": [],
+      "legende_booking": "Piscine ou située à proximité"
+    },
+    {
+      "fichier": "assets/photos/booking/etablissement/piscine-580883097.jpg",
+      "id_booking": "580883097",
+      "types_de_chambre_booking": [],
+      "legende_booking": "Piscine ou située à proximité"
+    },
+    {
+      "fichier": "assets/photos/booking/etablissement/jardin-679286638.jpg",
+      "id_booking": "679286638",
+      "types_de_chambre_booking": [],
+      "legende_booking": "Jardin"
+    },
+    {
+      "fichier": "assets/photos/booking/etablissement/salon-687905970.jpg",
+      "id_booking": "687905970",
+      "types_de_chambre_booking": [],
+      "legende_booking": "Coin salon dans l'établissement"
+    },
+    {
+      "fichier": "assets/photos/booking/etablissement/jardin-687906008.jpg",
+      "id_booking": "687906008",
+      "types_de_chambre_booking": [],
+      "legende_booking": "Jardin"
+    },
+    {
+      "fichier": "assets/photos/booking/etablissement/environs-687906143.jpg",
+      "id_booking": "687906143",
+      "types_de_chambre_booking": [],
+      "legende_booking": "Paysage naturel près de l'appart'hôtel"
+    },
+    {
+      "fichier": "assets/photos/booking/double-superieure/jardin-687906145.jpg",
+      "id_booking": "687906145",
+      "types_de_chambre_booking": [
+        "Chambre Double Supérieure"
+      ],
+      "legende_booking": "Jardin"
+    },
+    {
+      "fichier": "assets/photos/booking/double-standard/plan-687906267.jpg",
+      "id_booking": "687906267",
+      "types_de_chambre_booking": [
+        "Chambre Double Standard"
+      ],
+      "legende_booking": "Plan"
+    },
+    {
+      "fichier": "assets/photos/booking/etablissement/plan-687906386.jpg",
+      "id_booking": "687906386",
+      "types_de_chambre_booking": [],
+      "legende_booking": "Plan"
+    },
+    {
+      "fichier": "assets/photos/booking/etablissement/plan-687906403.jpg",
+      "id_booking": "687906403",
+      "types_de_chambre_booking": [],
+      "legende_booking": "Plan"
+    },
+    {
+      "fichier": "assets/photos/booking/etablissement/petit-dejeuner-687906410.jpg",
+      "id_booking": "687906410",
+      "types_de_chambre_booking": [],
+      "legende_booking": "Nourriture dans l'appart'hôtel ou à proximité"
+    },
+    {
+      "fichier": "assets/photos/booking/etablissement/petit-dejeuner-687906421.jpg",
+      "id_booking": "687906421",
+      "types_de_chambre_booking": [],
+      "legende_booking": "Nourriture dans l'appart'hôtel ou à proximité"
+    },
+    {
+      "fichier": "assets/photos/booking/etablissement/jardin-687907000.jpg",
+      "id_booking": "687907000",
+      "types_de_chambre_booking": [],
+      "legende_booking": "Jardin"
+    },
+    {
+      "fichier": "assets/photos/booking/etablissement/jardin-687907046.jpg",
+      "id_booking": "687907046",
+      "types_de_chambre_booking": [],
+      "legende_booking": "Jardin"
+    },
+    {
+      "fichier": "assets/photos/booking/suite-junior/jardin-687907154.jpg",
+      "id_booking": "687907154",
+      "types_de_chambre_booking": [
+        "Suite Junior - Vue sur Jardin"
+      ],
+      "legende_booking": "Jardin"
+    },
+    {
+      "fichier": "assets/photos/booking/etablissement/piscine-687907226.jpg",
+      "id_booking": "687907226",
+      "types_de_chambre_booking": [],
+      "legende_booking": "Piscine ou située à proximité"
+    },
+    {
+      "fichier": "assets/photos/booking/double-standard/chambre-687907381.jpg",
+      "id_booking": "687907381",
+      "types_de_chambre_booking": [
+        "Chambre Double Standard"
+      ],
+      "legende_booking": "Un ou plusieurs lits dans un hébergement"
+    },
+    {
+      "fichier": "assets/photos/booking/double-standard/equipements-687907392.jpg",
+      "id_booking": "687907392",
+      "types_de_chambre_booking": [
+        "Chambre Double Standard"
+      ],
+      "legende_booking": "Télévision ou salle de divertissement dans l'établissement"
+    },
+    {
+      "fichier": "assets/photos/booking/double-standard/salle-de-bains-687907405.jpg",
+      "id_booking": "687907405",
+      "types_de_chambre_booking": [
+        "Chambre Double Standard"
+      ],
+      "legende_booking": "Salle de bains dans l'établissement"
+    },
+    {
+      "fichier": "assets/photos/booking/double-standard/salon-687907441.jpg",
+      "id_booking": "687907441",
+      "types_de_chambre_booking": [
+        "Chambre Double Standard",
+        "Chambre Triple"
+      ],
+      "legende_booking": "Coin salon dans l'établissement"
+    },
+    {
+      "fichier": "assets/photos/booking/double-standard/jardin-687907604.jpg",
+      "id_booking": "687907604",
+      "types_de_chambre_booking": [
+        "Chambre Double Standard"
+      ],
+      "legende_booking": "Jardin"
+    },
+    {
+      "fichier": "assets/photos/booking/double-standard/jardin-687907701.jpg",
+      "id_booking": "687907701",
+      "types_de_chambre_booking": [
+        "Chambre Double Standard"
+      ],
+      "legende_booking": "Jardin"
+    },
+    {
+      "fichier": "assets/photos/booking/double-standard/chambre-687907743.jpg",
+      "id_booking": "687907743",
+      "types_de_chambre_booking": [
+        "Chambre Double Standard"
+      ],
+      "legende_booking": "Un ou plusieurs lits dans un hébergement"
+    },
+    {
+      "fichier": "assets/photos/booking/double-standard/equipements-687907753.jpg",
+      "id_booking": "687907753",
+      "types_de_chambre_booking": [
+        "Chambre Double Standard"
+      ],
+      "legende_booking": "Télévision ou salle de divertissement dans l'établissement"
+    },
+    {
+      "fichier": "assets/photos/booking/double-standard/equipements-687907771.jpg",
+      "id_booking": "687907771",
+      "types_de_chambre_booking": [
+        "Chambre Double Standard"
+      ],
+      "legende_booking": "Télévision ou salle de divertissement dans l'établissement"
+    },
+    {
+      "fichier": "assets/photos/booking/double-standard/jardin-687907794.jpg",
+      "id_booking": "687907794",
+      "types_de_chambre_booking": [
+        "Chambre Double Standard"
+      ],
+      "legende_booking": "Jardin"
+    },
+    {
+      "fichier": "assets/photos/booking/double-superieure/plan-687908064.jpg",
+      "id_booking": "687908064",
+      "types_de_chambre_booking": [
+        "Chambre Double Supérieure"
+      ],
+      "legende_booking": "Plan"
+    },
+    {
+      "fichier": "assets/photos/booking/triple/salle-de-bains-687908094.jpg",
+      "id_booking": "687908094",
+      "types_de_chambre_booking": [
+        "Chambre Triple"
+      ],
+      "legende_booking": "Salle de bains dans l'établissement"
+    },
+    {
+      "fichier": "assets/photos/booking/double-superieure/equipements-687908103.jpg",
+      "id_booking": "687908103",
+      "types_de_chambre_booking": [
+        "Chambre Double Supérieure",
+        "Chambre Triple"
+      ],
+      "legende_booking": "Télévision ou salle de divertissement dans l'établissement"
+    },
+    {
+      "fichier": "assets/photos/booking/double-superieure/chambre-687908112.jpg",
+      "id_booking": "687908112",
+      "types_de_chambre_booking": [
+        "Chambre Double Supérieure",
+        "Chambre Triple"
+      ],
+      "legende_booking": "Un ou plusieurs lits dans un hébergement"
+    },
+    {
+      "fichier": "assets/photos/booking/double-superieure/plan-687908125.jpg",
+      "id_booking": "687908125",
+      "types_de_chambre_booking": [
+        "Chambre Double Supérieure",
+        "Chambre Triple"
+      ],
+      "legende_booking": "Plan"
+    },
+    {
+      "fichier": "assets/photos/booking/double-superieure/jardin-687908198.jpg",
+      "id_booking": "687908198",
+      "types_de_chambre_booking": [
+        "Chambre Double Supérieure"
+      ],
+      "legende_booking": "Jardin"
+    },
+    {
+      "fichier": "assets/photos/booking/double-superieure/chambre-687908612.jpg",
+      "id_booking": "687908612",
+      "types_de_chambre_booking": [
+        "Chambre Double Supérieure",
+        "Chambre Triple"
+      ],
+      "legende_booking": "Un ou plusieurs lits dans un hébergement"
+    },
+    {
+      "fichier": "assets/photos/booking/triple/salle-de-bains-687908870.jpg",
+      "id_booking": "687908870",
+      "types_de_chambre_booking": [
+        "Chambre Triple"
+      ],
+      "legende_booking": "Salle de bains dans l'établissement"
+    },
+    {
+      "fichier": "assets/photos/booking/triple/jardin-687908877.jpg",
+      "id_booking": "687908877",
+      "types_de_chambre_booking": [
+        "Chambre Triple"
+      ],
+      "legende_booking": "Jardin"
+    },
+    {
+      "fichier": "assets/photos/booking/studio/chambre-687909108.jpg",
+      "id_booking": "687909108",
+      "types_de_chambre_booking": [
+        "Studio"
+      ],
+      "legende_booking": "Un ou plusieurs lits dans un hébergement"
+    },
+    {
+      "fichier": "assets/photos/booking/studio/divers-687909140.jpg",
+      "id_booking": "687909140",
+      "types_de_chambre_booking": [
+        "Studio"
+      ],
+      "legende_booking": "Cuisine ou kitchenette dans l'établissement"
+    },
+    {
+      "fichier": "assets/photos/booking/studio/salle-de-bains-687909141.jpg",
+      "id_booking": "687909141",
+      "types_de_chambre_booking": [
+        "Studio"
+      ],
+      "legende_booking": "Salle de bains dans l'établissement"
+    },
+    {
+      "fichier": "assets/photos/booking/studio/salon-687909142.jpg",
+      "id_booking": "687909142",
+      "types_de_chambre_booking": [
+        "Studio"
+      ],
+      "legende_booking": "Coin salon dans l'établissement"
+    },
+    {
+      "fichier": "assets/photos/booking/etablissement/piscine-868871279.jpg",
+      "id_booking": "868871279",
+      "types_de_chambre_booking": [],
+      "legende_booking": "Piscine ou située à proximité"
+    },
+    {
+      "fichier": "assets/photos/booking/etablissement/piscine-891195717.jpg",
+      "id_booking": "891195717",
+      "types_de_chambre_booking": [],
+      "legende_booking": "Piscine ou située à proximité"
+    },
+    {
+      "fichier": "assets/photos/booking/etablissement/environs-891195858.jpg",
+      "id_booking": "891195858",
+      "types_de_chambre_booking": [],
+      "legende_booking": "Paysage naturel près de l'appart'hôtel"
+    },
+    {
+      "fichier": "assets/photos/booking/etablissement/piscine-891196076.jpg",
+      "id_booking": "891196076",
+      "types_de_chambre_booking": [],
+      "legende_booking": "Piscine ou située à proximité"
+    }
+  ],
+  "photos_ancien_site": [
+    {
+      "fichier": "2023/03/Logo-550x108.png",
+      "utilise_pour": [
+        "accueil"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/03/Logo-550x108.png",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2023/03/logo-3.png",
+      "utilise_pour": [
+        "accueil"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/03/logo-3.png",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2026/04/chambre-ramatuelle-oumede-1200x799.jpg",
+      "utilise_pour": [
+        "accueil"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/04/chambre-ramatuelle-oumede-1200x799.jpg",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2026/04/chambre-avec-terrasse-oumede-ramatuelle-768x1013.jpg",
+      "utilise_pour": [
+        "accueil"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/04/chambre-avec-terrasse-oumede-ramatuelle-768x1013.jpg",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2026/04/oumede-hotel-vigne-ramatuelle-1200x799.jpg",
+      "utilise_pour": [
+        "accueil"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/04/oumede-hotel-vigne-ramatuelle-1200x799.jpg",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2023/05/687909140.jpg",
+      "utilise_pour": [
+        "accueil",
+        "chambre:studio"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/687909140.jpg",
+      "recupere": "oui, via Booking : assets/photos/booking/studio/divers-687909140.jpg"
+    },
+    {
+      "fichier": "2023/05/687907154.jpg",
+      "utilise_pour": [
+        "accueil"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/687907154.jpg",
+      "recupere": "oui, via Booking : assets/photos/booking/suite-junior/jardin-687907154.jpg"
+    },
+    {
+      "fichier": "2023/05/chambre-double-standard-oumede-ramatuelle.jpg",
+      "utilise_pour": [
+        "chambre:chambre-1-double-standard"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/chambre-double-standard-oumede-ramatuelle.jpg",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2023/05/F284F394-EFA6-437C-BB5B-FF1357ABD78F_1_105_c-1.jpeg",
+      "utilise_pour": [
+        "chambre:chambre-1-double-standard",
+        "chambre:chambre-3-double-superieure-triple"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/F284F394-EFA6-437C-BB5B-FF1357ABD78F_1_105_c-1.jpeg",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2026/05/chambre2-ramatuelle-oumede.jpg",
+      "utilise_pour": [
+        "chambre:chambre-2-double-standard"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/05/chambre2-ramatuelle-oumede.jpg",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2026/05/chambre2-oumede.jpg",
+      "utilise_pour": [
+        "chambre:chambre-2-double-standard"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/05/chambre2-oumede.jpg",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2026/05/chambre2.jpg",
+      "utilise_pour": [
+        "chambre:chambre-2-double-standard"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/05/chambre2.jpg",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2026/05/chambre2-oumede-sdb.jpg",
+      "utilise_pour": [
+        "chambre:chambre-2-double-standard"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/05/chambre2-oumede-sdb.jpg",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2023/05/687908198.jpg",
+      "utilise_pour": [
+        "chambre:chambre-3-double-superieure-triple",
+        "chambre:chambre-4-double-superieure"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/687908198.jpg",
+      "recupere": "oui, via Booking : assets/photos/booking/double-superieure/jardin-687908198.jpg"
+    },
+    {
+      "fichier": "2023/05/687908125.jpg",
+      "utilise_pour": [
+        "chambre:chambre-3-double-superieure-triple"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/687908125.jpg",
+      "recupere": "oui, via Booking : assets/photos/booking/double-superieure/plan-687908125.jpg"
+    },
+    {
+      "fichier": "2026/04/hotel-ramatuelle-mer-vigne-auberge-oumede.jpg",
+      "utilise_pour": [
+        "chambre:chambre-3-double-superieure-triple"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/04/hotel-ramatuelle-mer-vigne-auberge-oumede.jpg",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2023/05/687908103.jpg",
+      "utilise_pour": [
+        "chambre:chambre-3-double-superieure-triple"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/687908103.jpg",
+      "recupere": "oui, via Booking : assets/photos/booking/double-superieure/equipements-687908103.jpg"
+    },
+    {
+      "fichier": "2023/05/FCF4D21F-9A9D-4C9D-9B6B-AC19BF0EB08C_1_105_c.jpeg",
+      "utilise_pour": [
+        "chambre:chambre-4-double-superieure"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/FCF4D21F-9A9D-4C9D-9B6B-AC19BF0EB08C_1_105_c.jpeg",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2023/05/470727493.jpg",
+      "utilise_pour": [
+        "chambre:chambre-4-double-superieure"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/470727493.jpg",
+      "recupere": "oui, via Booking : assets/photos/booking/double-superieure/environs-470727493.jpg"
+    },
+    {
+      "fichier": "2023/05/687908166.jpg",
+      "utilise_pour": [
+        "chambre:chambre-4-double-superieure"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/687908166.jpg",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2023/05/687909142.jpg",
+      "utilise_pour": [
+        "chambre:studio"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/687909142.jpg",
+      "recupere": "oui, via Booking : assets/photos/booking/studio/salon-687909142.jpg"
+    },
+    {
+      "fichier": "2023/05/687909141.jpg",
+      "utilise_pour": [
+        "chambre:studio"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/687909141.jpg",
+      "recupere": "oui, via Booking : assets/photos/booking/studio/salle-de-bains-687909141.jpg"
+    },
+    {
+      "fichier": "2023/05/687909108.jpg",
+      "utilise_pour": [
+        "chambre:studio"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/687909108.jpg",
+      "recupere": "oui, via Booking : assets/photos/booking/studio/chambre-687909108.jpg"
+    },
+    {
+      "fichier": "2023/05/687909985.jpg",
+      "utilise_pour": [
+        "chambre:suite-junior"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/687909985.jpg",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2023/05/687909999.jpg",
+      "utilise_pour": [
+        "chambre:suite-junior"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/687909999.jpg",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2023/05/687909948.jpg",
+      "utilise_pour": [
+        "chambre:suite-junior"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/687909948.jpg",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2023/05/687909872.jpg",
+      "utilise_pour": [
+        "chambre:suite-junior"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/687909872.jpg",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2023/05/suite-oumede-780x520.jpg",
+      "utilise_pour": [
+        "chambre:suite-junior"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/suite-oumede-780x520.jpg",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2023/05/313A8442-01A8-4AC4-836C-F54A7C25D687_1_105_c.jpeg",
+      "utilise_pour": [
+        "chambre:suite-de-l-oumede"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/313A8442-01A8-4AC4-836C-F54A7C25D687_1_105_c.jpeg",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2023/05/C36F00A5-DFD2-49E8-BBA7-D50B544674E1_1_105_c.jpeg",
+      "utilise_pour": [
+        "chambre:suite-de-l-oumede"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/C36F00A5-DFD2-49E8-BBA7-D50B544674E1_1_105_c.jpeg",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2023/05/F1562A10-9600-4F82-AC7C-761C135ED4FD_1_105_c.jpeg",
+      "utilise_pour": [
+        "chambre:suite-de-l-oumede"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/F1562A10-9600-4F82-AC7C-761C135ED4FD_1_105_c.jpeg",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2023/05/08854B69-053A-4F7C-89D4-B3C22F773F54_1_105_c.jpeg",
+      "utilise_pour": [
+        "chambre:suite-de-l-oumede"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2023/05/08854B69-053A-4F7C-89D4-B3C22F773F54_1_105_c.jpeg",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2026/04/petit-dejeuner-ramatuelle-oumede.png",
+      "utilise_pour": [
+        "services"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/04/petit-dejeuner-ramatuelle-oumede.png",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2026/04/piscine-auberge-oumede-ramatuelle-780x520.jpg",
+      "utilise_pour": [
+        "services"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/04/piscine-auberge-oumede-ramatuelle-780x520.jpg",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2026/04/jardins-auberge-oumede-780x1016.jpg",
+      "utilise_pour": [
+        "services"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/04/jardins-auberge-oumede-780x1016.jpg",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2026/04/plage-pampelonne-auberge-de-loumede-550x384.jpg",
+      "utilise_pour": [
+        "decouvrir"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/04/plage-pampelonne-auberge-de-loumede-550x384.jpg",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2026/04/marche-provencal-de-ramatuelle-auberge-oumede-550x413.jpg",
+      "utilise_pour": [
+        "decouvrir"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/04/marche-provencal-de-ramatuelle-auberge-oumede-550x413.jpg",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    },
+    {
+      "fichier": "2026/04/randonnee-ramatuelle-oumede-french-riviera-550x413.jpg",
+      "utilise_pour": [
+        "decouvrir"
+      ],
+      "url_wayback": "https://web.archive.org/web/20260610055422im_/https://aubergedeloumede.com/wp-content/uploads/2026/04/randonnee-ramatuelle-oumede-french-riviera-550x413.jpg",
+      "recupere": "non (jamais archivé par la Wayback Machine)"
+    }
+  ]
+}

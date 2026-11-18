@@ -1,0 +1,60 @@
+{
+  "note_site": "★★★★★ Noté 5 sur 5",
+  "booking": {
+    "note_globale": 8.9,
+    "mention": "Superbe",
+    "nombre_avis": 60,
+    "sous_notes": {
+      "Situation géographique": 9.4,
+      "Propreté": 9.3,
+      "Personnel": 9.3,
+      "Équipements": 9.1,
+      "Confort": 9.1,
+      "Rapport qualité/prix": 8.1
+    },
+    "note_couples": 9.4,
+    "classement_qualite_booking": "4 sur 5"
+  },
+  "temoignages_affiches_sur_le_site": [
+    {
+      "auteur": "Stéphane",
+      "source": "Booking",
+      "texte": "Localisation parfaite à proximité des plages de Pampelonne et des villages de Ramatuelle et Saint Tropez. C'est un lieu idyllique au milieu des oliviers et des vignes qui nous fait vivre un séjour hors du temps. L'accueil est chaleureux et…"
+    },
+    {
+      "auteur": "Patrick",
+      "source": "Booking",
+      "texte": "Très bel endroit, chambre spacieuse et propre. Calme absolu. Propriétaires charmants."
+    },
+    {
+      "auteur": "Sandrine",
+      "source": "Booking",
+      "texte": "Le cadre est magnifique – la chambre est spacieuse et bien équipée – la terrasse individuelle est agréable – le calme de l'endroit – l'hospitalité de la patronne."
+    }
+  ],
+  "autres_extraits_booking": [
+    {
+      "auteur": "Florent",
+      "pays": "Polynésie française",
+      "texte": "L'endroit est très bien placé à côté des plages de Ramatuelle, c'est vraiment une super localisation. L'espace piscine est très sympa…"
+    },
+    {
+      "auteur": "Steven",
+      "pays": "Suisse",
+      "langue": "en",
+      "texte": "A beautiful place for sure, close to Saint Tropez and peaceful at the same time. Lovely pool and surroundings…"
+    },
+    {
+      "auteur": "Benjamin",
+      "pays": "Canada",
+      "langue": "en",
+      "texte": "Beautiful property located in a quiet area but accessible from the party Pampelonne scene. Staff was super nice. No complaints."
+    },
+    {
+      "auteur": "Nancy",
+      "pays": "États-Unis",
+      "langue": "en",
+      "texte": "The atmosphere is an oasis - so beautiful and serene. Great location to go to the beaches."
+    }
+  ]
+}

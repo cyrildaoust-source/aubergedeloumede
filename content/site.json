@@ -1,0 +1,40 @@
+{
+  "nom": "L'Auberge de l'Oumède",
+  "accroche": "Entre vignes et mer, le calme absolu à Ramatuelle",
+  "titre_seo": "Auberge de l'Oumède - Résidence provençale de charme au cœur des vignes de Ramatuelle",
+  "description_seo": "Résidence provençale de charme au cœur des vignes de Ramatuelle. Chambres et suite de standing à deux pas des plages de Pampelonne.",
+  "contact": {
+    "adresse": "1035 chemin de l'Oumède",
+    "code_postal": "83350",
+    "ville": "Ramatuelle",
+    "pays": "France",
+    "telephone": "+33 4 94 44 11 11",
+    "telephone_affiche": "04 94 44 11 11",
+    "email": "contact@aubergedeloumede.com",
+    "instagram": "https://www.instagram.com/aubergedeloumedehome"
+  },
+  "langues": [
+    "fr",
+    "en"
+  ],
+  "pied_de_page": "© 2026 Auberge de l'Oumède. Tous droits réservés. Une adresse de charme à Ramatuelle.",
+  "newsletter": "Recevez nos actualités et attentions exclusives en vous inscrivant à notre newsletter",
+  "presentation": {
+    "titre": "Résidence provençale de charme au cœur des vignes de Ramatuelle",
+    "sous_titre": "Chambres et suite de standing à deux pas des plages de Pampelonne",
+    "texte": "Nichée au cœur des vignes de Ramatuelle, L'Auberge de l'Oumède offre un refuge paisible et confidentiel à quelques minutes des plages de Pampelonne et de Saint-Tropez. Une adresse de charme où confort, sérénité et douceur de vivre provençale se rencontrent, avec des services pensés pour un séjour tout en simplicité."
+  },
+  "situation": {
+    "texte": "Dans un cadre calme, cette résidence typiquement provençale est située à environ 1 km des plages de Pampelonne, à 4 km du village de Ramatuelle et à 6 km de Saint-Tropez.",
+    "acces_booking": "Chemin de l'Oumède (par la route des plages)",
+    "temps_de_trajet_minutes": {
+      "Aéroport de Nice": 90,
+      "Aéroport de Toulon-Hyères": 50,
+      "Gare TGV Les Arcs-Draguignan": 45
+    }
+  },
+  "langues_parlees": [
+    "Français",
+    "Anglais"
+  ]
+}

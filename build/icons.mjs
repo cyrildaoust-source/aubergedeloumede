@@ -1,3 +1,4 @@
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 // Jeu d'icônes en ligne (tracés 24×24, style trait) – inspirés de Lucide (licence ISC).
 export const ICONS = {
   bed: '<path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/>',
@@ -57,5 +58,23 @@ const MAP = {
 };
 export const iconFor = (label) => MAP[label] || "check";
 
-export const icon = (name, cls = "") =>
-  `<svg class="icon${cls ? " " + cls : ""}" viewBox="0 0 24 24" aria-hidden="true" focusable="false">${ICONS[name] || ICONS.check}</svg>`;
+// Pictogrammes dessinés pour l'Auberge : un fichier assets/picto/<nom>.svg remplace l'icône de même nom.
+const PICTO_DIR = new URL("../assets/picto/", import.meta.url);
+const PICTO = {};
+if (existsSync(PICTO_DIR)) {
+  for (const f of readdirSync(PICTO_DIR)) {
+    if (!f.endsWith(".svg")) continue;
+    const src = readFileSync(new URL(f, PICTO_DIR), "utf8").replace(/<\?xml[^>]*>|<!--[\s\S]*?-->/g, "").trim();
+    const m = src.match(/<svg([^>]*)>([\s\S]*)<\/svg>/);
+    if (!m) continue;
+    const vb = (m[1].match(/viewBox="([^"]+)"/) || [, "0 0 24 24"])[1];
+    const attrs = m[1].replace(/\s(xmlns(:\w+)?|width|height|class|viewBox|style|id)="[^"]*"/g, "").trim();
+    PICTO[f.slice(0, -4)] = { vb, inner: `<g ${attrs}>${m[2]}</g>` };
+  }
+}
+
+export const icon = (name, cls = "") => {
+  const p = PICTO[name];
+  if (p) return `<svg class="icon icon--picto${cls ? " " + cls : ""}" viewBox="${p.vb}" aria-hidden="true" focusable="false">${p.inner}</svg>`;
+  return `<svg class="icon${cls ? " " + cls : ""}" viewBox="0 0 24 24" aria-hidden="true" focusable="false">${ICONS[name] || ICONS.check}</svg>`;
+};

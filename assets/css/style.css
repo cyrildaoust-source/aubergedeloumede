@@ -619,3 +619,86 @@ img { height: auto; }
 /* Pas de surtitres : titres de groupes en casse normale */
 .dist-group h3, .footer h3 { text-transform: none; letter-spacing: 0; font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: inherit; }
 .dist-group h3 { color: var(--ink); }
+
+/* ==========================================================================
+   Direction champêtre : papier, cadres fins, arches provençales, branches
+   d'olivier. Moins de « cartes à ombre », plus de matière et de main.
+   ========================================================================== */
+:root {
+  --r-sm: 3px; --r: 4px; --r-lg: 6px;
+  --shadow-sm: none;
+  --shadow: 0 1px 0 rgba(31, 38, 32, .04);
+  --paper: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .28 0 0 0 0 .18 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+body, .section--sand, .trust { background-image: var(--paper); }
+.section--sand { background-color: var(--sand); }
+
+/* Titres : un mot en italique, couleur olive, comme une main qui souligne */
+h1 em, h2 em { font-style: italic; font-weight: 500; color: var(--olive); }
+.hero h1 em, .cta h2 em { color: #e9dfc4; }
+.lead { font-family: var(--serif); font-size: clamp(1.25rem, 1.8vw, 1.45rem); line-height: 1.5; color: var(--ink-2); }
+
+/* Boutons et navigation : coins nets, pas de pilule */
+.btn, .bookbar .btn { border-radius: var(--r-sm); letter-spacing: .01em; }
+.bookbar { border-radius: var(--r-lg); }
+.bookbar__f { border-radius: var(--r-sm); }
+.nav a { border-radius: 0; padding: 8px 10px; }
+.nav a[aria-current="page"] { background: none; color: var(--ink); text-decoration: underline; text-decoration-color: var(--olive); text-underline-offset: 8px; text-decoration-thickness: 1px; }
+.burger, .room__tag, .room__count { border-radius: var(--r-sm); }
+.room__tag { box-shadow: none; border: 1px solid var(--line); font-weight: 500; }
+
+/* Cartes : filet fin plutôt qu'ombre */
+.service, .quote, .score, .menu-card, .contact-card, .compare, .amen li, .keyfacts li { box-shadow: none; border: 1px solid var(--line); }
+.bookcard { box-shadow: none; border: 1px solid var(--sand-2); }
+.room__media { border-radius: var(--r-sm); }
+
+/* Ornement : branche d'olivier */
+.orn { color: var(--olive-2); margin: 6px 0 22px; line-height: 0; }
+.orn .branch { width: 120px; height: auto; }
+.orn--center { text-align: center; margin: 0 0 28px; }
+.orn--center .branch { width: 150px; }
+
+/* Photos : arche provençale et tirage posé à la main */
+.ph--arch { border-radius: 999px 999px var(--r-sm) var(--r-sm) / 46% 46% var(--r-sm) var(--r-sm) !important; }
+.ph--print { background: var(--white); padding: 8px 8px 28px; border: 1px solid var(--line) !important; border-radius: 2px !important; }
+.ph--print img { height: 100%; }
+.split__media .ph--float.ph--print { border-width: 1px; transform: rotate(2.2deg); box-shadow: 0 10px 30px rgba(31, 38, 32, .14); aspect-ratio: 4/5; width: 40%; right: -4%; bottom: -6%; }
+
+/* Services : rangées alternées, plus « carnet » que « grille de cartes » */
+.services--rows { display: grid; grid-template-columns: 1fr; gap: clamp(48px, 7vw, 96px); }
+.services--rows .service { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(24px, 5vw, 72px); align-items: center; background: none; border: 0; overflow: visible; }
+.services--rows .service:nth-child(even) { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); }
+.services--rows .service:nth-child(even) .ph { order: 2; }
+.services--rows .service .ph { aspect-ratio: 4/5; max-height: 520px; width: 100%; }
+.services--rows .service .ph--print { aspect-ratio: 5/4; transform: rotate(-1.4deg); }
+.services--rows .service__body { padding: 0; max-width: 46ch; }
+.services--rows .service__body h3 { font-size: clamp(1.8rem, 3vw, 2.4rem); font-style: italic; }
+.services--rows .service__body p { font-size: 1.05rem; }
+.services--rows .service__detail { margin-top: 8px; }
+@media (max-width: 760px) {
+  .services--rows .service, .services--rows .service:nth-child(even) { grid-template-columns: 1fr; gap: 20px; }
+  .services--rows .service:nth-child(even) .ph { order: 0; }
+  .services--rows .service .ph { aspect-ratio: 4/3; max-height: none; }
+  .services--rows .service .ph--arch { aspect-ratio: 1; }
+}
+
+/* Bandeau d'appel : fond olive avec vrille de vigne */
+.cta { border-radius: var(--r-lg); }
+
+/* Pied de page : olive sombre, grande vrille de vigne en filigrane */
+.footer { position: relative; overflow: hidden; background-color: #262d22; background-image: var(--paper); }
+.footer__vine { position: absolute; right: -40px; top: -30px; width: 340px; color: #b9c29c; opacity: .14; pointer-events: none; }
+.footer__vine .vine { width: 100%; height: auto; }
+.footer .wrap { position: relative; }
+.footer h3 { font-style: italic; color: #e9dfc4; }
+
+/* Étoiles et notes à l'ocre */
+.stars, .stars .icon { color: var(--star); }
+
+/* Pictogrammes dessinés pour l'Auberge (assets/picto) */
+.icon--picto { stroke: none; fill: none; }
+.disc--card { background: transparent; border: 0; border-top: 1px solid var(--olive-2); border-radius: 0; padding: 24px 4px 0; }
+.disc__ico, .trust__ico { background: none; border-radius: 0; width: auto; height: auto; justify-content: start; }
+.disc__ico { margin-bottom: 14px; }
+.disc__ico .icon { width: 40px; height: 40px; stroke-width: 1.2; }
+.trust__ico .icon { width: 28px; height: 28px; stroke-width: 1.3; }

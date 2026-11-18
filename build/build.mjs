@@ -85,6 +85,11 @@ const LOGO = (base) => `<a class="logo" href="${base}index.html" aria-label="Aub
   <span class="logo__txt"><span class="logo__pre">Auberge de</span><span class="logo__name">l'Oumède</span><span class="logo__place">Ramatuelle</span></span>
 </a>`;
 
+// Ornements dessinés à la main : branche d'olivier horizontale et vrille de vigne.
+const BRANCH = `<svg class="branch" viewBox="0 0 160 36" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22c22-3 46-6 76-4 26 2 48-1 74-8"/><path d="M22 20.5c-3-6-9-9-15-9 3 5 8 8.5 15 9Z" fill="currentColor" fill-opacity=".14"/><path d="M34 19.6c4-6 10-8.5 16-8-3.6 5-9 7.6-16 8Z" fill="currentColor" fill-opacity=".14"/><path d="M48 19c-2.4 5.6-7.4 9-13.6 9.6 2.6-5 7-8.4 13.6-9.6Z" fill="currentColor" fill-opacity=".14"/><path d="M64 18.4c-3.4-5.4-9-8-15-7.6 3.4 4.6 8.6 7.2 15 7.6Z" fill="currentColor" fill-opacity=".14"/><path d="M78 18.2c3.2 5 8.6 7.6 14.6 7.2-3.4-4.4-8.4-7-14.6-7.2Z" fill="currentColor" fill-opacity=".14"/><path d="M96 18.6c3.6-5.6 9.2-8.2 15.4-7.8-3.4 4.8-8.8 7.6-15.4 7.8Z" fill="currentColor" fill-opacity=".14"/><path d="M112 17.4c2.8 5.2 7.6 8.2 13.4 8.4-2.8-4.6-7.4-7.6-13.4-8.4Z" fill="currentColor" fill-opacity=".14"/><path d="M128 14.6c3-5.4 8-8.4 14-8.6-2.8 4.8-7.8 7.8-14 8.6Z" fill="currentColor" fill-opacity=".14"/><path d="M146 10.6c2-3.6 5.4-5.6 9.6-5.8"/><ellipse cx="57" cy="26.5" rx="2.6" ry="3.3" transform="rotate(-20 57 26.5)" fill="currentColor" stroke="none" opacity=".75"/><ellipse cx="104" cy="25.5" rx="2.4" ry="3.1" transform="rotate(15 104 25.5)" fill="currentColor" stroke="none" opacity=".75"/></svg>`;
+const orn = (cls = "") => `<div class="orn${cls ? " " + cls : ""}" aria-hidden="true">${BRANCH}</div>`;
+const VINE = `<svg class="vine" viewBox="0 0 220 220" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 210C60 170 90 120 120 70c14-24 34-42 60-52"/><path d="M120 70c-30-6-52 6-62 30 18 6 44 0 62-30Z"/><path d="M120 70c-4 26 6 46 30 56 4-22-8-44-30-56Z"/><path d="M78 132c-26-4-44 8-50 28 18 4 38-6 50-28Z"/><path d="M78 132c2 22 16 36 36 38 0-20-14-34-36-38Z"/><path d="M58 100c-8 0-14-6-14-14M150 126c6 6 6 14 0 20M180 18c10 0 18 8 18 18"/><g fill="currentColor" stroke="none" opacity=".55"><circle cx="138" cy="150" r="5"/><circle cx="148" cy="158" r="5"/><circle cx="134" cy="161" r="5"/><circle cx="144" cy="170" r="5"/><circle cx="154" cy="168" r="4.5"/><circle cx="140" cy="181" r="4.5"/><circle cx="150" cy="180" r="4"/></g></svg>`;
+
 function layout({ title, desc, base = "", body, active = "", canonical = "", jsonld = null, mbar = "", ogImage = "" }) {
   const nav = NAV.filter((n) => n[2] !== "petitdej")
     .map(([h, l, k]) => `<a href="${base}${h}"${k === active ? ' aria-current="page"' : ""}>${l}</a>`).join("");
@@ -145,6 +150,7 @@ ${mbar}
 
 function footer(base) {
   return `<footer class="footer">
+  <span class="footer__vine">${VINE}</span>
   <div class="wrap">
     <div class="footer__grid">
       <div>
@@ -251,9 +257,10 @@ const faqBlock = () => `<div class="faq">${FAQ.map(([q, a], i) => `<details${i =
 const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: FAQ.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) };
 
 const ctaBand = (base) => `<section class="section section--tight"><div class="wrap">
+  ${orn("orn--center")}
   <div class="cta">
     ${img(base, PH.cta, "", { label: " " })}
-    <div><h2>Vos dates sont libres ?</h2><p>Dites-nous quand vous venez : nous vous répondons personnellement avec la disponibilité et le tarif de chaque logement.</p></div>
+    <div><h2>Vos dates <em>sont libres ?</em></h2><p>Dites-nous quand vous venez : nous vous répondons personnellement avec la disponibilité et le tarif de chaque logement.</p></div>
     <div class="cta__actions">
       <a class="btn btn--light" href="${base}contact.html">Demander mes dates ${icon("arrow", "icon--sm")}</a>
       <a href="tel:${TEL}">${icon("phone", "icon--sm")} ${C.telephone_affiche}</a>
@@ -280,7 +287,7 @@ function home() {
   <div class="hero__media"><img ${srcAttrs("", PH.hero, "100vw")} alt="${PH.heroAlt}" fetchpriority="high" decoding="async" onerror="this.classList.add('is-missing')"></div>
   <div class="wrap hero__in">
     <a class="score-pill hero__badges" href="#avis"><b>${num(B.note_globale)}</b><span>${B.mention} · ${B.nombre_avis} avis Booking</span></a>
-    <h1 id="h-hero">Entre vignes et mer, le calme absolu à Ramatuelle</h1>
+    <h1 id="h-hero">Entre vignes et mer, <em>le calme absolu</em> à Ramatuelle</h1>
     <p class="hero__sub">Un hôtel de charme avec piscine chauffée, à 6 km de Saint-Tropez : sept chambres, studio et suites, chacun avec sa terrasse privative.</p>
     <form class="bookbar" action="contact.html" method="get" data-dates data-search aria-label="Vérifier les disponibilités">
       <div class="bookbar__f"><label for="h-a">Arrivée</label><input id="h-a" type="date" name="arrivee" required></div>
@@ -306,6 +313,7 @@ function home() {
   <div class="wrap split">
     <div>
       <h2 id="h-intro">${esc(site.presentation.titre)}</h2>
+      ${orn("orn--left")}
       <p class="lead">${esc(site.presentation.texte)}</p>
       <div class="facts">
         <div><b>7</b><span>logements, de 25 à 57 m²</span></div>
@@ -320,8 +328,8 @@ function home() {
       <a class="btn btn--ghost" href="chambres.html">Découvrir les logements ${icon("arrow", "icon--sm")}</a>
     </div>
     <div class="split__media">
-      ${img(base, PH.intro1, "Terrasse privative ombragée, au milieu des oliviers")}
-      ${img(base, PH.intro2, "Petit-déjeuner servi en terrasse", { cls: "ph--float" })}
+      ${img(base, PH.intro1, "Terrasse privative ombragée, au milieu des oliviers", { cls: "ph--arch" })}
+      ${img(base, PH.intro2, "Petit-déjeuner servi en terrasse", { cls: "ph--float ph--print" })}
     </div>
   </div>
 </section>
@@ -329,7 +337,7 @@ function home() {
 <section class="section section--sand" id="chambres" aria-labelledby="h-rooms">
   <div class="wrap">
     <div class="section__head">
-      <div><h2 id="h-rooms">Choisissez votre logement</h2><p>Toutes nos chambres ouvrent sur une terrasse privative, avec climatisation, Wi-Fi et accès à la piscine.</p></div>
+      <div><h2 id="h-rooms">Choisissez votre <em>logement</em></h2><p>Toutes nos chambres ouvrent sur une terrasse privative, avec climatisation, Wi-Fi et accès à la piscine.</p></div>
       <a class="link" href="chambres.html">Comparer les 7 logements ${icon("arrow", "icon--sm")}</a>
     </div>
     <div class="rooms rooms--scroll">${ROOMS.slice(0, 6).map((r) => roomCard(r, base)).join("")}</div>
@@ -345,21 +353,21 @@ function home() {
 
 <section class="section section--sand" id="avis" aria-labelledby="h-avis">
   <div class="wrap">
-    <div class="section__head"><div><h2 id="h-avis">Ils ont aimé le calme et l'accueil</h2></div><a class="link" href="ramatuelle.html#acces">Voir la situation ${icon("arrow", "icon--sm")}</a></div>
+    <div class="section__head"><div><h2 id="h-avis">Ils ont aimé le calme <em>et l'accueil</em></h2></div><a class="link" href="ramatuelle.html#acces">Voir la situation ${icon("arrow", "icon--sm")}</a></div>
     ${reviewsBlock(base, { compact: true })}
   </div>
 </section>
 
 <section class="section" aria-labelledby="h-loc">
   <div class="wrap">
-    <div class="section__head"><div><h2 id="h-loc">Au calme, tout près de tout</h2><p>${esc(site.situation.texte)}</p></div></div>
+    <div class="section__head"><div><h2 id="h-loc">Au calme, <em>tout près de tout</em></h2><p>${esc(site.situation.texte)}</p></div></div>
     ${locationBlock(base)}
   </div>
 </section>
 
 <section class="section section--sand" id="bon-a-savoir" aria-labelledby="h-know">
   <div class="wrap">
-    <div class="section__head"><div><h2 id="h-know">Avant de réserver</h2></div></div>
+    <div class="section__head"><div><h2 id="h-know">Avant de <em>réserver</em></h2></div></div>
     ${knowBlock()}
     <h3 style="margin-top:56px">Questions fréquentes</h3>
     ${faqBlock()}
@@ -370,8 +378,8 @@ ${ctaBand(base)}`;
 }
 
 function servicesGrid(base) {
-  return `<div class="services">${SV.services.map((s, i) => `<article class="service"${i === 0 ? ' id="petit-dejeuner-teaser"' : ""}>
-    ${img(base, (s.photos || [s.photo])[0], s.titre, { ico: ["coffee", "pool", "leaf"][i] })}
+  return `<div class="services services--rows">${SV.services.map((s, i) => `<article class="service"${i === 0 ? ' id="petit-dejeuner-teaser"' : ""}>
+    ${img(base, (s.photos || [s.photo])[0], s.titre, { ico: ["coffee", "pool", "leaf"][i], cls: i % 2 ? "ph--print" : "ph--arch" })}
     <div class="service__body">
       <h3>${esc(s.titre)}</h3>
       <p>${esc(s.texte)}</p>
@@ -409,7 +417,7 @@ function roomsPage() {
   const body = `
 <section class="pagehead"><div class="wrap">
   <nav class="crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> / <span>Chambres & suites</span></nav>
-  <h1>Chambres, studio & suites</h1>
+  <h1>Chambres, studio <em>& suites</em></h1>
   <p class="lead">Sept logements de 25 à 57 m², tous avec terrasse privative, climatisation et Wi-Fi. Pour deux, en famille ou pour un long séjour.</p>
 </div></section>
 <section class="section mt-0" style="padding-top:0"><div class="wrap">
@@ -432,7 +440,7 @@ function roomsPage() {
 </div></section>
 
 <section class="section section--sand" aria-labelledby="h-cmp"><div class="wrap">
-  <div class="section__head"><div><h2 id="h-cmp">Les 7 logements en un coup d'œil</h2></div></div>
+  <div class="section__head"><div><h2 id="h-cmp">Les 7 logements <em>en un coup d'œil</em></h2></div></div>
   <div class="table-scroll" tabindex="0" role="region" aria-label="Tableau comparatif des logements">
   <table class="compare">
     <thead><tr><th scope="col">Logement</th><th scope="col">Surface</th><th scope="col">Voyageurs</th><th scope="col">Couchage</th><th scope="col">Cuisine</th><th scope="col">Vue</th><th scope="col">Tarif</th></tr></thead>
@@ -537,7 +545,7 @@ function roomPage(r, i) {
   </aside>
 </div>
 <section class="section section--sand" aria-labelledby="h-oth"><div class="wrap">
-  <div class="section__head"><div><h2 id="h-oth">Les autres logements</h2></div><a class="link" href="../chambres.html">Comparer les 7 logements ${icon("arrow", "icon--sm")}</a></div>
+  <div class="section__head"><div><h2 id="h-oth">Les autres <em>logements</em></h2></div><a class="link" href="../chambres.html">Comparer les 7 logements ${icon("arrow", "icon--sm")}</a></div>
   <div class="rooms rooms--scroll">${others.map((o) => roomCard(o, base)).join("")}</div>
 </div></section>
 ${ctaBand(base)}
@@ -596,7 +604,7 @@ function ramatuellePage() {
   const body = `
 <section class="pagehead"><div class="wrap">
   <nav class="crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> / <span>Saint-Tropez & alentours</span></nav>
-  <h1>Saint-Tropez, Pampelonne et Ramatuelle</h1>
+  <h1>Saint-Tropez, Pampelonne <em>et Ramatuelle</em></h1>
   <p class="lead">${esc(DC.texte)} Plages mythiques, village perché, marché provençal et sentiers du littoral : voici nos conseils.</p>
 </div></section>
 <section class="section" style="padding-top:0"><div class="wrap">
@@ -607,7 +615,7 @@ function ramatuellePage() {
   </article>`).join("")}</div>
 </div></section>
 <section class="section" style="padding-top:0" aria-labelledby="h-evt"><div class="wrap">
-  <div class="section__head"><div><h2 id="h-evt">Où dormir pour les grands rendez-vous</h2><p>L'Auberge est ouverte ${TF.saison || "de mai à octobre"}. Pensez à réserver tôt pour ces dates.</p></div></div>
+  <div class="section__head"><div><h2 id="h-evt">Où dormir pour <em>les grands rendez-vous</em></h2><p>L'Auberge est ouverte ${TF.saison || "de mai à octobre"}. Pensez à réserver tôt pour ces dates.</p></div></div>
   <div class="discover">
     <article class="disc disc--card"><span class="disc__ico">${icon("star", "icon--lg")}</span><h3>Festival de Ramatuelle</h3><p><b>Début août.</b> Théâtre, musique et humour en plein air, au cœur du village de Ramatuelle, à 4 km de l'Auberge.</p></article>
     <article class="disc disc--card"><span class="disc__ico">${icon("wave", "icon--lg")}</span><h3>Les Voiles de Saint-Tropez</h3><p><b>Fin septembre – début octobre.</b> Les plus beaux voiliers classiques et modernes dans la baie. Le soir, retour au calme des vignes, loin de l'affluence du port.</p></article>
@@ -615,7 +623,7 @@ function ramatuellePage() {
   </div>
 </div></section>
 <section class="section section--sand" id="acces" aria-labelledby="h-acc"><div class="wrap">
-  <div class="section__head"><div><h2 id="h-acc">Venir à l'Auberge</h2><p>${esc(site.situation.texte)} Accès par la route des plages, chemin de l'Oumède.</p></div></div>
+  <div class="section__head"><div><h2 id="h-acc">Venir <em>à l'Auberge</em></h2><p>${esc(site.situation.texte)} Accès par la route des plages, chemin de l'Oumède.</p></div></div>
   ${locationBlock(base)}
   <div class="dist-group" style="margin-top:40px;max-width:560px"><h3>Restaurants à proximité</h3><ul class="dist">${Object.entries(DC.a_proximite_source_booking.restaurants).map(([k, v]) => `<li><span>${k}</span><span>${v}</span></li>`).join("")}</ul></div>
 </div></section>
@@ -628,7 +636,7 @@ function contactPage() {
   const body = `
 <section class="pagehead"><div class="wrap">
   <nav class="crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> / <span>Contact & réservation</span></nav>
-  <h1>Demandez vos dates</h1>
+  <h1>Demandez <em>vos dates</em></h1>
   <p class="lead">Indiquez votre séjour : nous vous répondons personnellement avec la disponibilité et le tarif. Aucun paiement n'est demandé à cette étape.</p>
 </div></section>
 <section class="section" style="padding-top:0"><div class="wrap contact">
@@ -696,7 +704,7 @@ function legalPage() {
 }
 
 function notFound() {
-  const body = `<section class="section"><div class="wrap center"><h1>Cette page s'est perdue dans les vignes</h1><p class="lead" style="margin:0 auto 28px">La page demandée n'existe pas ou a changé d'adresse.</p><a class="btn" href="/index.html">Retour à l'accueil</a> <a class="btn btn--ghost" href="/chambres.html">Voir les chambres</a></div></section>`;
+  const body = `<section class="section"><div class="wrap center"><h1>Cette page s'est perdue <em>dans les vignes</em></h1><p class="lead" style="margin:0 auto 28px">La page demandée n'existe pas ou a changé d'adresse.</p><a class="btn" href="/index.html">Retour à l'accueil</a> <a class="btn btn--ghost" href="/chambres.html">Voir les chambres</a></div></section>`;
   return layout({ title: "Page introuvable | Auberge de l'Oumède", desc: "Page introuvable.", body, base: "/", canonical: "404.html" });
 }
 

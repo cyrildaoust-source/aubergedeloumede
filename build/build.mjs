@@ -76,7 +76,7 @@ const NAV = [
   ["chambres.html", "Chambres & suites", "chambres"],
   ["services.html", "Services", "services"],
   ["services.html#petit-dejeuner", "Petit-déjeuner", "petitdej"],
-  ["ramatuelle.html", "Ramatuelle", "ramatuelle"],
+  ["ramatuelle.html", "Saint-Tropez & alentours", "ramatuelle"],
   ["contact.html", "Contact", "contact"],
 ];
 
@@ -263,7 +263,7 @@ const ctaBand = (base) => `<section class="section section--tight"><div class="w
 </div></section>`;
 
 const lodgingLd = {
-  "@context": "https://schema.org", "@type": "BedAndBreakfast", name: site.nom, description: site.description_seo, url: SITE_URL,
+  "@context": "https://schema.org", "@type": "BedAndBreakfast", name: site.nom, description: "Hôtel de charme avec piscine chauffée à Ramatuelle, à 6 km de Saint-Tropez et 1 km de la plage de Pampelonne.", url: SITE_URL, alternateName: "Auberge de l'Oumède Saint-Tropez",
   telephone: C.telephone, email: C.email, image: `${SITE_URL}/${PH.hero}`,
   address: { "@type": "PostalAddress", streetAddress: C.adresse, postalCode: C.code_postal, addressLocality: C.ville, addressCountry: "FR" },
   checkinTime: "16:00", checkoutTime: "11:00", petsAllowed: false, numberOfRooms: ROOMS.length, sameAs: [C.instagram, BOOKING_URL],
@@ -280,8 +280,9 @@ function home() {
   <div class="hero__media"><img ${srcAttrs("", PH.hero, "100vw")} alt="${PH.heroAlt}" fetchpriority="high" decoding="async" onerror="this.classList.add('is-missing')"></div>
   <div class="wrap hero__in">
     <a class="score-pill hero__badges" href="#avis"><b>${num(B.note_globale)}</b><span>${B.mention} · ${B.nombre_avis} avis Booking</span></a>
+    <p class="hero__kicker">Golfe de Saint-Tropez · Plage de Pampelonne à 1 km</p>
     <h1 id="h-hero">Entre vignes et mer, le calme absolu à Ramatuelle</h1>
-    <p class="hero__sub">Sept chambres, studio et suites avec terrasse privative, une piscine chauffée et les plages de Pampelonne à 1 km.</p>
+    <p class="hero__sub">Un hôtel de charme avec piscine chauffée, à 6 km de Saint-Tropez : sept chambres, studio et suites, chacun avec sa terrasse privative.</p>
     <form class="bookbar" action="contact.html" method="get" data-dates data-search aria-label="Vérifier les disponibilités">
       <div class="bookbar__f"><label for="h-a">Arrivée</label><input id="h-a" type="date" name="arrivee" required></div>
       <div class="bookbar__f"><label for="h-d">Départ</label><input id="h-d" type="date" name="depart" required></div>
@@ -313,6 +314,11 @@ function home() {
         <div><b>1 km</b><span>des plages de Pampelonne</span></div>
         <div><b>${num(B.sous_notes["Situation géographique"])}</b><span>note de la situation</span></div>
       </div>
+      <ul class="clean ideal" aria-label="Idéal pour">
+        <li>${icon("heart")}<div><b>En amoureux</b><span>Note des couples ${num(B.note_couples)}/10 sur Booking, terrasse privée et calme absolu.</span></div></li>
+        <li>${icon("users")}<div><b>En famille</b><span>Chambre triple et Suite de L'Oumède jusqu'à 4 personnes, piscine avec espace peu profond.</span></div></li>
+        <li>${icon("kitchen")}<div><b>Longs séjours</b><span>Studio et suites avec cuisine équipée, parking gratuit sur place.</span></div></li>
+      </ul>
       <a class="btn btn--ghost" href="chambres.html">Découvrir les logements ${icon("arrow", "icon--sm")}</a>
     </div>
     <div class="split__media">
@@ -362,7 +368,7 @@ function home() {
   </div>
 </section>
 ${ctaBand(base)}`;
-  return layout({ title: site.titre_seo, desc: site.description_seo, body, base, canonical: "", jsonld: [lodgingLd, faqLd], mbar: mobileBar(base) });
+  return layout({ title: "Hôtel de charme avec piscine près de Saint-Tropez | Auberge de l'Oumède, Ramatuelle", desc: "Hôtel de charme au calme dans les vignes, à 6 km de Saint-Tropez et 1 km de la plage de Pampelonne : 7 chambres et suites avec terrasse, piscine chauffée, parking gratuit. Noté 8,9 sur Booking.", body, base, canonical: "", jsonld: [lodgingLd, faqLd], mbar: mobileBar(base) });
 }
 
 function servicesGrid(base) {
@@ -440,7 +446,7 @@ function roomsPage() {
   <p class="note" style="margin-top:14px">Dans tous les logements : climatisation, TV, Wi-Fi, coffre-fort, mini-bar, sèche-cheveux, produits d'accueil et terrasse privative.</p>
 </div></section>
 ${ctaBand(base)}`;
-  return layout({ title: "Chambres, studio et suites à Ramatuelle | Auberge de l'Oumède", desc: "Sept logements de 25 à 57 m² avec terrasse privative, à 1 km des plages de Pampelonne : chambres doubles, chambre triple, studio, suite junior et suite familiale.", body, base, active: "chambres", canonical: "chambres.html", mbar: mobileBar(base) });
+  return layout({ title: "Chambres et suites avec terrasse près de Saint-Tropez | Auberge de l'Oumède", desc: "Sept logements de 25 à 57 m² avec terrasse privative, à 6 km de Saint-Tropez et 1 km de la plage de Pampelonne : chambres doubles, chambre triple, studio, suite junior et suite familiale.", body, base, active: "chambres", canonical: "chambres.html", mbar: mobileBar(base) });
 }
 
 function roomPage(r, i) {
@@ -546,7 +552,7 @@ ${ctaBand(base)}
   <button class="iconbtn lightbox__nav lightbox__nav--next" type="button" data-lb="1" aria-label="Photo suivante">${icon("arrow")}</button>
 </dialog>`;
   const ld = { "@context": "https://schema.org", "@type": "HotelRoom", name: r.nom, description: r.description, floorSize: { "@type": "QuantitativeValue", value: r.surface_m2, unitCode: "MTK" }, occupancy: { "@type": "QuantitativeValue", maxValue: r.personnes_max }, bed: r.lits.join(", "), amenityFeature: r.equipements.map((e) => ({ "@type": "LocationFeatureSpecification", name: e, value: true })), containedInPlace: { "@type": "BedAndBreakfast", name: site.nom } };
-  return layout({ title: `${r.nom} · ${r.surface_m2} m² à Ramatuelle | Auberge de l'Oumède`, desc: r.description.slice(0, 155), body, base, active: "chambres", canonical: `chambres/${r.slug}.html`, jsonld: ld, ogImage: roomPhotos(r).list[0],
+  return layout({ title: `${r.nom}, ${r.surface_m2} m² avec terrasse · près de Saint-Tropez | Auberge de l'Oumède`, desc: r.description.slice(0, 155), body, base, active: "chambres", canonical: `chambres/${r.slug}.html`, jsonld: ld, ogImage: roomPhotos(r).list[0],
     mbar: mobileBar(base, { title: priceOf(r.slug) ? `${priceOf(r.slug)} € / nuit` : GLOBAL_FROM ? `${FROM_LABEL} / nuit` : "Tarif selon vos dates", href: `contact.html?chambre=${r.slug}`, cta: "Vérifier les dates" }) });
 }
 
@@ -588,16 +594,16 @@ function servicesPage() {
   </div>
 </div></section>
 ${ctaBand(base)}`;
-  return layout({ title: "Services : piscine chauffée, petit-déjeuner, jardins | Auberge de l'Oumède", desc: "Piscine chauffée, petit-déjeuner continental en terrasse, jardin méditerranéen, parking et Wi-Fi gratuits : les services de l'Auberge de l'Oumède à Ramatuelle.", body, base, active: "services", canonical: "services.html", mbar: mobileBar(base) });
+  return layout({ title: "Hôtel avec piscine chauffée et petit-déjeuner près de Saint-Tropez | Auberge de l'Oumède", desc: "Piscine chauffée, petit-déjeuner continental en terrasse, jardin méditerranéen, parking et Wi-Fi gratuits : les services de l'Auberge de l'Oumède à Ramatuelle.", body, base, active: "services", canonical: "services.html", mbar: mobileBar(base) });
 }
 
 function ramatuellePage() {
   const base = "";
   const body = `
 <section class="pagehead"><div class="wrap">
-  <nav class="crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> / <span>Ramatuelle</span></nav>
+  <nav class="crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> / <span>Saint-Tropez & alentours</span></nav>
   <span class="eyebrow">${esc(DC.surtitre)}</span>
-  <h1>${esc(DC.titre)}</h1>
+  <h1>Saint-Tropez, Pampelonne et Ramatuelle</h1>
   <p class="lead">${esc(DC.texte)} Plages mythiques, village perché, marché provençal et sentiers du littoral : voici nos conseils.</p>
 </div></section>
 <section class="section" style="padding-top:0"><div class="wrap">
@@ -607,13 +613,21 @@ function ramatuellePage() {
     <a class="link" href="${a.lien.replace(/^http:/, "https:")}" target="_blank" rel="noopener">En savoir plus ${icon("arrow", "icon--sm")}<span class="sr"> (site externe)</span></a></div>
   </article>`).join("")}</div>
 </div></section>
+<section class="section" style="padding-top:0" aria-labelledby="h-evt"><div class="wrap">
+  <div class="section__head"><div><span class="eyebrow">Temps forts de la saison</span><h2 id="h-evt">Où dormir pour les grands rendez-vous</h2><p>L'Auberge est ouverte ${TF.saison || "de mai à octobre"}. Pensez à réserver tôt pour ces dates.</p></div></div>
+  <div class="discover">
+    <article class="disc disc--card"><span class="disc__ico">${icon("star", "icon--lg")}</span><span class="eyebrow">Début août</span><h3>Festival de Ramatuelle</h3><p>Théâtre, musique et humour en plein air, au cœur du village de Ramatuelle, à 4 km de l'Auberge.</p></article>
+    <article class="disc disc--card"><span class="disc__ico">${icon("wave", "icon--lg")}</span><span class="eyebrow">Fin septembre – début octobre</span><h3>Les Voiles de Saint-Tropez</h3><p>Les plus beaux voiliers classiques et modernes dans la baie. Le soir, retour au calme des vignes, loin de l'affluence du port.</p></article>
+    <article class="disc disc--card"><span class="disc__ico">${icon("landmark", "icon--lg")}</span><span class="eyebrow">Toute la saison</span><h3>Marchés provençaux</h3><p>Ramatuelle le jeudi et le dimanche, Saint-Tropez place des Lices le mardi et le samedi.</p></article>
+  </div>
+</div></section>
 <section class="section section--sand" id="acces" aria-labelledby="h-acc"><div class="wrap">
   <div class="section__head"><div><span class="eyebrow">Accès & distances</span><h2 id="h-acc">Venir à l'Auberge</h2><p>${esc(site.situation.texte)} Accès par la route des plages, chemin de l'Oumède.</p></div></div>
   ${locationBlock(base)}
   <div class="dist-group" style="margin-top:40px;max-width:560px"><h3>Restaurants à proximité</h3><ul class="dist">${Object.entries(DC.a_proximite_source_booking.restaurants).map(([k, v]) => `<li><span>${k}</span><span>${v}</span></li>`).join("")}</ul></div>
 </div></section>
 ${ctaBand(base)}`;
-  return layout({ title: "Découvrir Ramatuelle et Pampelonne | Auberge de l'Oumède", desc: "Plage de Pampelonne, marché provençal, sentiers du littoral : nos conseils pour découvrir Ramatuelle et Saint-Tropez depuis l'Auberge de l'Oumède.", body, base, active: "ramatuelle", canonical: "ramatuelle.html", mbar: mobileBar(base) });
+  return layout({ title: "Que faire autour de Saint-Tropez : Pampelonne, Ramatuelle | Auberge de l'Oumède", desc: "Plage de Pampelonne, marché provençal, sentiers du littoral : nos conseils pour découvrir Ramatuelle et Saint-Tropez depuis l'Auberge de l'Oumède.", body, base, active: "ramatuelle", canonical: "ramatuelle.html", mbar: mobileBar(base) });
 }
 
 function contactPage() {
@@ -670,7 +684,7 @@ function contactPage() {
   </div>
 </div></section>
 <section class="section section--sand"><div class="wrap"><div class="section__head"><div><span class="eyebrow">Plan d'accès</span><h2>Nous trouver</h2></div></div>${locationBlock(base)}</div></section>`;
-  return layout({ title: "Contact et réservation | Auberge de l'Oumède, Ramatuelle", desc: "Demandez vos dates à l'Auberge de l'Oumède : réponse personnelle avec disponibilité et tarif. 1035 chemin de l'Oumède, 83350 Ramatuelle. 04 94 44 11 11.", body, base, active: "contact", canonical: "contact.html" });
+  return layout({ title: "Réserver un hôtel de charme près de Saint-Tropez | Auberge de l'Oumède", desc: "Demandez vos dates à l'Auberge de l'Oumède : réponse personnelle avec disponibilité et tarif. 1035 chemin de l'Oumède, 83350 Ramatuelle. 04 94 44 11 11.", body, base, active: "contact", canonical: "contact.html" });
 }
 
 function legalPage() {

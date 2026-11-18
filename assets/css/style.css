@@ -607,3 +607,11 @@ img { height: auto; }
 @media (max-width: 600px) { .lightbox__nav { display: none; } }
 .bookcard__hint { font-size: .8rem; color: var(--muted); margin: -8px 0 14px; line-height: 1.45; }
 .know { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+
+.hero__kicker { font-size: .78rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; margin: 0 0 10px; opacity: .95; text-shadow: 0 1px 12px rgba(0,0,0,.35); }
+.ideal { display: grid; gap: 14px; margin: -8px 0 28px; }
+.ideal li { display: flex; gap: 14px; align-items: flex-start; }
+.ideal .icon { color: var(--terra); margin-top: 3px; }
+.ideal b { display: block; }
+.ideal span { color: var(--ink-2); font-size: .93rem; }
+.disc--card h3 { font-size: 1.5rem; }

@@ -40,7 +40,7 @@ fiche logement **Airbnb** (mosaïque de photos, carte de réservation collante, 
   lien « confirmation immédiate » vers Booking.com, logotype typographique provençal (pas de fichier logo).
 - Passe 3 → 4 : la galerie s'ouvre en plein écran, une photo à la fois, avec flèches, clavier et glisser.
 
-## Points restants (mis à jour le 19 novembre : il en reste 5,5, tous du contenu ou un choix)
+## Points restants (mis à jour le 19 novembre : il reste 6 points, tous du contenu ou un choix)
 
 | Manque | Points | Qui peut le régler |
 |---|---|---|

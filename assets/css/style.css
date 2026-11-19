@@ -905,3 +905,15 @@ p, li, blockquote { text-wrap: pretty; }
 @media (max-width: 560px) { .rd .loc > div:last-child { grid-template-columns: 1fr; } .rd .loc > div:last-child > p { grid-column: auto; } .rd .dist-group + .dist-group { margin-top: 24px; } }
 @media (max-width: 480px) { .upsell__img { display: none; } .upsell, .form .upsell { grid-template-columns: 1fr 26px; } }
 @media (max-width: 620px) { .form { grid-template-columns: 1fr 1fr; gap: 14px; } .form .field:not(.field--dp) { grid-column: span 2; } .form .full { grid-column: span 2; } }
+
+/* Langue */
+.lang { display: inline-flex; align-items: center; justify-content: center; min-width: 40px; min-height: 40px; padding: 0 6px; font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-decoration: none; color: inherit; border-radius: 4px; }
+.lang:hover { background: rgba(85, 96, 61, .08); }
+.langs a { color: inherit; }
+.langs [aria-current] { color: #fff; }
+.drawer__lang { display: none; margin: 4px 0 18px; font-size: .9rem; color: inherit; }
+@media (max-width: 560px) {
+  .header .lang { display: none; }
+  .drawer__lang { display: inline-block; }
+  .rd .map { aspect-ratio: 4 / 3; min-height: 0; }
+}

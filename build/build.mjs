@@ -103,6 +103,9 @@ function layoutHtml({ title, desc, base = "", body, active = "", canonical = "",
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
 <link rel="canonical" href="${SITE_URL}/${canonical}">
+<link rel="alternate" hreflang="fr" href="${SITE_URL}/${canonical}">
+<link rel="alternate" hreflang="en" href="${SITE_URL}/en/${canonical}">
+<link rel="alternate" hreflang="x-default" href="${SITE_URL}/${canonical}">
 <meta name="theme-color" content="#faf6ef">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
@@ -122,6 +125,7 @@ ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script
   <div class="wrap header__in">
     ${LOGO(base)}
     <nav class="nav" aria-label="Navigation principale">${nav}</nav>
+    <a class="lang" data-switch href="${base}en/${canonical || "index.html"}" hreflang="en" lang="en" aria-label="English version">EN</a>
     <a class="header__tel" href="tel:${TEL}">${icon("phone", "icon--sm")}<span>${C.telephone_affiche}</span></a>
     <a class="btn header__cta" href="${base}contact.html">Réserver</a>
     <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="drawer">${icon("menu")}</button>
@@ -132,6 +136,7 @@ ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script
   <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
     <div class="drawer__top"><span class="brand__name">Menu</span><button class="iconbtn" type="button" data-close-drawer aria-label="Fermer le menu">${icon("close")}</button></div>
     <nav aria-label="Navigation mobile"><a href="${base}index.html">Accueil</a>${navM}</nav>
+    <a class="drawer__lang" data-switch href="${base}en/${canonical || "index.html"}" hreflang="en" lang="en">English version</a>
     <div class="drawer__contact">
       <a class="btn btn--block" href="${base}contact.html">Demander mes dates</a>
       <a class="btn btn--ghost btn--block" href="tel:${TEL}">${icon("phone", "icon--sm")} ${C.telephone_affiche}</a>
@@ -141,7 +146,7 @@ ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script
 <main id="contenu">
 ${body}
 </main>
-${footer(base)}
+${footer(base, canonical)}
 ${mbar}
 <script src="${base}assets/js/main.js" defer></script>
 </body>
@@ -149,7 +154,7 @@ ${mbar}
 `;
 }
 
-function footer(base) {
+function footer(base, canonical = "") {
   return `<footer class="footer">
   <span class="footer__vine">${VINE}</span>
   <div class="wrap">
@@ -177,7 +182,7 @@ function footer(base) {
         </ul>
       </div>
     </div>
-    <div class="footer__bottom"><span>${esc(site.pied_de_page)}</span><span>Français · <span title="Version anglaise en préparation">English soon</span></span></div>
+    <div class="footer__bottom"><span>${esc(site.pied_de_page)}</span><span class="langs"><span aria-current="true">Français</span> · <a data-switch href="${base}en/${canonical || "index.html"}" hreflang="en" lang="en">English</a></span></div>
   </div>
 </footer>`;
 }

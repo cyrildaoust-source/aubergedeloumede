@@ -9,6 +9,7 @@ les pages HTML à la racine se déposent telles quelles chez n'importe quel héb
 |---|---|
 | `content/*.json` | Tout le texte du site (chambres, services, avis, infos pratiques, tarifs) |
 | `build/build.mjs` | Génère les pages HTML à partir de `content/` |
+| `build/en.py` + `content/en.json` | Génère la version anglaise dans `en/` (s'arrête si une phrase française n'a pas de traduction) |
 | `build/images.py` | Génère les versions légères des photos (`assets/img/`) |
 | `assets/css/style.css`, `assets/js/main.js` | Style et comportements |
 | `assets/photos/` | Photos d'origine |
@@ -18,7 +19,7 @@ les pages HTML à la racine se déposent telles quelles chez n'importe quel héb
 
 1. Modifier le fichier voulu dans `content/` (par exemple un prix dans `content/tarifs.json`).
 2. Si des photos ont été ajoutées : `python3 build/images.py`
-3. Regénérer les pages : `node build/build.mjs`
+3. Regénérer les pages : `node build/build.mjs && python3 build/en.py`
 
 ## À compléter
 

@@ -25,6 +25,7 @@ fiche logement **Airbnb** (mosaïque de photos, carte de réservation collante, 
 | 2 – corrections de mise en page + photos Booking | 13 | 16 | 13 | 13 | 13 | 11 | **79** |
 | 3 – images optimisées, polices locales, carte à la demande, lien Booking, logotype | 14 | 18 | 15 | 14 | 14 | 14 | **89** |
 | 4 – visionneuse photo plein écran (flèches, clavier, glisser) | 14 | 18 | 15 | 14 | 15 | 14 | **90** |
+| 5 – calendrier, version anglaise, photos des suites, texte chambre 2 | 15 | 19 | 16 | 15 | 15 | 14 | **94** |
 
 ### Corrections faites entre les passes
 
@@ -39,18 +40,18 @@ fiche logement **Airbnb** (mosaïque de photos, carte de réservation collante, 
   lien « confirmation immédiate » vers Booking.com, logotype typographique provençal (pas de fichier logo).
 - Passe 3 → 4 : la galerie s'ouvre en plein écran, une photo à la fois, avec flèches, clavier et glisser.
 
-## Les 10 points restants (presque tous du contenu)
+## Points restants (mis à jour le 19 novembre : il en reste 5,5, tous du contenu ou un choix)
 
 | Manque | Points | Qui peut le régler |
 |---|---|---|
 | Aucun tarif affiché (« Tarif selon vos dates ») | −3 | L'Auberge : remplir `content/tarifs.json` |
 | Pas de disponibilité en temps réel (demande par e-mail) | −1 | Choix d'un moteur de réservation ou d'un service de formulaire |
-| Pas de version anglaise (beaucoup d'avis sont en anglais) | −1 | Traduction à fournir |
-| Suite de L'Oumède sans photo propre (photos du jardin à la place) | −1 | Photos à fournir |
-| Chambres 1 et 2 : même texte et mêmes photos | −1 | Texte et photos de la chambre 2 |
-| Photos en 1086 px seulement (un peu douces en plein écran) | −1 | Originaux en haute définition |
-| Menu et prix du petit-déjeuner (encart « bientôt disponible ») | −1 | L'Auberge : `content/tarifs.json > petit_dejeuner` |
-| Champs de date natifs du navigateur (pas de calendrier sur mesure) | −1 | Frontend, si on veut aller plus loin |
+| ~~Pas de version anglaise~~ : fait (19 novembre), 14 pages dans `en/`, bascule FR/EN | ✓ | |
+| ~~Suite de L'Oumède sans photo propre~~ : 7 photos Booking « Suite avec Terrasse » | ✓ | |
+| Chambres 1 et 2 : texte propre fait ; photos encore communes | −0,5 | Photos de la chambre 2 |
+| Photos de chambres en 723–1086 px (établissement passé en 2250–3000 px) | −0,5 | Originaux en haute définition |
+| Menu du petit-déjeuner (prix fait : 28 €) | −0,5 | Carte à fournir |
+| ~~Champs de date natifs~~ : calendrier sur mesure fait | ✓ | |
 
 ## Vérifications automatiques
 

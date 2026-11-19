@@ -1,6 +1,8 @@
 /* Auberge de l'Oumède – petits comportements, sans dépendance */
 (function () {
   "use strict";
+  var EN = document.documentElement.lang === "en", LOC = EN ? "en-GB" : LOC;
+  var t = function (fr, en) { return EN ? en : fr; };
   var $ = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
 
@@ -34,16 +36,19 @@
   function addDays(v, n) { var d = parse(v); d.setDate(d.getDate() + n); return isoOf(d); }
   function nights(a, b) { return Math.round((parse(b) - parse(a)) / 86400000); }
   var fmt = function (v) {
-    try { return parse(v).toLocaleDateString("fr-FR", { weekday: "short", day: "numeric", month: "long" }); }
+    try { return parse(v).toLocaleDateString(LOC, { weekday: "short", day: "numeric", month: "long" }); }
     catch (e) { return v; }
   };
   var fmtShort = function (v) {
-    try { return parse(v).toLocaleDateString("fr-FR", { weekday: "short", day: "numeric", month: "short" }); }
+    try { return parse(v).toLocaleDateString(LOC, { weekday: "short", day: "numeric", month: "short" }); }
     catch (e) { return v; }
   };
-  var fmtLong = function (v) { return parse(v).toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long", year: "numeric" }); };
-  var MONTHS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
-  var DOW = ["lun.", "mar.", "mer.", "jeu.", "ven.", "sam.", "dim."];
+  var fmtLong = function (v) { return parse(v).toLocaleDateString(LOC, { weekday: "long", day: "numeric", month: "long", year: "numeric" }); };
+  var MONTHS = EN ? ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    : ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+  var DOW = EN ? ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"] : ["lun.", "mar.", "mer.", "jeu.", "ven.", "sam.", "dim."];
+  function nn(n) { return n + (EN ? (n > 1 ? " nights" : " night") : (n > 1 ? " nuits" : " nuit")); }
+  function range(a, b) { return t("du ", "") + fmt(a) + t(" au ", " to ") + fmt(b); }
   var TODAY = isoOf(new Date());
 
   var dp = null; // fenêtre unique, partagée par tous les formulaires
@@ -62,30 +67,30 @@
   function build() {
     dp = document.createElement("div");
     dp.className = "dpk"; dp.hidden = true;
-    dp.setAttribute("role", "dialog"); dp.setAttribute("aria-label", "Choisir les dates du séjour");
+    dp.setAttribute("role", "dialog"); dp.setAttribute("aria-label", t("Choisir les dates du séjour", "Choose your dates"));
     dp.innerHTML =
       '<div class="dpk__head">' +
-        '<button type="button" class="dpk__sum" data-k="a"><small>Arrivée</small><b data-sum="a"></b></button>' +
+        '<button type="button" class="dpk__sum" data-k="a"><small>' + t("Arrivée", "Check-in") + '</small><b data-sum="a"></b></button>' +
         '<span class="dpk__to" aria-hidden="true"></span>' +
-        '<button type="button" class="dpk__sum" data-k="d"><small>Départ</small><b data-sum="d"></b></button>' +
-        '<div class="dpk__presets" role="group" aria-label="Durée du séjour">' +
-          '<button type="button" data-n="2">Week-end</button>' +
-          '<button type="button" data-n="4">4 nuits</button>' +
-          '<button type="button" data-n="7">1 semaine</button>' +
-          '<button type="button" data-n="14">2 semaines</button>' +
+        '<button type="button" class="dpk__sum" data-k="d"><small>' + t("Départ", "Check-out") + '</small><b data-sum="d"></b></button>' +
+        '<div class="dpk__presets" role="group" aria-label="' + t("Durée du séjour", "Length of stay") + '">' +
+          '<button type="button" data-n="2">' + t("Week-end", "Weekend") + '</button>' +
+          '<button type="button" data-n="4">' + t("4 nuits", "4 nights") + '</button>' +
+          '<button type="button" data-n="7">' + t("1 semaine", "1 week") + '</button>' +
+          '<button type="button" data-n="14">' + t("2 semaines", "2 weeks") + '</button>' +
         '</div>' +
-        '<button type="button" class="dpk__close" aria-label="Fermer le calendrier"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>' +
+        '<button type="button" class="dpk__close" aria-label="' + t("Fermer le calendrier", "Close calendar") + '"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>' +
       '</div>' +
       '<div class="dpk__body">' +
         '<div class="dpk__cal">' +
-          '<button type="button" class="dpk__nav dpk__nav--prev" data-step="-1" aria-label="Mois précédent"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>' +
-          '<button type="button" class="dpk__nav dpk__nav--next" data-step="1" aria-label="Mois suivant"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>' +
+          '<button type="button" class="dpk__nav dpk__nav--prev" data-step="-1" aria-label="' + t("Mois précédent", "Previous month") + '"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>' +
+          '<button type="button" class="dpk__nav dpk__nav--next" data-step="1" aria-label="' + t("Mois suivant", "Next month") + '"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>' +
           '<div class="dpk__months"></div>' +
         '</div>' +
       '</div>' +
       '<div class="dpk__foot"><p class="dpk__info" aria-live="polite"></p>' +
-        '<button type="button" class="dpk__clear">Effacer</button>' +
-        '<button type="button" class="btn btn--sm dpk__ok">Valider</button></div>';
+        '<button type="button" class="dpk__clear">' + t("Effacer", "Clear") + '</button>' +
+        '<button type="button" class="btn btn--sm dpk__ok">' + t("Valider", "Done") + '</button></div>';
     document.body.appendChild(dp);
     var bg = document.createElement("div"); bg.className = "dpk__bg"; bg.hidden = true; document.body.appendChild(bg);
     dp._bg = bg;
@@ -131,13 +136,13 @@
       var y = m.getFullYear(), mo = m.getMonth();
       var start = (m.getDay() + 6) % 7, days = new Date(y, mo + 1, 0).getDate();
       html += '<div class="dpk__m"><p class="dpk__mt">' + MONTHS[mo] + " " + y + '</p><table role="grid"><thead><tr>' +
-        DOW.map(function (d) { return '<th scope="col" abbr="' + d + '">' + d.charAt(0).toUpperCase() + d.slice(1, 2) + "</th>"; }).join("") + "</tr></thead><tbody><tr>";
+        DOW.map(function (d) { return '<th scope="col" abbr="' + d + '">' + d.charAt(0).toUpperCase() + d.slice(1, EN ? 2 : 2) + "</th>"; }).join("") + "</tr></thead><tbody><tr>";
       for (var c = 0; c < start; c++) html += "<td></td>";
       for (var d = 1; d <= days; d++) {
         var v = y + "-" + pad(mo + 1) + "-" + pad(d), md = v.slice(5);
         var closed = md < s.open || md > s.close;
         html += '<td data-v="' + v + '"><button type="button" class="dpk__d' + (closed ? " is-closed" : "") + (v === TODAY ? " is-today" : "") +
-          '" data-v="' + v + '" tabindex="-1" aria-label="' + fmtLong(v) + (closed ? ", fermé" : "") + '">' + d + "</button></td>";
+          '" data-v="' + v + '" tabindex="-1" aria-label="' + fmtLong(v) + (closed ? t(", fermé", ", closed") : "") + '">' + d + "</button></td>";
         if ((start + d) % 7 === 0 && d < days) html += "</tr><tr>";
       }
       html += "</tr></tbody></table></div>";
@@ -172,16 +177,16 @@
     if (!tb) tb = dp.querySelector('.dpk__d[aria-disabled="false"]');
     $$(".dpk__d", dp).forEach(function (b) { b.tabIndex = b === tb ? 0 : -1; });
 
-    $('[data-sum="a"]', dp).textContent = st.a ? fmtShort(st.a) : "Choisir";
-    $('[data-sum="d"]', dp).textContent = st.d ? fmtShort(st.d) : "Choisir";
+    $('[data-sum="a"]', dp).textContent = st.a ? fmtShort(st.a) : t("Choisir", "Select");
+    $('[data-sum="d"]', dp).textContent = st.d ? fmtShort(st.d) : t("Choisir", "Select");
     $$(".dpk__sum", dp).forEach(function (b) { b.classList.toggle("is-active", b.getAttribute("data-k") === st.k); });
     var info = $(".dpk__info", dp), sea = season(st.scope);
-    if (st.a && st.d) { var n = nights(st.a, st.d); info.innerHTML = "<b>" + n + (n > 1 ? " nuits" : " nuit") + "</b> · du " + fmt(st.a) + " au " + fmt(st.d); }
-    else if (st.a) info.textContent = "Choisissez maintenant votre date de départ.";
-    else info.textContent = "Choisissez votre date d'arrivée. Ouvert du " + label(sea.open) + " au " + label(sea.close) + ".";
+    if (st.a && st.d) { var n = nights(st.a, st.d); info.innerHTML = "<b>" + nn(n) + "</b> · " + range(st.a, st.d); }
+    else if (st.a) info.textContent = t("Choisissez maintenant votre date de départ.", "Now choose your check-out date.");
+    else info.textContent = t("Choisissez votre date d'arrivée. Ouvert du ", "Choose your check-in date. Open from ") + label(sea.open) + t(" au ", " to ") + label(sea.close) + ".";
     $(".dpk__ok", dp).disabled = !(st.a && st.d);
   }
-  function label(md) { var p = md.split("-"); return (+p[1] === 1 ? "1er" : +p[1]) + " " + MONTHS[+p[0] - 1]; }
+  function label(md) { var p = md.split("-"); return (+p[1] === 1 && !EN ? "1er" : +p[1]) + " " + MONTHS[+p[0] - 1]; }
 
   function pick(v) {
     var s = season(st.scope);
@@ -250,12 +255,12 @@
     var A = $("[name=arrivee]", scope), D = $("[name=depart]", scope), out = $("[data-nights]", scope);
     function show() {
       var va = $('[data-dp-val="a"]', scope), vd = $('[data-dp-val="d"]', scope);
-      if (va) { va.textContent = A.value ? fmtShort(A.value) : "Ajouter une date"; va.classList.toggle("is-set", !!A.value); }
-      if (vd) { vd.textContent = D.value ? fmtShort(D.value) : "Ajouter une date"; vd.classList.toggle("is-set", !!D.value); }
+      if (va) { va.textContent = A.value ? fmtShort(A.value) : t("Ajouter une date", "Add a date"); va.classList.toggle("is-set", !!A.value); }
+      if (vd) { vd.textContent = D.value ? fmtShort(D.value) : t("Ajouter une date", "Add a date"); vd.classList.toggle("is-set", !!D.value); }
       if (A.value) { var w = $('[data-dp-open="a"]', scope); w && w.parentNode.removeAttribute("aria-invalid"); }
       if (D.value) { var w2 = $('[data-dp-open="d"]', scope); w2 && w2.parentNode.removeAttribute("aria-invalid"); }
       if (out) {
-        if (A.value && D.value && D.value > A.value) { var n = nights(A.value, D.value); out.textContent = n + (n > 1 ? " nuits" : " nuit") + " · du " + fmt(A.value) + " au " + fmt(D.value); }
+        if (A.value && D.value && D.value > A.value) { var n = nights(A.value, D.value); out.textContent = nn(n) + " · " + range(A.value, D.value); }
         else out.textContent = out.getAttribute("data-empty") || "";
       }
     }
@@ -279,8 +284,10 @@
       if (!price) { out.textContent = ""; return; }
       if (A && D && A.value && D.value && D.value > A.value) {
         var n = nights(A.value, D.value);
-        out.textContent = (cb.checked ? "Ajouté : " : "Soit ") + (price * p * n) + " € pour " + p + " pers. et " + n + (n > 1 ? " matins" : " matin");
-      } else out.textContent = cb.checked ? "Ajouté à votre demande" : "";
+        out.textContent = EN
+          ? (cb.checked ? "Added: €" : "That is €") + (price * p * n) + " for " + p + (p > 1 ? " guests" : " guest") + " and " + n + (n > 1 ? " mornings" : " morning")
+          : (cb.checked ? "Ajouté : " : "Soit ") + (price * p * n) + " € pour " + p + " pers. et " + n + (n > 1 ? " matins" : " matin");
+      } else out.textContent = cb.checked ? t("Ajouté à votre demande", "Added to your request") : "";
     }
     sc.addEventListener("change", upd); upd();
   });
@@ -297,7 +304,7 @@
         var ok = (cat === "all" || r.dataset.cat === cat || (" " + r.dataset.tags + " ").indexOf(" " + cat + " ") > -1) && (+r.dataset.max >= guests);
         r.hidden = !ok; if (ok) n++;
       });
-      if (count) count.textContent = n + (n > 1 ? " logements" : " logement");
+      if (count) count.textContent = n + (EN ? (n > 1 ? " rooms" : " room") : (n > 1 ? " logements" : " logement"));
       if (empty) empty.hidden = n !== 0;
     }
     $$("[data-filter-cat], [data-filter-tag]").forEach(function (b, i, all) {
@@ -382,9 +389,9 @@
       if (a && d && d > a) {
         var n = nights(a, d);
         var ch = form.elements.chambre;
-        var label = ch && ch.value ? ch.options[ch.selectedIndex].text.replace(/ \(\d pers\.\)$/, "") : "Logement à conseiller";
-        summary.innerHTML = "<strong>" + n + (n > 1 ? " nuits" : " nuit") + "</strong> · du " + fmt(a) + " au " + fmt(d) +
-          " · " + form.elements.personnes.value + " pers. · " + label + (form.elements.petitdej.checked ? " · petit-déjeuner inclus" : "");
+        var label = ch && ch.value ? ch.options[ch.selectedIndex].text.replace(/ \(\d (pers\.|guests?)\)$/, "") : t("Logement à conseiller", "Room to be recommended");
+        summary.innerHTML = "<strong>" + nn(n) + "</strong> · " + range(a, d) +
+          " · " + form.elements.personnes.value + t(" pers. · ", (+form.elements.personnes.value > 1 ? " guests · " : " guest · ")) + label + (form.elements.petitdej.checked ? t(" · petit-déjeuner inclus", " · breakfast included") : "");
         summary.classList.add("is-on");
       } else summary.classList.remove("is-on");
     }
@@ -409,8 +416,18 @@
       }
       if (bad) { bad.focus(); return; }
       var E = form.elements;
-      var ch = E.chambre.value ? E.chambre.options[E.chambre.selectedIndex].text.replace(/ \(\d pers\.\)$/, "") : "À conseiller";
-      var body = [
+      var ch = E.chambre.value ? E.chambre.options[E.chambre.selectedIndex].text.replace(/ \(\d (pers\.|guests?)\)$/, "") : t("À conseiller", "Please recommend one");
+      var body = EN ? [
+        "Hello,", "",
+        "I would like to know your availability and price for:",
+        "- Check-in: " + fmt(E.arrivee.value),
+        "- Check-out: " + fmt(E.depart.value) + " (" + nn(nights(E.arrivee.value, E.depart.value)) + ")",
+        "- Guests: " + E.personnes.value,
+        "- Room: " + ch,
+        "- Breakfast: " + (E.petitdej.checked ? "yes" : "no"), "",
+        E.message.value ? E.message.value + "\n" : "",
+        E.nom.value, E.email.value, E.tel.value
+      ].join("\n") : [
         "Bonjour,", "",
         "Je souhaite connaître vos disponibilités et le tarif pour :",
         "- Arrivée : " + fmt(E.arrivee.value),
@@ -421,18 +438,18 @@
         E.message.value ? E.message.value + "\n" : "",
         E.nom.value, E.email.value, E.tel.value
       ].join("\n");
-      var subject = "Demande de réservation – " + fmt(E.arrivee.value) + " – " + E.nom.value;
+      var subject = t("Demande de réservation – ", "Booking request (EN) – ") + fmt(E.arrivee.value) + " – " + E.nom.value;
       var ok = $(".form__ok"), btn = $("button[type=submit]", form);
       function viaMail() {
         window.location.href = "mailto:" + form.dataset.to + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
         ok.classList.add("is-on");
       }
       if (form.dataset.endpoint && window.fetch) {
-        btn.disabled = true; btn.textContent = "Envoi en cours…";
+        btn.disabled = true; btn.textContent = t("Envoi en cours…", "Sending…");
         fetch(form.dataset.endpoint, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
           body: JSON.stringify({ _subject: subject, email: E.email.value, message: body }) })
-          .then(function (r) { if (!r.ok) throw r; form.hidden = true; ok.innerHTML = "<b>Merci, votre demande est bien envoyée.</b> Nous revenons vers vous personnellement par e-mail."; ok.classList.add("is-on"); ok.focus(); })
-          .catch(function () { btn.disabled = false; btn.textContent = "Envoyer ma demande"; viaMail(); });
+          .then(function (r) { if (!r.ok) throw r; form.hidden = true; ok.innerHTML = t("<b>Merci, votre demande est bien envoyée.</b> Nous revenons vers vous personnellement par e-mail.", "<b>Thank you, your request has been sent.</b> We will get back to you personally by email."); ok.classList.add("is-on"); ok.focus(); })
+          .catch(function () { btn.disabled = false; btn.textContent = t("Envoyer ma demande", "Send my request"); viaMail(); });
       } else viaMail();
     });
     $$("input, select, textarea", form).forEach(function (f) { f.addEventListener("input", function () { if (f.getAttribute("aria-invalid") === "true" && f.checkValidity()) f.setAttribute("aria-invalid", "false"); }); });

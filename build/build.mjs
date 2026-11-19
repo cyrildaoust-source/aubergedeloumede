@@ -191,13 +191,20 @@ const roomOptions = (selected = "") =>
   `<option value="">Je souhaite être conseillé</option>` +
   ROOMS.map((r) => `<option value="${r.slug}"${r.slug === selected ? " selected" : ""}>${esc(r.nom)} (${r.personnes_max} pers.)</option>`).join("");
 
+// Sélecteur de dates : un seul calendrier pour l'arrivée et le départ (assets/js/main.js > Calendrier).
+const SEASON = { open: "05-01", close: "10-04" };
+const dpAttrs = `data-dp data-open="${SEASON.open}" data-close="${SEASON.close}"`;
+const dateBtn = (id, which, label, wrapCls = "") => `<div class="${wrapCls}"><span class="dp__lbl" id="${id}-l">${label}</span><button type="button" class="dp__btn" id="${id}" data-dp-open="${which}" aria-haspopup="dialog" aria-expanded="false" aria-labelledby="${id}-l ${id}-v"><span class="dp__val" id="${id}-v" data-dp-val="${which}">Ajouter une date</span></button></div>`;
+const dateHidden = `<input type="hidden" name="arrivee"><input type="hidden" name="depart">`;
+
 const guestOptions = (sel = 2, max = 4) =>
   Array.from({ length: max }, (_, i) => i + 1).map((n) => `<option value="${n}"${n === sel ? " selected" : ""}>${n} ${n > 1 ? "voyageurs" : "voyageur"}</option>`).join("");
 
 /* ------------------------------------------------------------------ */
 /* Blocs réutilisables                                                */
 /* ------------------------------------------------------------------ */
-const roomCard = (r, base) => `<article class="room" data-cat="${r.categorie}" data-max="${r.personnes_max}">
+const roomTags = (r) => [r.categorie === "Double" ? "chambre" : r.categorie.toLowerCase(), r.personnes_max >= 3 ? "famille" : "", hasKitchen(r) ? "cuisine" : ""].filter(Boolean).join(" ");
+const roomCard = (r, base) => `<article class="room" data-cat="${r.categorie}" data-max="${r.personnes_max}" data-tags="${roomTags(r)}">
   <span class="room__tag">${r.categorie === "Double" ? "Chambre" : r.categorie} · ${r.surface_m2} m²</span>
   ${img(base, cover(r), `${r.nom}, Auberge de l'Oumède`, { cls: "room__media", sizes: "(max-width:620px) 82vw, 33vw" })}
   <h3><a href="${base}chambres/${r.slug}.html">${esc(shortName(r))}</a></h3>
@@ -256,6 +263,15 @@ const FAQ = [
 const faqBlock = () => `<div class="faq">${FAQ.map(([q, a], i) => `<details${i === 0 ? " open" : ""}><summary>${q}</summary><p>${a}</p></details>`).join("")}</div>`;
 const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: FAQ.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) };
 
+// Option petit-déjeuner proposée au moment de réserver (total calculé selon nuits et voyageurs).
+const BF_PRICE = TF.petit_dejeuner?.prix_par_personne || 0;
+const breakfastOption = (base, id) => `<label class="upsell" for="${id}-pd">
+  <input type="checkbox" id="${id}-pd" name="petitdej" value="1" data-bf="${BF_PRICE}">
+  <span class="upsell__img">${exists(PH.intro2) ? `<img ${srcAttrs(base, PH.intro2, "96px")} alt="" loading="lazy" decoding="async">` : ""}</span>
+  <span class="upsell__txt"><b>Ajouter le petit-déjeuner</b><span>En terrasse, entre piscine et vignes${BF_PRICE ? ` · ${BF_PRICE} € par personne et par jour` : ""}</span><span class="upsell__total" data-bf-total></span></span>
+  <span class="upsell__box" aria-hidden="true">${icon("check", "icon--sm")}</span>
+</label>`;
+
 const ctaBand = (base) => `<section class="section section--tight"><div class="wrap">
   ${orn("orn--center")}
   <div class="cta">
@@ -289,9 +305,10 @@ function home() {
     <a class="score-pill hero__badges" href="#avis"><b>${num(B.note_globale)}</b><span>${B.mention} · ${B.nombre_avis} avis Booking</span></a>
     <h1 id="h-hero">Entre vignes et mer, <em>le calme absolu</em> à Ramatuelle</h1>
     <p class="hero__sub">Un hôtel de charme avec piscine chauffée, à 6 km de Saint-Tropez : sept chambres, studio et suites, chacun avec sa terrasse privative.</p>
-    <form class="bookbar" action="contact.html" method="get" data-dates data-search aria-label="Vérifier les disponibilités">
-      <div class="bookbar__f"><label for="h-a">Arrivée</label><input id="h-a" type="date" name="arrivee" required></div>
-      <div class="bookbar__f"><label for="h-d">Départ</label><input id="h-d" type="date" name="depart" required></div>
+    <form class="bookbar" action="contact.html" method="get" data-dates data-search ${dpAttrs} aria-label="Vérifier les disponibilités">
+      ${dateHidden}
+      ${dateBtn("h-a", "a", "Arrivée", "bookbar__f")}
+      ${dateBtn("h-d", "d", "Départ", "bookbar__f")}
       <div class="bookbar__f"><label for="h-p">Voyageurs</label><select id="h-p" name="personnes">${guestOptions(2)}</select></div>
       <div class="bookbar__f bookbar__f--wide"><label for="h-c">Logement</label><select id="h-c" name="chambre"><option value="">Tous les logements</option>${ROOMS.map((r) => `<option value="${r.slug}">${esc(shortName(r))}</option>`).join("")}</select></div>
       <button class="btn" type="submit">${icon("calendar", "icon--sm")} Vérifier les dates</button>
@@ -337,10 +354,19 @@ function home() {
 <section class="section section--sand" id="chambres" aria-labelledby="h-rooms">
   <div class="wrap">
     <div class="section__head">
-      <div><h2 id="h-rooms">Choisissez votre <em>logement</em></h2><p>Toutes nos chambres ouvrent sur une terrasse privative, avec climatisation, Wi-Fi et accès à la piscine.</p></div>
-      <a class="link" href="chambres.html">Comparer les 7 logements ${icon("arrow", "icon--sm")}</a>
+      <div><h2 id="h-rooms">Choisissez votre <em>logement</em></h2><p>Sept logements, tous avec terrasse privative, climatisation, Wi-Fi et accès à la piscine.</p></div>
     </div>
-    <div class="rooms rooms--scroll">${ROOMS.slice(0, 6).map((r) => roomCard(r, base)).join("")}</div>
+    <div class="filters filters--home">
+      <div class="chips" role="group" aria-label="Filtrer les logements">
+        <button class="chip" type="button" data-filter-tag="all" aria-pressed="true">Tous <span class="chip__n">${ROOMS.length}</span></button>
+        <button class="chip" type="button" data-filter-tag="chambre" aria-pressed="false">Chambres doubles <span class="chip__n">${ROOMS.filter((r) => r.categorie === "Double").length}</span></button>
+        <button class="chip" type="button" data-filter-tag="famille" aria-pressed="false">En famille, 3 à 4 pers. <span class="chip__n">${ROOMS.filter((r) => r.personnes_max >= 3).length}</span></button>
+        <button class="chip" type="button" data-filter-tag="cuisine" aria-pressed="false">Avec cuisine <span class="chip__n">${ROOMS.filter(hasKitchen).length}</span></button>
+      </div>
+      <div class="rail__nav"><button class="iconbtn" type="button" data-rail="-1" aria-label="Logements précédents">${icon("arrow", "icon--sm flip")}</button><button class="iconbtn" type="button" data-rail="1" aria-label="Logements suivants">${icon("arrow", "icon--sm")}</button></div>
+    </div>
+    <div class="rooms rooms--rail" data-rooms>${ROOMS.map((r) => roomCard(r, base)).join("")}</div>
+    <p class="rooms__more"><a class="link" href="chambres.html#comparatif">Comparer surfaces, lits et cuisine dans le tableau ${icon("arrow", "icon--sm")}</a></p>
   </div>
 </section>
 
@@ -432,6 +458,7 @@ function roomsPage() {
       <label class="sr" for="f-g">Nombre de voyageurs</label>
       <select class="chip" id="f-g" data-filter-guests><option value="0">Tous les voyageurs</option>${[1, 2, 3, 4].map((n) => `<option value="${n}">${n} voyageur${n > 1 ? "s" : ""} ou +</option>`).join("")}</select>
       <span class="filters__count" data-rooms-count aria-live="polite"></span>
+      <a class="link" href="#comparatif">Tableau comparatif</a>
     </div>
   </div>
   <h2 class="sr">Liste des logements</h2>
@@ -439,7 +466,7 @@ function roomsPage() {
   <div class="empty" data-rooms-empty hidden><p>Aucun logement ne correspond. Pour plus de 4 voyageurs, réservez deux logements : <a class="link" href="contact.html">écrivez-nous</a>.</p></div>
 </div></section>
 
-<section class="section section--sand" aria-labelledby="h-cmp"><div class="wrap">
+<section class="section section--sand" id="comparatif" aria-labelledby="h-cmp"><div class="wrap">
   <div class="section__head"><div><h2 id="h-cmp">Les 7 logements <em>en un coup d'œil</em></h2></div></div>
   <div class="table-scroll" tabindex="0" role="region" aria-label="Tableau comparatif des logements">
   <table class="compare">
@@ -523,15 +550,17 @@ function roomPage(r, i) {
     </section>
   </div>
   <aside class="rd__aside" aria-label="Demande de réservation">
-    <form class="bookcard" action="../contact.html" method="get" data-dates data-search>
+    <form class="bookcard" action="../contact.html" method="get" data-dates data-search ${dpAttrs}>
       <div class="bookcard__price"><strong>${priceOf(r.slug) ? `${priceOf(r.slug)} € <small>/ nuit</small>` : GLOBAL_FROM ? `${FROM_LABEL} <small>/ nuit</small>` : "Tarif selon vos dates"}</strong><a class="bookcard__score" href="#avis">${icon("star", "icon--sm")} ${num(B.note_globale)} <span class="muted">(${B.nombre_avis})</span></a></div>
       ${!priceOf(r.slug) && GLOBAL_FROM ? `<p class="bookcard__hint">Prix indicatif selon la saison et le logement (de ${GLOBAL_FROM} à ${num(TF.jusqu_a_global)} € la nuit). Tarif exact avec notre réponse.</p>` : ""}
       <input type="hidden" name="chambre" value="${r.slug}">
+      ${dateHidden}
       <div class="fields">
-        <div><label for="b-a">Arrivée</label><input id="b-a" type="date" name="arrivee" required></div>
-        <div><label for="b-d">Départ</label><input id="b-d" type="date" name="depart" required></div>
+        ${dateBtn("b-a", "a", "Arrivée")}
+        ${dateBtn("b-d", "d", "Départ")}
         <div><label for="b-p">Voyageurs</label><select id="b-p" name="personnes">${guestOptions(Math.min(2, r.personnes_max), r.personnes_max)}</select></div>
       </div>
+      ${breakfastOption(base, "b")}
       <button class="btn btn--block" type="submit">Vérifier la disponibilité</button>
       <p class="bookcard__nights" data-nights data-empty="Sans engagement · aucun paiement à cette étape"></p>
       <ul class="bookcard__list">
@@ -641,10 +670,11 @@ function contactPage() {
 </div></section>
 <section class="section" style="padding-top:0"><div class="wrap contact">
   <div class="contact-card">
-    <form id="resa" class="form" data-dates data-to="${C.email}"${site.formulaire_endpoint ? ` data-endpoint="${site.formulaire_endpoint}"` : ""} novalidate>
+    <form id="resa" class="form" data-dates ${dpAttrs} data-to="${C.email}"${site.formulaire_endpoint ? ` data-endpoint="${site.formulaire_endpoint}"` : ""} novalidate>
       <!-- Pour recevoir les demandes sans passer par la messagerie du client : ajouter "formulaire_endpoint" (ex. Formspree) dans content/site.json -->
-      <div class="field"><label for="c-a">Arrivée</label><input id="c-a" type="date" name="arrivee" required><p class="err">Choisissez une date d'arrivée.</p></div>
-      <div class="field"><label for="c-d">Départ</label><input id="c-d" type="date" name="depart" required><p class="err">Choisissez une date de départ après l'arrivée.</p></div>
+      ${dateHidden}
+      <div class="field field--dp">${dateBtn("c-a", "a", "Arrivée")}<p class="err">Choisissez une date d'arrivée.</p></div>
+      <div class="field field--dp">${dateBtn("c-d", "d", "Départ")}<p class="err">Choisissez une date de départ après l'arrivée.</p></div>
       <div class="field"><label for="c-p">Voyageurs</label><select id="c-p" name="personnes">${guestOptions(2, 4)}</select></div>
       <div class="field"><label for="c-c">Logement</label><select id="c-c" name="chambre">${roomOptions()}</select></div>
       <div class="form__summary" aria-live="polite"></div>
@@ -652,7 +682,7 @@ function contactPage() {
       <div class="field"><label for="c-e">E-mail</label><input id="c-e" type="email" name="email" autocomplete="email" required><p class="err">Indiquez un e-mail valide.</p></div>
       <div class="field full"><label for="c-t">Téléphone <small>(facultatif)</small></label><input id="c-t" type="tel" name="tel" autocomplete="tel"></div>
       <div class="field full"><label for="c-m">Message <small>(facultatif)</small></label><textarea id="c-m" name="message" placeholder="Heure d'arrivée prévue, occasion particulière, réservation de plage…"></textarea></div>
-      <label class="full" style="display:flex;gap:10px;align-items:center;font-size:.95rem"><input type="checkbox" name="petitdej" style="width:20px;height:20px"> Je souhaite le petit-déjeuner</label>
+      <div class="full">${breakfastOption("", "c")}</div>
       <div class="full"><button class="btn btn--block" type="submit">Envoyer ma demande ${icon("arrow", "icon--sm")}</button>
       <p class="note" style="margin:10px 0 0;text-align:center">Votre messagerie s'ouvre avec la demande prête à envoyer. Vos données ne servent qu'à vous répondre.</p></div>
     </form>

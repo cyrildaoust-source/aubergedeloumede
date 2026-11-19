@@ -52,9 +52,10 @@
     <a class="score-pill hero__badges" href="#avis"><b>8,9</b><span>Superbe · 60 avis Booking</span></a>
     <h1 id="h-hero">Entre vignes et mer, <em>le calme absolu</em> à Ramatuelle</h1>
     <p class="hero__sub">Un hôtel de charme avec piscine chauffée, à 6 km de Saint-Tropez : sept chambres, studio et suites, chacun avec sa terrasse privative.</p>
-    <form class="bookbar" action="contact.html" method="get" data-dates data-search aria-label="Vérifier les disponibilités">
-      <div class="bookbar__f"><label for="h-a">Arrivée</label><input id="h-a" type="date" name="arrivee" required></div>
-      <div class="bookbar__f"><label for="h-d">Départ</label><input id="h-d" type="date" name="depart" required></div>
+    <form class="bookbar" action="contact.html" method="get" data-dates data-search data-dp data-open="05-01" data-close="10-04" aria-label="Vérifier les disponibilités">
+      <input type="hidden" name="arrivee"><input type="hidden" name="depart">
+      <div class="bookbar__f"><span class="dp__lbl" id="h-a-l">Arrivée</span><button type="button" class="dp__btn" id="h-a" data-dp-open="a" aria-haspopup="dialog" aria-expanded="false" aria-labelledby="h-a-l h-a-v"><span class="dp__val" id="h-a-v" data-dp-val="a">Ajouter une date</span></button></div>
+      <div class="bookbar__f"><span class="dp__lbl" id="h-d-l">Départ</span><button type="button" class="dp__btn" id="h-d" data-dp-open="d" aria-haspopup="dialog" aria-expanded="false" aria-labelledby="h-d-l h-d-v"><span class="dp__val" id="h-d-v" data-dp-val="d">Ajouter une date</span></button></div>
       <div class="bookbar__f"><label for="h-p">Voyageurs</label><select id="h-p" name="personnes"><option value="1">1 voyageur</option><option value="2" selected>2 voyageurs</option><option value="3">3 voyageurs</option><option value="4">4 voyageurs</option></select></div>
       <div class="bookbar__f bookbar__f--wide"><label for="h-c">Logement</label><select id="h-c" name="chambre"><option value="">Tous les logements</option><option value="chambre-1-double-standard">Chambre 1 · Double Standard</option><option value="chambre-2-double-standard">Chambre 2 · Double Standard</option><option value="chambre-3-double-superieure-triple">Chambre 3 · Double Supérieure / Triple</option><option value="chambre-4-double-superieure">Chambre 4 · Double Supérieure</option><option value="studio">Studio</option><option value="suite-junior">Suite Junior</option><option value="suite-de-l-oumede">Suite de L'Oumède</option></select></div>
       <button class="btn" type="submit"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Vérifier les dates</button>
@@ -100,10 +101,18 @@
 <section class="section section--sand" id="chambres" aria-labelledby="h-rooms">
   <div class="wrap">
     <div class="section__head">
-      <div><h2 id="h-rooms">Choisissez votre <em>logement</em></h2><p>Toutes nos chambres ouvrent sur une terrasse privative, avec climatisation, Wi-Fi et accès à la piscine.</p></div>
-      <a class="link" href="chambres.html">Comparer les 7 logements <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div><h2 id="h-rooms">Choisissez votre <em>logement</em></h2><p>Sept logements, tous avec terrasse privative, climatisation, Wi-Fi et accès à la piscine.</p></div>
     </div>
-    <div class="rooms rooms--scroll"><article class="room" data-cat="Double" data-max="2">
+    <div class="filters filters--home">
+      <div class="chips" role="group" aria-label="Filtrer les logements">
+        <button class="chip" type="button" data-filter-tag="all" aria-pressed="true">Tous <span class="chip__n">7</span></button>
+        <button class="chip" type="button" data-filter-tag="chambre" aria-pressed="false">Chambres doubles <span class="chip__n">4</span></button>
+        <button class="chip" type="button" data-filter-tag="famille" aria-pressed="false">En famille, 3 à 4 pers. <span class="chip__n">2</span></button>
+        <button class="chip" type="button" data-filter-tag="cuisine" aria-pressed="false">Avec cuisine <span class="chip__n">3</span></button>
+      </div>
+      <div class="rail__nav"><button class="iconbtn" type="button" data-rail="-1" aria-label="Logements précédents"><svg class="icon icon--sm flip" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><button class="iconbtn" type="button" data-rail="1" aria-label="Logements suivants"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+    </div>
+    <div class="rooms rooms--rail" data-rooms><article class="room" data-cat="Double" data-max="2" data-tags="chambre">
   <span class="room__tag">Chambre · 28 m²</span>
   <div class="ph room__media" data-label="Chambre 1 – Double Standard, Auberge de l'Oumède"><img src="assets/photos/booking/double-standard/chambre-687907381.jpg" srcset="assets/img/booking/double-standard/chambre-687907381-640.webp 640w, assets/photos/booking/double-standard/chambre-687907381.jpg 1086w" sizes="(max-width:620px) 82vw, 33vw" width="1086" height="723" alt="Chambre 1 – Double Standard, Auberge de l'Oumède" loading="lazy" decoding="async" onerror="this.classList.add('is-missing')"></div>
   <h3><a href="chambres/chambre-1-double-standard.html">Chambre 1 · Double Standard</a></h3>
@@ -114,7 +123,7 @@
   </div>
   <div class="room__view">Terrasse privative · vue sur la piscine et le jardin</div>
   <div class="room__foot"><span class="room__price">Tarif selon dates</span><span class="room__more">Voir <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-</article><article class="room" data-cat="Double" data-max="2">
+</article><article class="room" data-cat="Double" data-max="2" data-tags="chambre">
   <span class="room__tag">Chambre · 28 m²</span>
   <div class="ph room__media" data-label="Chambre 2 – Double Standard, Auberge de l'Oumède"><img src="assets/photos/booking/double-standard/chambre-687907743.jpg" srcset="assets/img/booking/double-standard/chambre-687907743-640.webp 640w, assets/photos/booking/double-standard/chambre-687907743.jpg 1086w" sizes="(max-width:620px) 82vw, 33vw" width="1086" height="723" alt="Chambre 2 – Double Standard, Auberge de l'Oumède" loading="lazy" decoding="async" onerror="this.classList.add('is-missing')"></div>
   <h3><a href="chambres/chambre-2-double-standard.html">Chambre 2 · Double Standard</a></h3>
@@ -125,7 +134,7 @@
   </div>
   <div class="room__view">Terrasse privative · vue sur la piscine et le jardin</div>
   <div class="room__foot"><span class="room__price">Tarif selon dates</span><span class="room__more">Voir <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-</article><article class="room" data-cat="Double" data-max="3">
+</article><article class="room" data-cat="Double" data-max="3" data-tags="chambre famille">
   <span class="room__tag">Chambre · 35 m²</span>
   <div class="ph room__media" data-label="Chambre 3 – Double Supérieure / Triple, Auberge de l'Oumède"><img src="assets/photos/booking/double-superieure/chambre-687908112.jpg" srcset="assets/img/booking/double-superieure/chambre-687908112-640.webp 640w, assets/photos/booking/double-superieure/chambre-687908112.jpg 1086w" sizes="(max-width:620px) 82vw, 33vw" width="1086" height="723" alt="Chambre 3 – Double Supérieure / Triple, Auberge de l'Oumède" loading="lazy" decoding="async" onerror="this.classList.add('is-missing')"></div>
   <h3><a href="chambres/chambre-3-double-superieure-triple.html">Chambre 3 · Double Supérieure / Triple</a></h3>
@@ -136,7 +145,7 @@
   </div>
   <div class="room__view">Terrasse privative · vue sur la piscine et le jardin</div>
   <div class="room__foot"><span class="room__price">Tarif selon dates</span><span class="room__more">Voir <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-</article><article class="room" data-cat="Double" data-max="2">
+</article><article class="room" data-cat="Double" data-max="2" data-tags="chambre">
   <span class="room__tag">Chambre · 30 m²</span>
   <div class="ph room__media" data-label="Chambre 4 – Double Supérieure, Auberge de l'Oumède"><img src="assets/photos/booking/double-superieure/chambre-687908612.jpg" srcset="assets/img/booking/double-superieure/chambre-687908612-640.webp 640w, assets/photos/booking/double-superieure/chambre-687908612.jpg 723w" sizes="(max-width:620px) 82vw, 33vw" width="723" height="1086" alt="Chambre 4 – Double Supérieure, Auberge de l'Oumède" loading="lazy" decoding="async" onerror="this.classList.add('is-missing')"></div>
   <h3><a href="chambres/chambre-4-double-superieure.html">Chambre 4 · Double Supérieure</a></h3>
@@ -147,7 +156,7 @@
   </div>
   <div class="room__view">Terrasse privative · vue sur la piscine et le jardin</div>
   <div class="room__foot"><span class="room__price">Tarif selon dates</span><span class="room__more">Voir <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-</article><article class="room" data-cat="Studio" data-max="2">
+</article><article class="room" data-cat="Studio" data-max="2" data-tags="studio cuisine">
   <span class="room__tag">Studio · 25 m²</span>
   <div class="ph room__media" data-label="Studio, Auberge de l'Oumède"><img src="assets/photos/booking/studio/chambre-687909108.jpg" srcset="assets/img/booking/studio/chambre-687909108-640.webp 640w, assets/photos/booking/studio/chambre-687909108.jpg 1086w" sizes="(max-width:620px) 82vw, 33vw" width="1086" height="723" alt="Studio, Auberge de l'Oumède" loading="lazy" decoding="async" onerror="this.classList.add('is-missing')"></div>
   <h3><a href="chambres/studio.html">Studio</a></h3>
@@ -158,7 +167,7 @@
   </div>
   <div class="room__view">Terrasse privative · vue sur la piscine</div>
   <div class="room__foot"><span class="room__price">Tarif selon dates</span><span class="room__more">Voir <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-</article><article class="room" data-cat="Suite" data-max="2">
+</article><article class="room" data-cat="Suite" data-max="2" data-tags="suite cuisine">
   <span class="room__tag">Suite · 40 m²</span>
   <div class="ph room__media" data-label="Suite Junior, Auberge de l'Oumède"><img src="assets/photos/booking/suite-junior/jardin-687907154.jpg" srcset="assets/img/booking/suite-junior/jardin-687907154-640.webp 640w, assets/photos/booking/suite-junior/jardin-687907154.jpg 1086w" sizes="(max-width:620px) 82vw, 33vw" width="1086" height="723" alt="Suite Junior, Auberge de l'Oumède" loading="lazy" decoding="async" onerror="this.classList.add('is-missing')"></div>
   <h3><a href="chambres/suite-junior.html">Suite Junior</a></h3>
@@ -169,7 +178,19 @@
   </div>
   <div class="room__view">Terrasse privative · vue sur les jardins</div>
   <div class="room__foot"><span class="room__price">Tarif selon dates</span><span class="room__more">Voir <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+</article><article class="room" data-cat="Suite" data-max="4" data-tags="suite famille cuisine">
+  <span class="room__tag">Suite · 57 m²</span>
+  <div class="ph room__media" data-label="Suite de L'Oumède, Auberge de l'Oumède"><img src="assets/photos/booking/etablissement/jardin-687907000.jpg" srcset="assets/img/booking/etablissement/jardin-687907000-640.webp 640w, assets/photos/booking/etablissement/jardin-687907000.jpg 1086w" sizes="(max-width:620px) 82vw, 33vw" width="1086" height="723" alt="Suite de L'Oumède, Auberge de l'Oumède" loading="lazy" decoding="async" onerror="this.classList.add('is-missing')"></div>
+  <h3><a href="chambres/suite-de-l-oumede.html">Suite de L'Oumède</a></h3>
+  <div class="room__meta">
+    <span><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> 4 pers.</span>
+    <span><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg> Lit 160 cm + Canapé-lit 160 cm</span>
+    <span><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 2v7c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2V2M6 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg> Cuisine équipée</span>
+  </div>
+  <div class="room__view">Terrasse privative · vue sur les vignes et le jardin</div>
+  <div class="room__foot"><span class="room__price">Tarif selon dates</span><span class="room__more">Voir <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
 </article></div>
+    <p class="rooms__more"><a class="link" href="chambres.html#comparatif">Comparer surfaces, lits et cuisine dans le tableau <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
   </div>
 </section>
 

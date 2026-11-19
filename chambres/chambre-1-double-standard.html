@@ -124,15 +124,22 @@
     </section>
   </div>
   <aside class="rd__aside" aria-label="Demande de réservation">
-    <form class="bookcard" action="../contact.html" method="get" data-dates data-search>
+    <form class="bookcard" action="../contact.html" method="get" data-dates data-search data-dp data-open="05-01" data-close="10-04">
       <div class="bookcard__price"><strong>Dès 370 € <small>/ nuit</small></strong><a class="bookcard__score" href="#avis"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> 8,9 <span class="muted">(60)</span></a></div>
       <p class="bookcard__hint">Prix indicatif selon la saison et le logement (de 370 à 1650 € la nuit). Tarif exact avec notre réponse.</p>
       <input type="hidden" name="chambre" value="chambre-1-double-standard">
+      <input type="hidden" name="arrivee"><input type="hidden" name="depart">
       <div class="fields">
-        <div><label for="b-a">Arrivée</label><input id="b-a" type="date" name="arrivee" required></div>
-        <div><label for="b-d">Départ</label><input id="b-d" type="date" name="depart" required></div>
+        <div class=""><span class="dp__lbl" id="b-a-l">Arrivée</span><button type="button" class="dp__btn" id="b-a" data-dp-open="a" aria-haspopup="dialog" aria-expanded="false" aria-labelledby="b-a-l b-a-v"><span class="dp__val" id="b-a-v" data-dp-val="a">Ajouter une date</span></button></div>
+        <div class=""><span class="dp__lbl" id="b-d-l">Départ</span><button type="button" class="dp__btn" id="b-d" data-dp-open="d" aria-haspopup="dialog" aria-expanded="false" aria-labelledby="b-d-l b-d-v"><span class="dp__val" id="b-d-v" data-dp-val="d">Ajouter une date</span></button></div>
         <div><label for="b-p">Voyageurs</label><select id="b-p" name="personnes"><option value="1">1 voyageur</option><option value="2" selected>2 voyageurs</option></select></div>
       </div>
+      <label class="upsell" for="b-pd">
+  <input type="checkbox" id="b-pd" name="petitdej" value="1" data-bf="28">
+  <span class="upsell__img"><img src="../assets/photos/booking/etablissement/petit-dejeuner-687906421.jpg" srcset="../assets/img/booking/etablissement/petit-dejeuner-687906421-640.webp 640w, ../assets/photos/booking/etablissement/petit-dejeuner-687906421.jpg 723w" sizes="96px" width="723" height="1086" alt="" loading="lazy" decoding="async"></span>
+  <span class="upsell__txt"><b>Ajouter le petit-déjeuner</b><span>En terrasse, entre piscine et vignes · 28 € par personne et par jour</span><span class="upsell__total" data-bf-total></span></span>
+  <span class="upsell__box" aria-hidden="true"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg></span>
+</label>
       <button class="btn btn--block" type="submit">Vérifier la disponibilité</button>
       <p class="bookcard__nights" data-nights data-empty="Sans engagement · aucun paiement à cette étape"></p>
       <ul class="bookcard__list">
@@ -147,7 +154,7 @@
 </div>
 <section class="section section--sand" aria-labelledby="h-oth"><div class="wrap">
   <div class="section__head"><div><h2 id="h-oth">Les autres <em>logements</em></h2></div><a class="link" href="../chambres.html">Comparer les 7 logements <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-  <div class="rooms rooms--scroll"><article class="room" data-cat="Double" data-max="2">
+  <div class="rooms rooms--scroll"><article class="room" data-cat="Double" data-max="2" data-tags="chambre">
   <span class="room__tag">Chambre · 28 m²</span>
   <div class="ph room__media" data-label="Chambre 2 – Double Standard, Auberge de l'Oumède"><img src="../assets/photos/booking/double-standard/chambre-687907743.jpg" srcset="../assets/img/booking/double-standard/chambre-687907743-640.webp 640w, ../assets/photos/booking/double-standard/chambre-687907743.jpg 1086w" sizes="(max-width:620px) 82vw, 33vw" width="1086" height="723" alt="Chambre 2 – Double Standard, Auberge de l'Oumède" loading="lazy" decoding="async" onerror="this.classList.add('is-missing')"></div>
   <h3><a href="../chambres/chambre-2-double-standard.html">Chambre 2 · Double Standard</a></h3>
@@ -158,7 +165,7 @@
   </div>
   <div class="room__view">Terrasse privative · vue sur la piscine et le jardin</div>
   <div class="room__foot"><span class="room__price">Tarif selon dates</span><span class="room__more">Voir <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-</article><article class="room" data-cat="Double" data-max="2">
+</article><article class="room" data-cat="Double" data-max="2" data-tags="chambre">
   <span class="room__tag">Chambre · 30 m²</span>
   <div class="ph room__media" data-label="Chambre 4 – Double Supérieure, Auberge de l'Oumède"><img src="../assets/photos/booking/double-superieure/chambre-687908612.jpg" srcset="../assets/img/booking/double-superieure/chambre-687908612-640.webp 640w, ../assets/photos/booking/double-superieure/chambre-687908612.jpg 723w" sizes="(max-width:620px) 82vw, 33vw" width="723" height="1086" alt="Chambre 4 – Double Supérieure, Auberge de l'Oumède" loading="lazy" decoding="async" onerror="this.classList.add('is-missing')"></div>
   <h3><a href="../chambres/chambre-4-double-superieure.html">Chambre 4 · Double Supérieure</a></h3>
@@ -169,7 +176,7 @@
   </div>
   <div class="room__view">Terrasse privative · vue sur la piscine et le jardin</div>
   <div class="room__foot"><span class="room__price">Tarif selon dates</span><span class="room__more">Voir <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-</article><article class="room" data-cat="Studio" data-max="2">
+</article><article class="room" data-cat="Studio" data-max="2" data-tags="studio cuisine">
   <span class="room__tag">Studio · 25 m²</span>
   <div class="ph room__media" data-label="Studio, Auberge de l'Oumède"><img src="../assets/photos/booking/studio/chambre-687909108.jpg" srcset="../assets/img/booking/studio/chambre-687909108-640.webp 640w, ../assets/photos/booking/studio/chambre-687909108.jpg 1086w" sizes="(max-width:620px) 82vw, 33vw" width="1086" height="723" alt="Studio, Auberge de l'Oumède" loading="lazy" decoding="async" onerror="this.classList.add('is-missing')"></div>
   <h3><a href="../chambres/studio.html">Studio</a></h3>

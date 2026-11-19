@@ -53,10 +53,11 @@
 </div></section>
 <section class="section" style="padding-top:0"><div class="wrap contact">
   <div class="contact-card">
-    <form id="resa" class="form" data-dates data-to="contact@aubergedeloumede.com" novalidate>
+    <form id="resa" class="form" data-dates data-dp data-open="05-01" data-close="10-04" data-to="contact@aubergedeloumede.com" novalidate>
       <!-- Pour recevoir les demandes sans passer par la messagerie du client : ajouter "formulaire_endpoint" (ex. Formspree) dans content/site.json -->
-      <div class="field"><label for="c-a">Arrivée</label><input id="c-a" type="date" name="arrivee" required><p class="err">Choisissez une date d'arrivée.</p></div>
-      <div class="field"><label for="c-d">Départ</label><input id="c-d" type="date" name="depart" required><p class="err">Choisissez une date de départ après l'arrivée.</p></div>
+      <input type="hidden" name="arrivee"><input type="hidden" name="depart">
+      <div class="field field--dp"><div class=""><span class="dp__lbl" id="c-a-l">Arrivée</span><button type="button" class="dp__btn" id="c-a" data-dp-open="a" aria-haspopup="dialog" aria-expanded="false" aria-labelledby="c-a-l c-a-v"><span class="dp__val" id="c-a-v" data-dp-val="a">Ajouter une date</span></button></div><p class="err">Choisissez une date d'arrivée.</p></div>
+      <div class="field field--dp"><div class=""><span class="dp__lbl" id="c-d-l">Départ</span><button type="button" class="dp__btn" id="c-d" data-dp-open="d" aria-haspopup="dialog" aria-expanded="false" aria-labelledby="c-d-l c-d-v"><span class="dp__val" id="c-d-v" data-dp-val="d">Ajouter une date</span></button></div><p class="err">Choisissez une date de départ après l'arrivée.</p></div>
       <div class="field"><label for="c-p">Voyageurs</label><select id="c-p" name="personnes"><option value="1">1 voyageur</option><option value="2" selected>2 voyageurs</option><option value="3">3 voyageurs</option><option value="4">4 voyageurs</option></select></div>
       <div class="field"><label for="c-c">Logement</label><select id="c-c" name="chambre"><option value="">Je souhaite être conseillé</option><option value="chambre-1-double-standard">Chambre 1 – Double Standard (2 pers.)</option><option value="chambre-2-double-standard">Chambre 2 – Double Standard (2 pers.)</option><option value="chambre-3-double-superieure-triple">Chambre 3 – Double Supérieure / Triple (3 pers.)</option><option value="chambre-4-double-superieure">Chambre 4 – Double Supérieure (2 pers.)</option><option value="studio">Studio (2 pers.)</option><option value="suite-junior">Suite Junior (2 pers.)</option><option value="suite-de-l-oumede">Suite de L'Oumède (4 pers.)</option></select></div>
       <div class="form__summary" aria-live="polite"></div>
@@ -64,7 +65,12 @@
       <div class="field"><label for="c-e">E-mail</label><input id="c-e" type="email" name="email" autocomplete="email" required><p class="err">Indiquez un e-mail valide.</p></div>
       <div class="field full"><label for="c-t">Téléphone <small>(facultatif)</small></label><input id="c-t" type="tel" name="tel" autocomplete="tel"></div>
       <div class="field full"><label for="c-m">Message <small>(facultatif)</small></label><textarea id="c-m" name="message" placeholder="Heure d'arrivée prévue, occasion particulière, réservation de plage…"></textarea></div>
-      <label class="full" style="display:flex;gap:10px;align-items:center;font-size:.95rem"><input type="checkbox" name="petitdej" style="width:20px;height:20px"> Je souhaite le petit-déjeuner</label>
+      <div class="full"><label class="upsell" for="c-pd">
+  <input type="checkbox" id="c-pd" name="petitdej" value="1" data-bf="28">
+  <span class="upsell__img"><img src="assets/photos/booking/etablissement/petit-dejeuner-687906421.jpg" srcset="assets/img/booking/etablissement/petit-dejeuner-687906421-640.webp 640w, assets/photos/booking/etablissement/petit-dejeuner-687906421.jpg 723w" sizes="96px" width="723" height="1086" alt="" loading="lazy" decoding="async"></span>
+  <span class="upsell__txt"><b>Ajouter le petit-déjeuner</b><span>En terrasse, entre piscine et vignes · 28 € par personne et par jour</span><span class="upsell__total" data-bf-total></span></span>
+  <span class="upsell__box" aria-hidden="true"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg></span>
+</label></div>
       <div class="full"><button class="btn btn--block" type="submit">Envoyer ma demande <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       <p class="note" style="margin:10px 0 0;text-align:center">Votre messagerie s'ouvre avec la demande prête à envoyer. Vos données ne servent qu'à vous répondre.</p></div>
     </form>

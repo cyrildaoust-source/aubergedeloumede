@@ -37,12 +37,12 @@ const PH = {
 };
 const rank = (f) => /\/chambre-/.test(f) ? 0 : /salon|divers/.test(f) ? 1 : /jardin|environs/.test(f) ? 2 : 3;
 const roomPhotos = (r) => {
-  const own = (r.photos || []).filter(exists).sort((a, b) => rank(a) - rank(b));
+  const own = (r.photos || []).filter(exists).sort((a, b) => (b === r.couverture) - (a === r.couverture) || rank(a) - rank(b));
   const extra = own.length < 4 ? PH.estate.filter((x) => !own.includes(x)).slice(0, 5 - own.length) : [];
   return { list: [...own, ...extra], own: own.length, estate: extra.length };
 };
 // Couverture distincte pour chaque logement (évite deux cartes identiques)
-const COVER = {}; { const used = new Set(); for (const r of ROOMS) { const l = roomPhotos(r).list; const c = l.find((x) => !used.has(x)) || l[0]; used.add(c); COVER[r.slug] = c; } }
+const COVER = {}; { const used = new Set(); for (const r of ROOMS) { const l = roomPhotos(r).list; const c = (r.couverture && exists(r.couverture) && r.couverture) || l.find((x) => !used.has(x)) || l[0]; used.add(c); COVER[r.slug] = c; } }
 const cover = (r) => COVER[r.slug];
 const num = (n) => String(n).replace(".", ",");
 const C = site.contact;

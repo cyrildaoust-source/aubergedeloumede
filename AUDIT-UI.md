@@ -27,8 +27,15 @@ Passe complète sur les 8 gabarits (accueil, chambres, fiche logement, suite san
 11. Contact : icônes de tailles différentes qui décalaient les textes ; dates côte à côte sur mobile ; option petit-déjeuner sans vignette sur petit écran pour laisser respirer le texte.
 12. Bande crème sous le pied de page sur tablette et mobile : supprimée.
 
-## Ce qui reste (5 points)
+## Points restants appliqués (19 novembre, après-midi)
 
-- Photos : la plupart font 1086 px de large (copies Booking). Il faut les originaux HD pour la galerie plein écran.
-- Chambre 2 réutilise les photos de la Chambre 1 et la Suite de L'Oumède n'a aucune photo propre.
-- Tarif par logement : seul le « dès 370 € » global existe, les cartes affichent donc « Tarif selon dates ».
+- Photos HD : les 45 photos ont été retéléchargées depuis Booking à la plus grande taille disponible. 10 photos de l'établissement passent de 1150 à 2250-3000 px (piscine, jardin, salon). Les 35 autres sont déjà à la taille maximale que Booking conserve (723 à 1086 px) : seuls tes originaux feront mieux.
+- Suite de L'Oumède : 7 photos propres (salon, chambre, cuisine, salles de bains), tirées du type Booking « Suite avec Terrasse ».
+- Suite Junior : passe de 1 à 8 photos.
+- Chambre 4 : 9 nouvelles photos récentes en 2250 × 3000 px, et elle ne partage plus ses photos avec la Chambre 3.
+
+## Ce qui dépend encore de toi
+
+- Chambre 2 : Booking la range avec la Chambre 1 (« Double Standard ») sans photos à part. Il faut des photos à toi.
+- Tarif par logement : il manque la grille « à partir de » par logement ; le site l'affiche dès qu'elle est saisie dans content/tarifs.json.
+- Originaux HD des photos de chambres (723 à 1086 px sur Booking).

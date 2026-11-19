@@ -215,14 +215,19 @@
         "2023/05/687908166.jpg"
       ],
       "photos": [
+        "assets/photos/booking/double-superieure/chambre-868852986.jpg",
+        "assets/photos/booking/double-superieure/chambre-868853032.jpg",
+        "assets/photos/booking/double-superieure/chambre-868853320.jpg",
+        "assets/photos/booking/double-superieure/chambre-868852949.jpg",
+        "assets/photos/booking/double-superieure/chambre-868852969.jpg",
+        "assets/photos/booking/double-superieure/chambre-871061324.jpg",
+        "assets/photos/booking/double-superieure/chambre-871061649.jpg",
+        "assets/photos/booking/double-superieure/salle-de-bains-868853332.jpg",
+        "assets/photos/booking/double-superieure/salle-de-bains-868853346.jpg",
         "assets/photos/booking/double-superieure/environs-470727493.jpg",
         "assets/photos/booking/double-superieure/jardin-687906145.jpg",
         "assets/photos/booking/double-superieure/plan-687908064.jpg",
-        "assets/photos/booking/double-superieure/equipements-687908103.jpg",
-        "assets/photos/booking/double-superieure/chambre-687908112.jpg",
-        "assets/photos/booking/double-superieure/plan-687908125.jpg",
-        "assets/photos/booking/double-superieure/jardin-687908198.jpg",
-        "assets/photos/booking/double-superieure/chambre-687908612.jpg"
+        "assets/photos/booking/double-superieure/jardin-687908198.jpg"
       ]
     },
     {
@@ -322,6 +327,13 @@
         "2023/05/suite-oumede-780x520.jpg"
       ],
       "photos": [
+        "assets/photos/booking/suite-junior/chambre-687909984.jpg",
+        "assets/photos/booking/suite-junior/chambre-687909985.jpg",
+        "assets/photos/booking/suite-junior/salon-687909872.jpg",
+        "assets/photos/booking/suite-junior/salon-687909906.jpg",
+        "assets/photos/booking/suite-junior/salon-687909948.jpg",
+        "assets/photos/booking/suite-junior/cuisine-687909937.jpg",
+        "assets/photos/booking/suite-junior/jardin-687909999.jpg",
         "assets/photos/booking/suite-junior/jardin-687907154.jpg"
       ]
     },
@@ -371,7 +383,16 @@
         "2023/05/F1562A10-9600-4F82-AC7C-761C135ED4FD_1_105_c.jpeg",
         "2023/05/08854B69-053A-4F7C-89D4-B3C22F773F54_1_105_c.jpeg"
       ],
-      "photos": []
+      "photos": [
+        "assets/photos/booking/suite-terrasse/salon-687912176.jpg",
+        "assets/photos/booking/suite-terrasse/salon-687912179.jpg",
+        "assets/photos/booking/suite-terrasse/salon-687912188.jpg",
+        "assets/photos/booking/suite-terrasse/chambre-687912189.jpg",
+        "assets/photos/booking/suite-terrasse/cuisine-687912187.jpg",
+        "assets/photos/booking/suite-terrasse/salle-de-bains-687912399.jpg",
+        "assets/photos/booking/suite-terrasse/salle-de-bains-687912400.jpg"
+      ],
+      "couverture": "assets/photos/booking/suite-terrasse/salon-687912176.jpg"
     }
   ]
 }

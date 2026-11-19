@@ -68,15 +68,15 @@
         '<button type="button" class="dpk__sum" data-k="a"><small>Arrivée</small><b data-sum="a"></b></button>' +
         '<span class="dpk__to" aria-hidden="true"></span>' +
         '<button type="button" class="dpk__sum" data-k="d"><small>Départ</small><b data-sum="d"></b></button>' +
+        '<div class="dpk__presets" role="group" aria-label="Durée du séjour">' +
+          '<button type="button" data-n="2">Week-end</button>' +
+          '<button type="button" data-n="4">4 nuits</button>' +
+          '<button type="button" data-n="7">1 semaine</button>' +
+          '<button type="button" data-n="14">2 semaines</button>' +
+        '</div>' +
         '<button type="button" class="dpk__close" aria-label="Fermer le calendrier"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>' +
       '</div>' +
       '<div class="dpk__body">' +
-        '<div class="dpk__presets" role="group" aria-label="Durée du séjour"><p>Durée du séjour</p>' +
-          '<button type="button" data-n="2">Week-end<span>2 nuits</span></button>' +
-          '<button type="button" data-n="4">Escapade<span>4 nuits</span></button>' +
-          '<button type="button" data-n="7">Une semaine<span>7 nuits</span></button>' +
-          '<button type="button" data-n="14">Deux semaines<span>14 nuits</span></button>' +
-        '</div>' +
         '<div class="dpk__cal">' +
           '<button type="button" class="dpk__nav dpk__nav--prev" data-step="-1" aria-label="Mois précédent"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>' +
           '<button type="button" class="dpk__nav dpk__nav--next" data-step="1" aria-label="Mois suivant"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>' +
@@ -212,11 +212,13 @@
     var sheet = window.innerWidth < 700;
     dp.classList.toggle("is-sheet", sheet); dp._bg.hidden = !sheet;
     document.body.classList.toggle("dpk-lock", sheet);
-    if (sheet) { dp.style.left = dp.style.top = ""; return; }
-    var anchor = st.trigger.closest(".bookbar, .fields, .form") || st.trigger;
-    var r = (st.trigger.closest(".bookbar, .fields") || st.trigger.parentNode).getBoundingClientRect();
-    var w = dp.offsetWidth, vw = document.documentElement.clientWidth;
+    if (sheet) { dp.style.left = dp.style.top = dp.style.width = ""; return; }
+    var anchor = st.trigger.closest(".bookbar, .fields, .form") || st.trigger.parentNode;
+    var r = anchor.getBoundingClientRect(), vw = document.documentElement.clientWidth;
+    var w = Math.min(Math.max(r.width, 700), vw - 32);
+    dp.style.width = w + "px";
     var left = anchor.classList.contains("fields") ? r.right - w : r.left;
+    if (anchor.classList.contains("form")) r = st.trigger.getBoundingClientRect();
     left = Math.max(16, Math.min(left, vw - w - 16));
     dp.style.left = left + window.scrollX + "px";
     dp.style.top = r.bottom + window.scrollY + 10 + "px";

@@ -90,7 +90,8 @@ const BRANCH = `<svg class="branch" viewBox="0 0 160 36" aria-hidden="true" fill
 const orn = (cls = "") => `<div class="orn${cls ? " " + cls : ""}" aria-hidden="true">${BRANCH}</div>`;
 const VINE = `<svg class="vine" viewBox="0 0 220 220" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 210C60 170 90 120 120 70c14-24 34-42 60-52"/><path d="M120 70c-30-6-52 6-62 30 18 6 44 0 62-30Z"/><path d="M120 70c-4 26 6 46 30 56 4-22-8-44-30-56Z"/><path d="M78 132c-26-4-44 8-50 28 18 4 38-6 50-28Z"/><path d="M78 132c2 22 16 36 36 38 0-20-14-34-36-38Z"/><path d="M58 100c-8 0-14-6-14-14M150 126c6 6 6 14 0 20M180 18c10 0 18 8 18 18"/><g fill="currentColor" stroke="none" opacity=".55"><circle cx="138" cy="150" r="5"/><circle cx="148" cy="158" r="5"/><circle cx="134" cy="161" r="5"/><circle cx="144" cy="170" r="5"/><circle cx="154" cy="168" r="4.5"/><circle cx="140" cy="181" r="4.5"/><circle cx="150" cy="180" r="4"/></g></svg>`;
 
-function layout({ title, desc, base = "", body, active = "", canonical = "", jsonld = null, mbar = "", ogImage = "" }) {
+function layout(opts) { return layoutHtml(opts).replaceAll("@@PICTO@@", `${opts.base || ""}assets/picto/`); }
+function layoutHtml({ title, desc, base = "", body, active = "", canonical = "", jsonld = null, mbar = "", ogImage = "" }) {
   const nav = NAV.filter((n) => n[2] !== "petitdej")
     .map(([h, l, k]) => `<a href="${base}${h}"${k === active ? ' aria-current="page"' : ""}>${l}</a>`).join("");
   const navM = NAV.map(([h, l]) => `<a href="${base}${h}">${l}</a>`).join("");
@@ -311,7 +312,7 @@ function home() {
       ${dateBtn("h-d", "d", "Départ", "bookbar__f")}
       <div class="bookbar__f"><label for="h-p">Voyageurs</label><select id="h-p" name="personnes">${guestOptions(2)}</select></div>
       <div class="bookbar__f bookbar__f--wide"><label for="h-c">Logement</label><select id="h-c" name="chambre"><option value="">Tous les logements</option>${ROOMS.map((r) => `<option value="${r.slug}">${esc(shortName(r))}</option>`).join("")}</select></div>
-      <button class="btn" type="submit">${icon("calendar", "icon--sm")} Vérifier les dates</button>
+      <button class="btn" type="submit">${icon("cal", "icon--sm")} Vérifier les dates</button>
     </form>
     <p class="bookbar__note">${icon("check", "icon--sm")} ${GLOBAL_FROM ? `Chambres dès ${GLOBAL_FROM} € la nuit · ` : ""}Réservation en direct · Réponse personnelle · Sans engagement</p>
   </div>
@@ -405,7 +406,7 @@ ${ctaBand(base)}`;
 
 function servicesGrid(base) {
   return `<div class="services services--rows">${SV.services.map((s, i) => `<article class="service"${i === 0 ? ' id="petit-dejeuner-teaser"' : ""}>
-    ${img(base, (s.photos || [s.photo])[0], s.titre, { ico: ["coffee", "pool", "leaf"][i], cls: i % 2 ? "ph--print" : "ph--arch" })}
+    ${img(base, (s.photos || [s.photo])[0], s.titre, { ico: ["breakfast", "pool", "garden"][i], cls: i % 2 ? "ph--print" : "ph--arch" })}
     <div class="service__body">
       <h3>${esc(s.titre)}</h3>
       <p>${esc(s.texte)}</p>
@@ -488,8 +489,8 @@ function roomPage(r, i) {
   const galCls = n >= 5 ? "" : n === 4 ? " gallery--4" : n === 3 ? " gallery--3" : " gallery--2";
   const highlights = [
     ["sun", "Terrasse privative", viewOf(r) ? `${viewOf(r)}.` : "Votre coin dehors, au calme."],
-    r.caracteristiques.some((c) => /rez-de-chaussée/.test(c)) ? ["ground", "De plain-pied", "Logement entièrement situé au rez-de-chaussée."] : ["leaf", "Au calme", "Au cœur des vignes, loin de l'agitation de la côte."],
-    hasKitchen(r) ? ["kitchen", hasKitchen(r), "Pour préparer vos repas en toute autonomie, idéal pour les longs séjours."] : ["coffee", "Petit-déjeuner sur demande", "Servi en terrasse, entre piscine et vignes."],
+    r.caracteristiques.some((c) => /rez-de-chaussée/.test(c)) ? ["mas", "De plain-pied", "Logement entièrement situé au rez-de-chaussée."] : ["garden", "Au calme", "Au cœur des vignes, loin de l'agitation de la côte."],
+    hasKitchen(r) ? ["kitchen", hasKitchen(r), "Pour préparer vos repas en toute autonomie, idéal pour les longs séjours."] : ["breakfast", "Petit-déjeuner sur demande", "Servi en terrasse, entre piscine et vignes."],
     ["wave", "Plages à 1 km", "Pampelonne à quelques minutes, Saint-Tropez à 6 km."],
   ];
   const facts = [
@@ -646,7 +647,7 @@ function ramatuellePage() {
 <section class="section" style="padding-top:0" aria-labelledby="h-evt"><div class="wrap">
   <div class="section__head"><div><h2 id="h-evt">Où dormir pour <em>les grands rendez-vous</em></h2><p>L'Auberge est ouverte ${TF.saison || "de mai à octobre"}. Pensez à réserver tôt pour ces dates.</p></div></div>
   <div class="discover">
-    <article class="disc disc--card"><span class="disc__ico">${icon("star", "icon--lg")}</span><h3>Festival de Ramatuelle</h3><p><b>Début août.</b> Théâtre, musique et humour en plein air, au cœur du village de Ramatuelle, à 4 km de l'Auberge.</p></article>
+    <article class="disc disc--card"><span class="disc__ico">${icon("etoile", "icon--lg")}</span><h3>Festival de Ramatuelle</h3><p><b>Début août.</b> Théâtre, musique et humour en plein air, au cœur du village de Ramatuelle, à 4 km de l'Auberge.</p></article>
     <article class="disc disc--card"><span class="disc__ico">${icon("wave", "icon--lg")}</span><h3>Les Voiles de Saint-Tropez</h3><p><b>Fin septembre – début octobre.</b> Les plus beaux voiliers classiques et modernes dans la baie. Le soir, retour au calme des vignes, loin de l'affluence du port.</p></article>
     <article class="disc disc--card"><span class="disc__ico">${icon("landmark", "icon--lg")}</span><h3>Marchés provençaux</h3><p><b>Toute la saison.</b> Ramatuelle le jeudi et le dimanche, Saint-Tropez place des Lices le mardi et le samedi.</p></article>
   </div>

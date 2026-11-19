@@ -833,3 +833,45 @@ body.dpk-lock { overflow: hidden; }
 .bookcard .upsell { grid-template-columns: 1fr 24px; padding: 12px 14px; }
 .bookcard .upsell__img { display: none; }
 .bookcard .upsell__box { width: 24px; height: 24px; }
+
+/* Calendrier, version compacte : largeur de la barre, période nette */
+.dpk__head { gap: 8px; padding: 12px 14px; flex-wrap: wrap; }
+.dpk__sum { flex: 0 1 170px; padding: 5px 12px; }
+.dpk__sum b { font-size: 1.05rem; }
+.dpk__presets { display: flex; flex-direction: row; gap: 6px; border: 0; padding: 0; margin-left: auto; }
+.dpk__presets button { border: 1px solid var(--sand-2); background: var(--white); padding: 6px 12px; font-size: .85rem; white-space: nowrap; border-radius: var(--r-sm); }
+.dpk__presets button:hover { border-color: var(--ink); background: var(--white); }
+.dpk__close { margin-left: 4px; }
+.dpk__body { display: block; }
+.dpk__cal { padding: 10px 18px 4px; }
+.dpk__nav { top: 8px; }
+.dpk__months { gap: 40px; }
+.dpk__mt { margin: 0 0 6px; font-size: 1.15rem; }
+.dpk table { border-collapse: separate; border-spacing: 0 2px; }
+.dpk th { padding-bottom: 2px; }
+.dpk td { padding: 0; height: 36px; }
+.dpk__d { width: 36px; height: 36px; font-size: .88rem; }
+.dpk td.in-range, .dpk td.in-range.is-preview { background: #ebe5d0; }
+.dpk td.is-preview { --band: #f2eee0; }
+.dpk td.in-range.is-preview { background: #f2eee0; }
+.dpk td.edge-s { background: linear-gradient(90deg, transparent 50%, var(--band, #ebe5d0) 50%); }
+.dpk td.edge-e { background: linear-gradient(90deg, var(--band, #ebe5d0) 50%, transparent 50%); }
+.dpk td.edge-s .dpk__d, .dpk td.edge-e .dpk__d { z-index: 1; }
+.dpk__d.is-hover { background: var(--white); border-color: var(--olive); }
+.dpk__d.is-today::after { bottom: 3px; }
+.dpk__foot { padding: 10px 14px; }
+.dpk.is-sheet .dpk__presets { width: 100%; margin: 4px 0 0; padding: 0; border: 0; overflow-x: auto; scrollbar-width: none; order: 5; }
+.dpk.is-sheet .dpk__presets button { flex: none; }
+.dpk.is-sheet .dpk__close { margin-left: auto; }
+.dpk.is-sheet .dpk__d { width: 40px; height: 40px; }
+.dpk.is-sheet td { height: 40px; }
+
+/* Pictogrammes de l'Auberge : trait fin, on les affiche un peu plus grands que les icônes d'interface */
+.icon.icon--picto { width: 26px; height: 26px; }
+.icon.icon--picto.icon--sm { width: 20px; height: 20px; }
+.icon.icon--picto.icon--lg { width: 52px; height: 52px; }
+.trust__ico .icon.icon--picto { width: 42px; height: 42px; }
+.disc__ico .icon.icon--picto { width: 56px; height: 56px; }
+.ph--empty .icon.icon--picto { width: 72px; height: 72px; opacity: .8; }
+.eq li .icon, .keyfacts li .icon.icon--picto { color: var(--olive); }
+.keyfacts li .icon.icon--picto { width: 28px; height: 28px; }

@@ -1,4 +1,4 @@
-import { existsSync, readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync } from "node:fs";
 // Jeu d'icônes en ligne (tracés 24×24, style trait) – inspirés de Lucide (licence ISC).
 export const ICONS = {
   bed: '<path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/>',
@@ -50,31 +50,22 @@ export const ICONS = {
   heart: '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>',
 };
 
+ICONS.cal = ICONS.calendar;
+
 const MAP = {
   "Climatisation": "snow", "TV": "tv", "Wifi & Internet": "wifi", "Serviettes de bain": "towel", "Terrasse": "sun",
-  "Sèche-cheveux": "wind", "Produits d'accueil": "soap", "Coffre-fort": "lock", "Mini bar": "fridge", "Téléphone": "phone",
+  "Sèche-cheveux": "wind", "Produits d'accueil": "soap", "Coffre-fort": "lock", "Mini bar": "fridge", "Téléphone": "telephone",
   "Machine à café": "coffee", "Bouilloire": "kettle", "Cuisine équipée": "kitchen", "Kitchenette": "kitchen",
-  "Piscine extérieure": "pool", "Petit-déjeuner sur demande": "coffee", "Parking extérieur gratuit": "parking", "Lit supplémentaire": "bed",
+  "Piscine extérieure": "pool", "Petit-déjeuner sur demande": "breakfast", "Parking extérieur gratuit": "parking", "Lit supplémentaire": "bed", "Canapé": "sofa", "Canapé-lit": "sofa",
 };
 export const iconFor = (label) => MAP[label] || "check";
 
-// Pictogrammes dessinés pour l'Auberge : un fichier assets/picto/<nom>.svg remplace l'icône de même nom.
+// Pictogrammes dessinés pour l'Auberge (choisis par Cyril) : assets/picto/<nom>.svg, générés par build/pictos.py.
+// Ils sont appelés par <use> (fichier mis en cache) ; « @@PICTO@@ » est remplacé par le bon chemin dans layout().
 const PICTO_DIR = new URL("../assets/picto/", import.meta.url);
-const PICTO = {};
-if (existsSync(PICTO_DIR)) {
-  for (const f of readdirSync(PICTO_DIR)) {
-    if (!f.endsWith(".svg")) continue;
-    const src = readFileSync(new URL(f, PICTO_DIR), "utf8").replace(/<\?xml[^>]*>|<!--[\s\S]*?-->/g, "").trim();
-    const m = src.match(/<svg([^>]*)>([\s\S]*)<\/svg>/);
-    if (!m) continue;
-    const vb = (m[1].match(/viewBox="([^"]+)"/) || [, "0 0 24 24"])[1];
-    const attrs = m[1].replace(/\s(xmlns(:\w+)?|width|height|class|viewBox|style|id)="[^"]*"/g, "").trim();
-    PICTO[f.slice(0, -4)] = { vb, inner: `<g ${attrs}>${m[2]}</g>` };
-  }
-}
+const PICTO = new Set(existsSync(PICTO_DIR) ? readdirSync(PICTO_DIR).filter((f) => f.endsWith(".svg")).map((f) => f.slice(0, -4)) : []);
 
 export const icon = (name, cls = "") => {
-  const p = PICTO[name];
-  if (p) return `<svg class="icon icon--picto${cls ? " " + cls : ""}" viewBox="${p.vb}" aria-hidden="true" focusable="false">${p.inner}</svg>`;
+  if (PICTO.has(name)) return `<svg class="icon icon--picto${cls ? " " + cls : ""}" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="@@PICTO@@${name}.svg#p"/></svg>`;
   return `<svg class="icon${cls ? " " + cls : ""}" viewBox="0 0 24 24" aria-hidden="true" focusable="false">${ICONS[name] || ICONS.check}</svg>`;
 };

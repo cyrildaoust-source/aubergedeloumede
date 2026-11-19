@@ -320,7 +320,7 @@ function home() {
 
 <section class="trust" aria-label="Points forts">
   <div class="wrap trust__in">
-    <div class="trust__i"><span class="trust__ico">${icon("wave")}</span><div><strong>Plages à 1 km</strong><span>Pampelonne, 6 km de Saint-Tropez</span></div></div>
+    <div class="trust__i"><span class="trust__ico">${icon("wave")}</span><div><strong>Plages à 1 km</strong><span>Plage de Pampelonne</span></div></div>
     <div class="trust__i"><span class="trust__ico">${icon("pool")}</span><div><strong>Piscine chauffée</strong><span>Dès juin, au milieu du jardin</span></div></div>
     <div class="trust__i"><span class="trust__ico">${icon("sun")}</span><div><strong>Terrasse privative</strong><span>Dans chaque logement</span></div></div>
     <div class="trust__i"><span class="trust__ico">${icon("parking")}</span><div><strong>Parking & Wi-Fi</strong><span>Gratuits sur place</span></div></div>
@@ -367,7 +367,7 @@ function home() {
       <div class="rail__nav"><button class="iconbtn" type="button" data-rail="-1" aria-label="Logements précédents">${icon("arrow", "icon--sm flip")}</button><button class="iconbtn" type="button" data-rail="1" aria-label="Logements suivants">${icon("arrow", "icon--sm")}</button></div>
     </div>
     <div class="rooms rooms--rail" data-rooms>${ROOMS.map((r) => roomCard(r, base)).join("")}</div>
-    <p class="rooms__more"><a class="link" href="chambres.html#comparatif">Comparer surfaces, lits et cuisine dans le tableau ${icon("arrow", "icon--sm")}</a></p>
+    <p class="rooms__more"><a class="link" href="chambres.html#comparatif">Voir le tableau comparatif ${icon("arrow", "icon--sm")}</a></p>
   </div>
 </section>
 
@@ -396,8 +396,10 @@ function home() {
   <div class="wrap">
     <div class="section__head"><div><h2 id="h-know">Avant de <em>réserver</em></h2></div></div>
     ${knowBlock()}
-    <h3 style="margin-top:56px">Questions fréquentes</h3>
-    ${faqBlock()}
+    <div class="faq-wrap">
+      <div><h3>Questions fréquentes</h3><p>Une autre question ? Appelez-nous au <a href="tel:${TEL}">${C.telephone_affiche}</a>, nous répondons nous-mêmes.</p></div>
+      ${faqBlock()}
+    </div>
   </div>
 </section>
 ${ctaBand(base)}`;
@@ -575,7 +577,7 @@ function roomPage(r, i) {
   </aside>
 </div>
 <section class="section section--sand" aria-labelledby="h-oth"><div class="wrap">
-  <div class="section__head"><div><h2 id="h-oth">Les autres <em>logements</em></h2></div><a class="link" href="../chambres.html">Comparer les 7 logements ${icon("arrow", "icon--sm")}</a></div>
+  <div class="section__head"><div><h2 id="h-oth">Les autres <em>logements</em></h2></div><a class="link" href="../chambres.html#comparatif">Tableau comparatif ${icon("arrow", "icon--sm")}</a></div>
   <div class="rooms rooms--scroll">${others.map((o) => roomCard(o, base)).join("")}</div>
 </div></section>
 ${ctaBand(base)}
@@ -595,7 +597,7 @@ function servicesPage() {
   const pd = TF.petit_dejeuner;
   const menu = pd.menu?.length
     ? `<ul class="menu-list">${pd.menu.map((m) => `<li><span>${esc(m.nom || m)}</span>${m.prix ? `<b>${m.prix} €</b>` : ""}</li>`).join("")}</ul>`
-    : `<div class="placeholder"><strong>${icon("info", "icon--sm")} Menu détaillé bientôt disponible</strong><p>La carte du petit-déjeuner et son tarif seront publiés ici très prochainement. D'ici là, demandez-les-nous lors de votre réservation.</p></div>`;
+    : `<div class="placeholder"><strong>${icon("info", "icon--sm")} Carte détaillée bientôt en ligne</strong><p>Le détail du petit-déjeuner sera publié ici très prochainement. D'ici là, nous vous le présentons volontiers avec notre réponse.</p></div>`;
   const body = `
 <section class="pagehead"><div class="wrap">
   <nav class="crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> / <span>Services</span></nav>

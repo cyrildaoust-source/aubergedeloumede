@@ -1,0 +1,32 @@
+L’OUMÈDE — 44 PICTOGRAMMES SVG
+
+44 fichiers SVG individuels, numérotés selon l’ordre des six planches validées.
+Les contours ont été vectorisés directement à partir des planches sans aplats (version 2).
+Le pictogramme 33 représente la voiture de face, recentrée et sans flèche.
+
+Caractéristiques
+- Fond transparent et intérieurs transparents.
+- Une seule couleur : vert olive #55603D.
+- Cadre commun : viewBox="0 0 64 64".
+- Dimensions intrinsèques : 64 × 64, redimensionnables.
+- Tracés de Bézier autonomes, avec titres accessibles.
+- Les lignes sont conservées sous forme de contours vectoriels fermés pour préserver leur dessin et leur épaisseur visuelle.
+
+Fichiers
+01–08 : atouts de la maison
+09–16 : équipements des chambres
+17–24 : équipements des suites
+25–32 : bon à savoir
+33–40 : accès et découvertes
+41–44 : ornements provençaux
+
+Ouvrez oumede-44-pictogrammes-svg-apercu.html après extraction pour parcourir les SVG.
+L’aperçu PNG utilise un fond crème pour montrer la transparence des pictogrammes.
+Le fichier JSON contient les noms, la correspondance des planches et les contrôles de fidélité.
+
+Exemple HTML
+<img src="oumede-01-piscine-chauffee.svg" width="32" height="32" alt="Piscine chauffée">
+
+Validation
+Les 44 SVG ont été analysés et rendus. Les formes et les ouvertures des modèles ont été conservées.
+Le recouvrement avec les contours d’origine dépasse 98 % pour chacun des 43 SVG issus directement des planches.

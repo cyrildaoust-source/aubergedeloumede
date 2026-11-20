@@ -1,5 +1,5 @@
 {
-  "note": "Les photos du dépôt viennent de la fiche Booking (taille 2048 px max), rangées par type de chambre Booking dans assets/photos/booking/. Les photos de l'ancien site n'ont jamais été archivées par la Wayback Machine : seules celles qui étaient aussi sur Booking ont pu être récupérées.",
+  "note": "Les photos du dépôt viennent de la fiche Booking (à la plus grande taille que Booking fournit, jusqu’à 3000 px), rangées par type de chambre Booking dans assets/photos/booking/. Les photos de l'ancien site n'ont jamais été archivées par la Wayback Machine : seules celles qui étaient aussi sur Booking ont pu être récupérées.",
   "correspondance_types_booking": {
     "Chambre Double Standard": [
       "chambre-1-double-standard",
@@ -350,6 +350,190 @@
       "id_booking": "891196076",
       "types_de_chambre_booking": [],
       "legende_booking": "Piscine ou située à proximité"
+    },
+    {
+      "fichier": "assets/photos/booking/suite-terrasse/salon-687912176.jpg",
+      "id_booking": "687912176",
+      "types_de_chambre_booking": [
+        "Suite avec Terrasse"
+      ],
+      "legende_booking": "Télévision ou salle de divertissement"
+    },
+    {
+      "fichier": "assets/photos/booking/suite-terrasse/salon-687912179.jpg",
+      "id_booking": "687912179",
+      "types_de_chambre_booking": [
+        "Suite avec Terrasse"
+      ],
+      "legende_booking": "Coin salon"
+    },
+    {
+      "fichier": "assets/photos/booking/suite-terrasse/salon-687912188.jpg",
+      "id_booking": "687912188",
+      "types_de_chambre_booking": [
+        "Suite avec Terrasse"
+      ],
+      "legende_booking": "Coin salon"
+    },
+    {
+      "fichier": "assets/photos/booking/suite-terrasse/chambre-687912189.jpg",
+      "id_booking": "687912189",
+      "types_de_chambre_booking": [
+        "Suite avec Terrasse"
+      ],
+      "legende_booking": "Une chambre avec un grand lit et une grande fenêtre"
+    },
+    {
+      "fichier": "assets/photos/booking/suite-terrasse/cuisine-687912187.jpg",
+      "id_booking": "687912187",
+      "types_de_chambre_booking": [
+        "Suite avec Terrasse"
+      ],
+      "legende_booking": "Cuisine ou kitchenette"
+    },
+    {
+      "fichier": "assets/photos/booking/suite-terrasse/salle-de-bains-687912399.jpg",
+      "id_booking": "687912399",
+      "types_de_chambre_booking": [
+        "Suite avec Terrasse"
+      ],
+      "legende_booking": "Salle de bains"
+    },
+    {
+      "fichier": "assets/photos/booking/suite-terrasse/salle-de-bains-687912400.jpg",
+      "id_booking": "687912400",
+      "types_de_chambre_booking": [
+        "Suite avec Terrasse"
+      ],
+      "legende_booking": "Salle de bains"
+    },
+    {
+      "fichier": "assets/photos/booking/suite-junior/chambre-687909984.jpg",
+      "id_booking": "687909984",
+      "types_de_chambre_booking": [
+        "Suite Junior - Vue sur Jardin"
+      ],
+      "legende_booking": "Un ou plusieurs lits dans un hébergement"
+    },
+    {
+      "fichier": "assets/photos/booking/suite-junior/chambre-687909985.jpg",
+      "id_booking": "687909985",
+      "types_de_chambre_booking": [
+        "Suite Junior - Vue sur Jardin"
+      ],
+      "legende_booking": "Un ou plusieurs lits dans un hébergement"
+    },
+    {
+      "fichier": "assets/photos/booking/suite-junior/salon-687909872.jpg",
+      "id_booking": "687909872",
+      "types_de_chambre_booking": [
+        "Suite Junior - Vue sur Jardin"
+      ],
+      "legende_booking": "Cuisine ou kitchenette"
+    },
+    {
+      "fichier": "assets/photos/booking/suite-junior/salon-687909906.jpg",
+      "id_booking": "687909906",
+      "types_de_chambre_booking": [
+        "Suite Junior - Vue sur Jardin"
+      ],
+      "legende_booking": "Télévision ou salle de divertissement"
+    },
+    {
+      "fichier": "assets/photos/booking/suite-junior/salon-687909948.jpg",
+      "id_booking": "687909948",
+      "types_de_chambre_booking": [
+        "Suite Junior - Vue sur Jardin"
+      ],
+      "legende_booking": "Télévision ou salle de divertissement"
+    },
+    {
+      "fichier": "assets/photos/booking/suite-junior/cuisine-687909937.jpg",
+      "id_booking": "687909937",
+      "types_de_chambre_booking": [
+        "Suite Junior - Vue sur Jardin"
+      ],
+      "legende_booking": "Cuisine ou kitchenette"
+    },
+    {
+      "fichier": "assets/photos/booking/suite-junior/jardin-687909999.jpg",
+      "id_booking": "687909999",
+      "types_de_chambre_booking": [
+        "Suite Junior - Vue sur Jardin"
+      ],
+      "legende_booking": "Jardin"
+    },
+    {
+      "fichier": "assets/photos/booking/double-superieure/chambre-868852986.jpg",
+      "id_booking": "868852986",
+      "types_de_chambre_booking": [
+        "Chambre Double Supérieure"
+      ],
+      "legende_booking": "Un ou plusieurs lits dans un hébergement"
+    },
+    {
+      "fichier": "assets/photos/booking/double-superieure/chambre-868853032.jpg",
+      "id_booking": "868853032",
+      "types_de_chambre_booking": [
+        "Chambre Double Supérieure"
+      ],
+      "legende_booking": "Un ou plusieurs lits dans un hébergement"
+    },
+    {
+      "fichier": "assets/photos/booking/double-superieure/chambre-868853320.jpg",
+      "id_booking": "868853320",
+      "types_de_chambre_booking": [
+        "Chambre Double Supérieure"
+      ],
+      "legende_booking": "Un ou plusieurs lits dans un hébergement"
+    },
+    {
+      "fichier": "assets/photos/booking/double-superieure/chambre-868852949.jpg",
+      "id_booking": "868852949",
+      "types_de_chambre_booking": [
+        "Chambre Double Supérieure"
+      ],
+      "legende_booking": "Un ou plusieurs lits dans un hébergement"
+    },
+    {
+      "fichier": "assets/photos/booking/double-superieure/chambre-868852969.jpg",
+      "id_booking": "868852969",
+      "types_de_chambre_booking": [
+        "Chambre Double Supérieure"
+      ],
+      "legende_booking": "Un ou plusieurs lits dans un hébergement"
+    },
+    {
+      "fichier": "assets/photos/booking/double-superieure/chambre-871061324.jpg",
+      "id_booking": "871061324",
+      "types_de_chambre_booking": [
+        "Chambre Double Supérieure"
+      ],
+      "legende_booking": "Un ou plusieurs lits dans un hébergement"
+    },
+    {
+      "fichier": "assets/photos/booking/double-superieure/chambre-871061649.jpg",
+      "id_booking": "871061649",
+      "types_de_chambre_booking": [
+        "Chambre Double Supérieure"
+      ],
+      "legende_booking": "Un ou plusieurs lits dans un hébergement"
+    },
+    {
+      "fichier": "assets/photos/booking/double-superieure/salle-de-bains-868853332.jpg",
+      "id_booking": "868853332",
+      "types_de_chambre_booking": [
+        "Chambre Double Supérieure"
+      ],
+      "legende_booking": "Une salle de bain avec lavabo et douche"
+    },
+    {
+      "fichier": "assets/photos/booking/double-superieure/salle-de-bains-868853346.jpg",
+      "id_booking": "868853346",
+      "types_de_chambre_booking": [
+        "Chambre Double Supérieure"
+      ],
+      "legende_booking": "Salle de bains"
     }
   ],
   "photos_ancien_site": [
